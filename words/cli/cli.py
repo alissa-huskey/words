@@ -1,4 +1,4 @@
-"""Datamuse API Wrapper."""
+"""DatamuseAPI API Wrapper."""
 
 from enum import Enum, EnumMeta
 
@@ -10,7 +10,7 @@ from typer import BadParameter, Option, Typer
 from typing_extensions import Annotated
 
 from words.compat import BdbQuit
-from words.datamuse import Datamuse
+from words.datamuse_api import DatamuseAPI
 from words.word_presenter import WordPresenter
 
 cli = Typer()
@@ -84,8 +84,8 @@ def words(
         help="Print word list in long format.",
     )] = False,
 ):
-    """Print results from the primary datamuse endpoint."""
-    api = Datamuse(ml=ml, md=md, max=max, ipa=ipa)
+    """Print results from the primary datamuse_api endpoint."""
+    api = DatamuseAPI(ml=ml, md=md, max=max, ipa=ipa)
     api.get()
 
     if json:

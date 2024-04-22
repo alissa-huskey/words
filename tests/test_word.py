@@ -42,18 +42,22 @@ def test_word_():
     assert word
 
 
-@pytest.mark.parametrize(("tags", "parts"), (
-        (["n"], ["n"]),
-        (["n", "a"], ["n", "a"]),
-        (["n", "pron:K R IY1 M "], ["n"]),
+@pytest.mark.parametrize(("tags", "parts", "skip"), (
+        (["n"], ["n"], False),
+        (["n", "a"], ["n", "a"], False),
+        (["n", "pron:K R IY1 M "], ["n"], False),
+        (['syn', 'v'], ["v"], "TODO"),
 ))
-def test_word_parts(tags, parts):
+def test_word_parts(tags, parts, skip):
     """
     GIVEN: a tags list containing some number of parts of speech
            {"score": 20051203, "tags": ["n", "pron:K R IY1 M "], "word": "cream"},
     WHEN: word.tags is assigned
     THEN: word.parts should return a list of those parts
     """
+
+    if skip:
+        pytest.skip(skip)
     word = Word(tags=tags)
     assert word.parts == parts
 

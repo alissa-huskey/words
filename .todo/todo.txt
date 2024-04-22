@@ -4,4 +4,3 @@
 2024-04-21 figure out how to accept arbitrary options
 2024-04-21 ensure --ipa isn't passed if falsy
 2024-04-21 add dict lookup: 'curl dict://dict.org/d:word'
-2024-04-21 switch out what I can for python-datamuse
