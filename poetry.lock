@@ -283,6 +283,18 @@ python-versions = "*"
 tests = ["pytest"]
 
 [[package]]
+name = "py-dict-client"
+version = "0.2.0"
+description = "A client implementing the Dictionary Server Protocol (DICT)"
+category = "main"
+optional = false
+python-versions = ">=3"
+
+[package.extras]
+dev = ["black", "coverage", "flake8", "isort", "nose2", "pylint"]
+dist = ["setuptools", "twine", "wheel"]
+
+[[package]]
 name = "pycodestyle"
 version = "2.11.1"
 description = "Python style guide checker"
@@ -491,7 +503,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.10, <4.0"
-content-hash = "d8d5e7a9cb2cde8c94daaa710730a06715bc0e01f858ceb926e148b4c3dcc569"
+content-hash = "3bed1434dcc1f2e7c9087453cf0bf07bf528d31844ab8b3ee5bbe757cda8d151"
 
 [metadata.files]
 asttokens = [
@@ -677,6 +689,10 @@ ptyprocess = [
 pure-eval = [
     {file = "pure_eval-0.2.2-py3-none-any.whl", hash = "sha256:01eaab343580944bc56080ebe0a674b39ec44a945e6d09ba7db3cb8cec289350"},
     {file = "pure_eval-0.2.2.tar.gz", hash = "sha256:2b45320af6dfaa1750f543d714b6d1c520a1688dec6fd24d339063ce0aaa9ac3"},
+]
+py-dict-client = [
+    {file = "py-dict-client-0.2.0.tar.gz", hash = "sha256:0af3d53412af950af37b8ef21a26cbb30cbc67c23335e7ea8415fd1dd82c4d98"},
+    {file = "py_dict_client-0.2.0-py3-none-any.whl", hash = "sha256:b5c9aa786bb5b7f49c564ffe8b313877c1a49894ddd1e134a77c1a9727e4f4d6"},
 ]
 pycodestyle = [
     {file = "pycodestyle-2.11.1-py2.py3-none-any.whl", hash = "sha256:44fe31000b2d866f2e41841b18528a505fbd7fef9017b04eff4e2648a0fadc67"},

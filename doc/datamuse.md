@@ -1,7 +1,7 @@
 Datamuse API
 ============
 
-Docs taken from the official [Datamuse API](https://www.datamuse.com/api/) website.
+Docs taken from the official [Datamuse API](https://www.datamuse.com/api/) website and reformatted/rephrased for my own sanity.
 
 * API version:  1.1
 * Queries per second:  29
@@ -13,47 +13,50 @@ Examples
 
 In order to find...	...use https://api.datamuse.com…
 
-* words with a meaning similar to ringing in the ears	/words?ml=ringing+in+the+ears
-* words related to duck that start with the letter b	/words?ml=duck&sp=b*
-* words related to spoon that end with the letter a	/words?ml=spoon&sp=*a
-* words that sound like jirraf	/words?sl=jirraf
-* words that start with t, end in k, and have two letters in between	/words?sp=t??k
-* words that are spelled similarly to hipopatamus	/words?sp=hipopatamus
-* adjectives that are often used to describe ocean	/words?rel_jjb=ocean
-* adjectives describing ocean sorted by how related they are to temperature	/words?rel_jjb=ocean&topics=temperature
-* nouns that are often described by the adjective yellow	/words?rel_jja=yellow
-* words that often follow "drink" in a sentence, that start with the letter w	/words?lc=drink&sp=w*
-* words that are triggered by (strongly associated with) the word "cow"	/words?rel_trg=cow
-* suggestions for the user if they have typed in rawand so far	/sug?s=rawand
+* words with a meaning similar to ringing in the ears	`/words?ml=ringing+in+the+ears`
+* words related to duck that start with the letter b	`/words?ml=duck&sp=b*`
+* words related to spoon that end with the letter a	`/words?ml=spoon&sp=*a`
+* words that sound like jirraf	`/words?sl=jirraf`
+* words that start with t, end in k, and have two letters in between	`/words?sp=t??k`
+* words that are spelled similarly to hipopatamus	`/words?sp=hipopatamus`
+* adjectives that are often used to describe ocean	`/words?rel_jjb=ocean`
+* adjectives describing ocean sorted by how related they are to temperature	`/words?rel_jjb=ocean&topics=temperature`
+* nouns that are often described by the adjective yellow	`/words?rel_jja=yellow`
+* words that often follow "drink" in a sentence, that start with the letter w	`/words?lc=drink&sp=w*`
+* words that are triggered by (strongly associated with) the word "cow"	`/words?rel_trg=cow`
+* suggestions for the user if they have typed in rawand so far	`/sug?s=rawand`
 
 /words endpoint
 ---------------
 
 This endpoint returns a list of words (and multiword expressions) from a given vocabulary that match a given set of constraints.
 
-In the table below, the first four parameters (rd, sl, sp, rel_[code], and v) can be thought of as hard constraints on the result set, while the next three (topics, lc, and rc) can be thought of as context hints. The latter only impact the order in which results are returned. All parameters are optional.
+All parameters are optional.
 
-|            |    |                   |                                    |                          |
-|------------|----|-------------------|------------------------------------|--------------------------|
-| ml         |main    | Means like        |                                    |                          |
-| sl         |main    | Sounds like       |                                    |                          |
-| sp         |main    | Spelled like      |                                    | wildcard patterns        |
-| rel_[code] |main    | Related word      | words related in a particular way  |                          |
-| v          |opt | Vocabulary source |                                    |                          |
-| topics     |opt | Topic words       | theme of document                  | space/comma sep, up to 5 |
-| lc         |opt | Left context      | word that appears to the left      |                          |
-| rc         |opt | Right context     | word that appears to the right     |                          |
-| max        |opt | Max results       |                                    | (default 100, max: 1000) |
-| md         |opt | Metadata flags    | extra lexical knowledge to include |                          |
-| qe         |    | Query echo        | ???                                |                          |
+### Word constraints
 
-### vocabulary sources
+Hard constraints filter the result set.
 
-* default: a 550,000-term vocabulary of English words and multiword expressions is used.
-* es: a 500,000-term vocabulary of words from Spanish-language books
-* enwiki: ~6 million-term vocabulary of article titles from the English-language Wikipedia
+| Param      | Name         | Description                                                                                                                                                                        |
+|------------|--------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ml         | Means like   | Words with a related meaning which can be any word or sequence of words. (This is effectively the reverse dictionary feature of OneLook.) |
+| sl         | Sounds like  |                                                                                                                                                                                    |
+| sp         | Spelled like |                                                                                                                                                                                    |
+| rel_[code] | Related word |                                                                                                                                                                                    |
 
-### related words
+### Vocabulary Set
+
+|            |                   |
+|------------|-------------------|
+| v          | Vocabulary source |
+
+### Spelled Like
+
+Accepts wildcard patterns.
+
+### Related Words
+
+Related word constraints: require that the results, when paired with the word in this parameter, are in a predefined lexical relation indicated by [code]. Any number of these parameters may be specified any number of times. An assortment of semantic, phonetic, and corpus-statistics-based relations are available.
 
 [code] is a three-letter identifier from the list below.
 
@@ -73,20 +76,90 @@ In the table below, the first four parameters (rd, sl, sp, rel_[code], and v) ca
 | hom    | Homophones (sound-alike words)                                            | course → coarse                       |
 | cns    | Consonant match                                                           | sample → simple                       |
 
-### metadata flags
+### Vocabulary sources
 
-| Letter | Description     | Implementation notes                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-|--------|-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| d      | Definitions     | Produced in the defs field of the result object. The definitions are from Wiktionary and WordNet. If the word is an inflected form (such as the plural of a noun or a conjugated form of a verb), then an additional defHeadword field will be added indicating the base form from which the definitions are drawn.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| p      | Parts of speech | One or more part-of-speech codes will be added to the tags field of the result object. "n" means noun, "v" means verb, "adj" means adjective, "adv" means adverb, and "u" means that the part of speech is none of these or cannot be determined. Multiple entries will be added when the word's part of speech is ambiguous, with the most popular part of speech listed first. This field is derived from an analysis of Google Books Ngrams data.                                                                                                                                                                                                                                                                                                                                                                                                         |
-| s      | Syllable count  | Produced in the numSyllables field of the result object. In certain cases the number of syllables may be ambiguous, in which case the system's best guess is chosen based on the entire query.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| r      | Pronunciation   | Produced in the tags field of the result object, prefixed by "pron:". This is the system's best guess for the pronunciation of the word or phrase. The format of the pronunication is a space-delimited list of Arpabet phoneme codes. If you add "&ipa=1" to your API query, the pronunciation string will instead use the International Phonetic Alphabet. Note that for terms that are very rare or outside of the vocabulary, the pronunciation will be guessed based on the spelling. In certain cases the pronunciation may be ambiguous, in which case the system's best guess is chosen based on the entire query.                                                                                                                                                                                                                                   |
-| f      | Word frequency  | Produced in the tags field of the result object, prefixed by "f:". The value is the number of times the word (or multi-word phrase) occurs per million words of English text according to Google Books Ngrams.The API makes an effort to ensure that metadata values are consistent with the sense or senses of the word that best match the API query. For example, the word "refuse" is tagged as a verb ("v") in the results of a search for words related to "deny" but as a noun ("n") in the results of a search for words related to "trash". And "resume" is shown to have 2 syllables in a search of synonyms for "start" but 3 syllables in a search of synonyms for "dossier". There are occasional errors in this guesswork, particularly with pronunciations. Metadata is available for both English (default) and Spanish (v=es) vocabularies. |
+* default: a 550,000-term vocabulary of English words and multiword expressions is used.
+* es: a 500,000-term vocabulary of words from Spanish-language books
+* enwiki: ~6 million-term vocabulary of article titles from the English-language Wikipedia
+
+### Context Hints
+
+Context hints only impact the order in which results are returned.
+
+|            |      |                                 |                                    |                          |
+|------------|------|---------------------------------|------------------------------------|--------------------------|
+| topics     | opt  | Topic words                     | theme of document                  | space/comma sep, up to 5 |
+| lc         | opt  | Left context                    | word that appears to the left      |                          |
+| rc         | opt  | Right context                   | word that appears to the right     |                          |
+
+### Output
+
+These parameters impact the nature of information to include in the results.
+
+| Param | Meaning           | Expects      |                                                                          |
+|-------|-------------------|--------------|--------------------------------------------------------------------------|
+| max   | Max results       | `1` - `1000` |                                                                          |
+| md    | Metadata flags    | Letter flag. | Additional lexical information to include.                               |
+| qe    | Query echo        |              | ???                                                                      |
+| ipa   | IPA Pronunciation | Any value.   | Provide pronunciation in International Phonetic Alphabet notation |
+
+### Metadata
+
+A list of single-letter codes (no delimiter) requesting that extra lexical knowledge be included with the results.
+
+The API makes an effort to ensure that metadata values are consistent with the sense or senses of the word that best match the API query. For example, the word "refuse" is tagged as a verb ("v") in the results of a search for words related to "deny" but as a noun ("n") in the results of a search for words related to "trash". And "resume" is shown to have 2 syllables in a search of synonyms for "start" but 3 syllables in a search of synonyms for "dossier". There are occasional errors in this guesswork, particularly with pronunciations. Metadata is available for both English (default) and Spanish (v=es) vocabularies.
+
+| Letter | Description     | Field(s)          | Prefix | Implementation notes                                                                                       |
+|--------|-----------------|-------------------|--------|------------------------------------------------------------------------------------------------------------|
+| d      | Definitions     | defs, defHeadword |        | From Wiktionary and WordNet.                                                                               |
+| p      | Parts of speech | tags              |        | From Google Books Ngrams.                                                                                  |
+| s      | Syllable count  | numSyllables      |        | When ambiguous the system's best guess is chosen.                                                          |
+| r      | Pronunciation   | tags              | pron:  | May be based on spelling or the the system's best guess.                                                   |
+| f      | Word frequency  | tags              | f:     | Number of times the word/phrase occurs per million words of English text according to Google Books Ngrams. |
 
 Interpreting the results
 ------------------------
 
-For both /words and /sug, the result of an API call is always a JSON list of word objects, like so:
+The result of an API call is always a JSON list of word objects, or an empty list (`[]`) if no words match the given constraints.
+
+Results are ordered by popularity or strength of relationship.
+
+Note that popular multiword expressions like "hot dog" are included in the default vocabulary, and these will appear as space-delimited strings.
+
+### Fields
+
+| Field       | Prefix | When   | Meaning                                                                    |
+|-------------|--------|--------|----------------------------------------------------------------------------|
+| word        |        |        | the matching vocabulary entry                                              |
+| score       |        |        | raking of results                                                          |
+| defs        |        | `md=d` | list of definitions                                                        |
+| tags        |        |        | list of parts of speech, and possibly other prefixed metadata information. |
+| tags        | pron:  | `md=r` | Pronunciation                                                              |
+| tags        | f:     | `md=f` | Word frequency                                                             |
+| defHeadword |        | `md=d` | Base of inflected words when applicable.                                   |
+| numSyllables|        | `md=s` | Syllable count.                                                            |
+|             |        |        |                                                                            |
+
+#### Parts of speech
+
+Multiple entries will be added when the word's part of speech is ambiguous.
+
+Most popular listed first. 
+
+| Acronym | Meaning                               |
+|---------|---------------------------------------|
+| n       | noun                                  |
+| v       | verb                                  |
+| adj     | adjective                             |
+| adv     | adverb                                |
+| u       | none of these or cannot be determined |
+
+#### Pronunciation
+
+Space-delimited list of Arpabet phoneme codes or a string formatted per International Phonetic Alphabet (if ipa=1 was passed).
+
+Examples
+--------
 
 ```bash
 curl "https://api.datamuse.com/words?ml=ringing+in+the+ears&max=4" | python -mjson.tool
@@ -113,6 +186,25 @@ curl "https://api.datamuse.com/words?ml=ringing+in+the+ears&max=4" | python -mjs
 ]
 ```
 
-Each list item is an object that contains the matching vocabulary entry ("word") and some metadata, currently just an integer score. An empty list ([]) will be returned if no words or phrases are found that match your constraints. Note that popular multiword expressions like "hot dog" are included in the default vocabulary, and these will appear as space-delimited strings.
+---
 
-For queries that have a semantic constraint, results are ordered by an estimate of the strength of the relationship, most to least. Otherwise, queries are ranked by an estimate of the popularity of the word in written text, most to least. At this time, the "score" field has no interpretable meaning, other than as a way to rank the results.
+```json
+{
+    'word': 'accepts',
+    'score': 10021555,
+    'tags': ['v'],
+    'defs': [
+        'v\t(transitive) To receive, especially with a consent, with favour, or with approval. ',
+        'v\t(transitive) To admit to a place or a group. ',
+        'v\t(transitive) To regard as proper, usual, true, or to believe in. ',
+        'v\t(transitive) To receive as adequate or satisfactory. ',
+        'v\t(transitive) To receive or admit to; to agree to; to assent to; to submit to. ',
+        'v\t(transitive) To endure patiently. ',
+        'v\t(transitive) To acknowledge patiently without opposition or resistance. ',
+        'v\t(transitive, law, business) To agree to pay. ',
+        'v\t(transitive) To receive officially. ',
+        'v\t(intransitive) To receive something willingly. '
+    ],
+    'defHeadword': 'accept'
+}
+```

@@ -1,0 +1,6 @@
+2024-04-21 change --ipa to --format=ipa/apc or --proun=ipa/apc @maybe
+2024-04-21 md: figure out a way to list metadata flags
+2024-04-21 try changing --ml to ml
+2024-04-21 figure out how to accept arbitrary options
+2024-04-21 ensure --ipa isn't passed if falsy
+2024-04-21 add dict lookup: 'curl dict://dict.org/show:db'
