@@ -14,7 +14,7 @@ rich = "^13.7.1"
 py-dict-client = "^0.2.0"
 
 [tool.poetry.scripts]
-words = "words.cli:run"
+words = "words.cli.cli:run"
 
 [tool.pytest.ini_options]
 addopts = "-vx"

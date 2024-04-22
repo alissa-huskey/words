@@ -495,6 +495,8 @@ Python Dict Client
 
 ```python
 from dictionary_client import DictionaryClient as DictClient
-client = DictClient("dict://test.dict.org")
+# NOTE: this should not include the "dict://"
+#       nor can it include a trailing slash
+client = DictClient("test.dict.org")
 client.define("hello")
 ```
