@@ -1,0 +1,83 @@
+"""DefinitionRequest module for interacting with dict.org."""
+
+from collections import namedtuple
+
+from dictionary_client import DictionaryClient as DictClient
+from dictionary_client.response import DefineWordResponse
+
+from words.dictionary_entry import DictionaryEntry
+from words.object import Object
+
+ResponseStatus = namedtuple("ResponseStatus", ("code", "message"))
+
+
+class DefinitionRequest(Object):
+    """A request to dict.org via a DictionaryCient."""
+
+    HOST = "dict.org"
+    PORT = 2628
+
+    _client: DictClient = None
+
+    response: DefineWordResponse = None
+
+    def __init__(self, word=None, client=None, send_request=True, **kwargs):
+        """Initialize and make request unless send_request is False."""
+        self.word = word
+        self.client = client
+        super().__init__(**kwargs)
+
+        if word and send_request:
+            self.response = self.lookup()
+
+    def lookup(self) -> DefineWordResponse:
+        """Query dict.com for a definition."""
+        try:
+            self.response = self.client.define(self.word)
+        except BrokenPipeError:
+            self._client = None
+            self.lookup()
+        return self.response
+
+    @property
+    def matches(self) -> int:
+        """Number of matches found."""
+        return len(self.entries)
+
+    @property
+    def client(self) -> DictClient:
+        """Return or create DictClient object."""
+        if not self._client:
+            self._client = DictClient("dict.org")
+        return self._client
+
+    @client.setter
+    def client(self, value):
+        """Get client."""
+        self._client = value
+
+    @property
+    def definitions(self) -> list:
+        """Return list of definition strings."""
+        return [d.definition for d in self.entries]
+
+    @property
+    def entries(self) -> list:
+        """Return a list of DefinitionEntry objects from response."""
+        if not self.response.content:
+            return []
+        return [DictionaryEntry(word=self.word, **d) for d in self.response.content]
+
+    @property
+    def status(self) -> ResponseStatus:
+        """Return the status code and message from the response."""
+
+    @property
+    def ok(self):
+        """Return True for a successful request."""
+        if not self.response:
+            return
+
+        status = str(self.response.status_code)
+
+        return (status[0] not in ("4", "5"))
