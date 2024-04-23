@@ -4,6 +4,7 @@ from enum import Enum, EnumMeta
 
 from rich import print as rprint
 from rich.console import Console
+from rich.panel import Panel
 from rich.table import Table
 from rich.traceback import install as rich_tracebacks
 from typer import BadParameter, Option, Typer
@@ -11,6 +12,7 @@ from typing_extensions import Annotated
 
 from words.compat import BdbQuit
 from words.datamuse_api import DatamuseAPI
+from words.definition_request import DefinitionRequest
 from words.word_presenter import WordPresenter
 
 cli = Typer()
@@ -58,6 +60,17 @@ def check_metadata(value: str):
         if flag not in MetadataFlags:
             raise BadParameter(f"Invalid metadata (--md) flag: {flag}")
     return value
+
+
+@cli.command()
+def define(word: str):
+    """Get the definition of a word."""
+    rsp = DefinitionRequest(word)
+    if not rsp.count:
+        rprint("Not found.")
+    for e in rsp.entries:
+        panel = Panel(e.definition, title=e.db)
+        rprint(panel)
 
 
 @cli.command()
