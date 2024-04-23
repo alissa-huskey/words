@@ -1,14 +1,11 @@
 """DefinitionRequest module for interacting with dict.org."""
 
-from collections import namedtuple
-
 from dictionary_client import DictionaryClient as DictClient
 from dictionary_client.response import DefineWordResponse
 
 from words.dictionary_entry import DictionaryEntry
 from words.object import Object
-
-ResponseStatus = namedtuple("ResponseStatus", ("code", "message"))
+from words.response_status import ResponseStatus
 
 
 class DefinitionRequest(Object):
@@ -40,7 +37,7 @@ class DefinitionRequest(Object):
         return self.response
 
     @property
-    def matches(self) -> int:
+    def count(self) -> int:
         """Number of matches found."""
         return len(self.entries)
 
@@ -71,6 +68,12 @@ class DefinitionRequest(Object):
     @property
     def status(self) -> ResponseStatus:
         """Return the status code and message from the response."""
+        if not self.response:
+            return ResponseStatus()
+        lines = self.response.response_text.splitlines()
+        lines.append("")  # in case it's empty
+
+        return ResponseStatus(lines[0])
 
     @property
     def ok(self):

@@ -7,3 +7,4 @@
 2024-04-21 fix tag setting so that it looks at parts of speech list, not just add whatever's there
 2024-04-21 figure out what "syn" means as a tag; (probably because --rel-syn WORD)
 2024-04-22 fix no results bug 'words --ml etcetra' @bug'
+2024-04-23 inherit from DictionaryClient instead @maybe

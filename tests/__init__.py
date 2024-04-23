@@ -18,6 +18,10 @@ class Stub():
         attrs = ", ".join([f"{k}={v!r}" for k, v in self.__dict__.items()])
         return f"{self.__class__.__name__}({attrs})"
 
+    def __eq__(self, other):
+        """Objects are equal if all attrs are equal."""
+        return self.__dict__ == other.__dict__
+
 
 def fixture_path(name) -> Path:
     """Return the path to a file in the tests/data directory."""
