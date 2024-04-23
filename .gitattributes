@@ -1,2 +1,4 @@
 # disable EOL-normalization
 tests/data/* binary
+**/*.def binary
+**/*.show binary

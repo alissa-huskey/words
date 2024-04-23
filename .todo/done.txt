@@ -1,1 +1,2 @@
 x 2024-04-21 2024-04-21 switch out what I can for python-datamuse
+x 2024-04-23 2024-04-21 add dict lookup: 'curl dict://dict.org/d:word'

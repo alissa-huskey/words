@@ -1,0 +1,1429 @@
+[
+    {
+        'word': 'happen',
+        'score': 20020208,
+        'tags': ['syn', 'v', 'results_type:primary_rel'],
+        'defs': [
+            'v\t(intransitive) To occur or take place. ',
+            'v\t(transitive, archaic) To happen to; to befall. ',
+            'v\t(intransitive or impersonal, with infinitive) To do or occur by chance or unexpectedly. ',
+            'v\t(followed by on or upon) To encounter by chance. ',
+            'v\t(informal) To become popular or trendy. '
+        ]
+    },
+    {
+        'word': 'chance',
+        'score': 20018491,
+        'tags': ['syn', 'v'],
+        'defs': [
+            'v\t(archaic, intransitive) To happen by chance, to occur. ',
+            'v\t(archaic, transitive) To befall; to happen to. ',
+            'v\tTo try or risk. ',
+            'v\tTo discover something by chance. ',
+            'v\t(Belize) To rob, cheat or swindle someone. ',
+            'v\t(Nigeria) To take an opportunity from someone; to cut a queue. '
+        ]
+    },
+    {
+        'word': 'encounter',
+        'score': 20017210,
+        'tags': ['syn', 'v'],
+        'defs': [
+            'v\t(transitive) To meet (someone) or find (something), especially unexpectedly. ',
+            'v\t(transitive) To confront (someone or something) face to face. ',
+            'v\t(transitive, intransitive) To engage in conflict, as with an enemy. ',
+            'v\t(transitive, India) To execute someone extrajudicially. '
+        ]
+    },
+    {
+        'word': 'discover',
+        'score': 20017191,
+        'tags': ['syn', 'v'],
+        'defs': [
+            'v\tTo find or learn something for the first time. ',
+            'v\t(transitive, obsolete) To remove the cover from; to uncover (a head, building etc.). ',
+            'v\t(transitive, now rare) To expose, uncover. ',
+            "v\t(transitive, chess) To create by moving a piece out of another piece's line of attack. ",
+            'v\t(law, transitive) To question (a person) as part of discovery in a lawsuit. ',
+            'v\t(transitive, archaic) To reveal (information); to divulge, make known. ',
+            'v\t(transitive, obsolete) To reconnoitre, explore (an area). ',
+            'v\t(obsolete) To manifest without design; to show; to exhibit. '
+        ]
+    },
+    {
+        'word': 'get',
+        'score': 20015569,
+        'tags': ['syn', 'v'],
+        'defs': [
+            'v\t(ditransitive) To obtain; to acquire. ',
+            'v\t(transitive) To receive. ',
+            'v\t(transitive, in a perfect construction, with present-tense meaning) To have. See usage notes. ',
+            'v\t(transitive) To fetch, bring, take. ',
+            'v\t(copulative) To become, or cause oneself to become. ',
+            'v\t(transitive) To cause to become; to bring about. ',
+            'v\t(transitive) To cause to do. ',
+            'v\t(transitive) To cause to come or go or move. ',
+            'v\t(intransitive, with various prepositions, such as into, over, or behind; for specific idiomatic senses see individual 
+entries get into, get over, etc.) To adopt, assume, arrive at, or progress towards (a certain position, location, state). ',
+            'v\t(transitive) To cover (a certain distance) while travelling. ',
+            'v\t(intransitive, catenative) (with full infinitive or gerund-participle) To begin (doing something or to do something). ',
+            'v\t(transitive) To take or catch (a scheduled transportation service). ',
+            'v\t(transitive) To respond to (a telephone call, a doorbell, etc). ',
+            'v\t(intransitive, catenative) (with full infinitive) To be able, be permitted, or have the opportunity (to do something 
+desirable or ironically implied to be desirable). ',
+            'v\t(transitive, informal) To understand. (compare get it) ',
+            'v\t(transitive, informal) To be told; be the recipient of (a question, comparison, opinion, etc.). ',
+            'v\t(auxiliary, informal) Used with the past participle to form the dynamic passive voice of a dynamic verb. Compared with 
+static passive with to be, this emphasizes the commencement of an action or entry into a state. ',
+            'v\t(transitive) To become ill with or catch (a disease). ',
+            'v\t(transitive, informal) To catch out, trick successfully. ',
+            'v\t(transitive, informal) To perplex, stump. ',
+            'v\t(transitive) To find as an answer. ',
+            'v\t(transitive, informal) To bring to reckoning; to catch (as a criminal); to effect retribution. ',
+            'v\t(transitive) To hear completely; catch. ',
+            'v\t(transitive) To getter. ',
+            'v\t(now rare) To beget (of a father). ',
+            'v\t(archaic) To learn; to commit to memory; to memorize; sometimes with out. ',
+            'v\t(imperative, informal) Used with a personal pronoun to indicate that someone is being pretentious or grandiose. ',
+            'v\t(intransitive, informal, chiefly imperative) To go, to leave; to scram. ',
+            'v\t(euphemistic) To kill. ',
+            'v\t(intransitive, obsolete) To make acquisitions; to gain; to profit. ',
+            'v\t(transitive) To measure. ',
+            'v\t(transitive) To cause someone to laugh. '
+        ]
+    },
+    {
+        'word': 'breakthrough',
+        'score': 20015111,
+        'tags': ['syn', 'n', 'adj'],
+        'defs': [
+            'adj\tCharacterized by major progress or overcoming some obstacle. ',
+            'adj\t(immunology) Involving the contraction of a disease by a person with a decreased susceptibility, such as a person who 
+has been vaccinated to help prevent that disease. ',
+            'adj\t(medicine) The emergence or one or more symptoms of a condition despite medication or other medical treatment. ',
+            'n\t(military) An advance through and past enemy lines. ',
+            'n\tAny major progress; such as a great innovation or discovery that overcomes a significant obstacle. ',
+            "n\t(sports) The penetration of the opposition's defence. ",
+            'n\t(construction) The penetration of a separating wall or the remaining distance to an adjacent hollow (a crosscut in mining)
+or between two parts of a tunnel build from both ends; knockthrough. '
+        ]
+    },
+    {
+        'word': 'discovery',
+        'score': 20014976,
+        'tags': ['syn', 'n'],
+        'defs': [
+            'n\tSomething discovered. ',
+            'n\t(uncountable) The discovering of new things. ',
+            'n\t(countable, archaic) An act of uncovering or revealing something; a revelation. ',
+            'n\t(law, uncountable) A pre-trial phase in which evidence is gathered. ',
+            'n\t(law, uncountable) Materials revealed to the opposing party during the pre-trial phase in which evidence is gathered. ',
+            'n\t(chess) A discovered attack. '
+        ]
+    },
+    {
+        'word': 'obtain',
+        'score': 20014966,
+        'tags': ['syn', 'v'],
+        'defs': [
+            'v\t(transitive) To get hold of; to gain possession of, to procure; to acquire, in any way. ',
+            'v\t(intransitive, obsolete) To secure (that) a specific objective or state of affairs be reached. ',
+            'v\t(intransitive, obsolete) To prevail, be victorious; to succeed. ',
+            'v\t(transitive, obsolete) To hold; to keep, possess or occupy. ',
+            'v\t(intransitive, philosophy) To exist or be the case; to hold true, be in force. '
+        ]
+    },
+    {
+        'word': 'find out',
+        'score': 20013236,
+        'tags': ['syn', 'v'],
+        'defs': [
+            'v\t(idiomatic) To discover, as by asking or investigating. ',
+            'v\tTo discover or expose (someone) as disobedient, dishonest, etc. ',
+            'v\tTo uncover a weakness in (someone). '
+        ]
+    },
+    {
+        'word': 'detect',
+        'score': 20011810,
+        'tags': ['syn', 'v'],
+        'defs': [
+            'v\tTo discover or find by careful search, examination, or probing. ',
+            'v\t(intransitive, informal) To work or solve cases as a detective. '
+        ]
+    },
+    {
+        'word': 'observe',
+        'score': 20010914,
+        'tags': ['syn', 'v'],
+        'defs': [
+            'v\t(transitive) To notice or view, especially carefully or with attention to detail. ',
+            'v\t(transitive) To follow or obey the custom, practice, or rules (especially of a religion). ',
+            'v\t(transitive) To take note of and celebrate (a holiday or similar occurrence), to keep; to follow (a type of time or 
+calendar reckoning). ',
+            'v\t(intransitive) To comment on something; to make an observation. '
+        ]
+    },
+    {
+        'word': 'receive',
+        'score': 20010801,
+        'tags': ['syn', 'v'],
+        'defs': [
+            'v\tTo take, as something that is offered, given, committed, sent, paid, etc.; to accept; to be given something. ',
+            'v\t(law) To take goods knowing them to be stolen. ',
+            "v\tTo act as a host for guests; to give admittance to; to permit to enter, as into one's house, presence, company, etc. ",
+            'v\tTo incur (an injury). ',
+            'v\tTo allow (a custom, tradition, etc.); to give credence or acceptance to. ',
+            'v\t(telecommunications) To detect a signal from a transmitter. ',
+            'v\t(sports) To be in a position to take possession, or hit back the ball. ',
+            'v\t(tennis, badminton, squash) To be in a position to hit back a service. ',
+            'v\t(American football) To be in a position to catch a forward pass. ',
+            'v\t(transitive, intransitive) To accept into the mind; to understand. '
+        ]
+    },
+    {
+        'word': 'ascertain',
+        'score': 20009657,
+        'tags': ['syn', 'v'],
+        'defs': [
+            'v\tTo find out definitely; to discover or establish. ',
+            'v\t(obsolete) To make (someone) certain or confident about something; to inform. ',
+            'v\t(archaic) To establish, to prove. ',
+            'v\t(archaic) To ensure or effect. '
+        ]
+    },
+    {
+        'word': 'notice',
+        'score': 20009656,
+        'tags': ['syn', 'v'],
+        'defs': [
+            'v\t(transitive, now rare) To remark upon; to mention. ',
+            'v\t(transitive) To become aware of; to observe. ',
+            'v\t(obsolete, transitive) To lavish attention upon; to treat (someone) favourably. ',
+            'v\t(intransitive) To be noticeable; to show. '
+        ]
+    },
+    {
+        'word': 'incur',
+        'score': 20008387,
+        'tags': ['syn', 'v'],
+        'defs': [
+            'v\t(transitive) to bring upon oneself or expose oneself to, especially something inconvenient, harmful, or onerous; to become
+liable or subject to ',
+            'v\t(chiefly law, accounting) to render somebody liable or subject to ',
+            'v\t(obsolete, transitive) to enter or pass into ',
+            'v\t(obsolete, intransitive) to fall within a period or scope; to occur; to run into danger '
+        ]
+    },
+    {
+        'word': 'recover',
+        'score': 20005743,
+        'tags': ['syn', 'v'],
+        'defs': [
+            'v\t(transitive) To get back, to regain (a physical thing; in astronomy and navigation, sight of a thing or a signal). ',
+            'v\t(transitive) to salvage, to extricate, to rescue (a thing or person) ',
+            'v\t(transitive) To replenish to, resume (a good state of mind or body). ',
+            'v\t(intransitive, law) To obtain a positive judgement; to win in a lawsuit. ',
+            'v\t(transitive, law) To gain as compensation or reparation, usually by formal legal process ',
+            'v\t(transitive, obsolete) To reach (a place), arrive at. ',
+            'v\t(transitive, archaic) To restore to good health, consciousness, life etc. ',
+            'v\t(transitive, archaic) To make good by reparation; to make up for; to retrieve; to repair the loss or injury of. ',
+            "v\t(intransitive) To regain one's composure, balance etc. ",
+            'v\t(intransitive, followed by "from" to show what caused the bad feeling) To get better, to regain health or prosperity. ',
+            'v\t(transitive, archaic, without "from") to recover from ',
+            'v\tTo cover again. ',
+            'v\t(roofing) To add a new roof membrane or steep-slope covering over an existing one. '
+        ]
+    },
+    {
+        'word': 'retrieve',
+        'score': 20005686,
+        'tags': ['syn', 'v'],
+        'defs': [
+            'v\t(transitive) To regain or get back something. ',
+            'v\t(transitive) To rescue (a creature). ',
+            'v\t(transitive) To salvage something ',
+            'v\t(transitive) To remedy or rectify something. ',
+            'v\t(transitive) To remember or recall something. ',
+            'v\t(transitive) To fetch or carry back something, especially (computing) a file or data record. ',
+            'v\t(transitive) To fetch and bring in game. ',
+            'v\t(intransitive) To fetch and bring in game systematically. ',
+            'v\t(intransitive) To fetch or carry back systematically, notably as a game. ',
+            'v\t(sports, transitive) To make a difficult but successful return of the ball. ',
+            'v\t(obsolete) To remedy the evil consequence of, to repair (a loss or damage). '
+        ]
+    },
+    {
+        'word': 'see',
+        'score': 20004227,
+        'tags': ['syn', 'v'],
+        'defs': [
+            'v\t(transitive) To perceive or detect someone or something with the eyes, or as if by sight. ',
+            'v\tTo witness or observe by personal experience. ',
+            'v\tTo watch (a movie) at a cinema, or a show on television etc. ',
+            'v\tTo form a mental picture of. ',
+            'v\t(figuratively) To understand. ',
+            'v\tTo come to a realization of having been mistaken or misled. ',
+            'v\t(transitive) To foresee, predict, or prophesy. ',
+            'v\t(used in the imperative) Used to emphasise a proposition. ',
+            'v\t(social) To meet, to visit. ',
+            'v\tTo have an interview with; especially, to make a call upon; to visit. ',
+            'v\tTo date frequently. ',
+            'v\tTo visit for a medical appointment. ',
+            'v\t(ergative) To be the setting or time of. ',
+            'v\t(by extension) Chiefly followed by that: to ensure that something happens, especially by personally witnessing it. ',
+            'v\t(transitive) To wait upon; attend, escort. ',
+            "v\t(gambling, transitive) To respond to another player's bet with a bet of equal value. ",
+            'v\tTo determine by trial or experiment; to find out (if or whether). ',
+            'v\t(used in the imperative) To reference or to study for further details. ',
+            'v\tTo examine something closely, or to utilize something, often as a temporary alternative. ',
+            "v\tTo include as one of something's experiences. "
+        ]
+    },
+    {'word': 'regain', 'score': 20003780, 'tags': ['syn', 'v'], 'defs': ['v\t(transitive) To get back; to recover possession of. ']},
+    {
+        'word': 'feel',
+        'score': 20000375,
+        'tags': ['syn', 'v'],
+        'defs': [
+            'v\t(heading) To use or experience the sense of touch. ',
+            'v\t(transitive, copulative) To become aware of through the skin; to use the sense of touch on. ',
+            "v\t(transitive) To find one's way (literally or figuratively) by touching or using cautious movements. ",
+            'v\t(intransitive) To receive information by touch or by any neurons other than those responsible for sight, smell, taste, or 
+hearing. ',
+            'v\t(intransitive) To search by sense of touch. ',
+            'v\t(heading) To sense or think emotionally or judgmentally. ',
+            'v\t(transitive) To experience an emotion or other mental state about. ',
+            'v\t(transitive) To think, believe, or have an impression concerning. ',
+            'v\t(intransitive, copulative) To experience an emotion or other mental state. ',
+            'v\t(intransitive) To sympathise; to have the sensibilities moved or affected. ',
+            'v\t(transitive) To be or become aware of. ',
+            'v\t(transitive) To experience the consequences of. ',
+            'v\t(copulative) To seem (through touch or otherwise). ',
+            'v\t(transitive, US, slang) To understand. '
+        ]
+    },
+    {
+        'word': 'determine',
+        'score': 19999236,
+        'tags': ['syn', 'v'],
+        'defs': [
+            'v\tTo set the boundaries or limits of. ',
+            'v\tTo ascertain definitely; to figure out, find out, or conclude by analyzing, calculating, or investigating. ',
+            'v\tTo fix the form or character of; to shape; to prescribe imperatively; to regulate; to settle. ',
+            'v\tTo fix the course of; to impel and direct; with a remoter object preceded by to. ',
+            'v\tTo bring to a conclusion, as a question or controversy; to settle authoritative or judicial sentence; to decide. ',
+            'v\tTo resolve (to do something); to establish a fixed intention; to cause (something) to come to a conclusion or decision; to
+lead. ',
+            'v\t(logic) To define or limit by adding a differentia. ',
+            'v\t(law, otherwise obsolete) To bring to an end; to finish. '
+        ]
+    },
+    {
+        'word': 'come up',
+        'score': 19997733,
+        'tags': ['syn', 'v'],
+        'defs': [
+            'v\tUsed other than figuratively or idiomatically: see come, up. ',
+            'v\t(intransitive) To come towards, to approach. ',
+            'v\t(idiomatic, intransitive) To emerge or become known, especially unexpectedly. ',
+            'v\t(intransitive) To come to attention, present itself; to arrive or appear. ',
+            'v\t(intransitive) To appear (before a judge or court). ',
+            'v\t(intransitive) To draw near in time. ',
+            'v\t(intransitive, of a heavenly body) To rise (above the horizon). ',
+            'v\t(Britain, slang, intransitive) To begin to feel the effects of a recreational drug. ',
+            'v\t(UK, Oxford University, intransitive) To arrive at the university. (Compare go down, send down.) '
+        ]
+    },
+    {
+        'word': 'witness',
+        'score': 19997661,
+        'tags': ['syn', 'v'],
+        'defs': [
+            'v\t(transitive) To furnish proof of, to show. ',
+            'v\t(transitive) To take as evidence. ',
+            'v\t(transitive) To see or gain knowledge of through experience. ',
+            'v\t(intransitive, construed with to or for) To present personal religious testimony; to preach at (someone) or on behalf of. 
+',
+            'v\tTo see the execution of (a legal instrument), and subscribe it for the purpose of establishing its authenticity. '
+        ]
+    },
+    {'word': 'uncovering', 'score': 19993600, 'tags': ['syn', 'n'], 'defs': ['n\tThe act by which something is uncovered. ']},
+    {
+        'word': 'rule',
+        'score': 19992783,
+        'tags': ['syn', 'v'],
+        'defs': [
+            'v\t(transitive, stative) To regulate, be in charge of, make decisions for, reign over. ',
+            'v\t(slang, intransitive, stative) To excel. ',
+            'v\t(intransitive) To decide judicially. ',
+            'v\t(transitive) To establish or settle by, or as by, a rule; to fix by universal or general consent, or by common practice. 
+',
+            'v\t(transitive) To mark (paper or the like) with rules (lines). ',
+            'v\t(obsolete, intransitive) To revel. '
+        ]
+    },
+    {
+        'word': 'line up',
+        'score': 19983246,
+        'tags': ['syn', 'v'],
+        'defs': [
+            'v\t(engineering) To align; to put in alignment; to put in correct adjustment for smooth running. ',
+            'v\t(transitive) To put things in a line. ',
+            "v\t(intransitive) To get into a line; especially, so as to wait one's turn. ",
+            'v\t(intransitive, sports) To start a game in a certain position on the playing field. ',
+            'v\tTo make arrangements for an event. ',
+            'v\tTo support a group or movement. ',
+            'v\tTo agree or correspond. '
+        ]
+    },
+    {
+        'word': 'bump',
+        'score': 19971207,
+        'tags': ['syn', 'v'],
+        'defs': [
+            'v\tTo knock against or run into with a jolt. ',
+            'v\tTo move up or down by a step; displace. ',
+            "v\t(Internet) To post in an Internet forum thread in order to raise the thread's profile by returning it to the top of the 
+list of active threads. ",
+            'v\t(chemistry, of a superheated liquid) To suddenly boil, causing movement of the vessel and loss of liquid. ',
+            'v\t(transitive) To move (a booked passenger) to a later flight because of earlier delays or cancellations. ',
+            'v\t(transitive) To move the time of (a scheduled event). ',
+            'v\t(transitive) To pick (a lock) with a repeated striking motion that dislodges the pins. ',
+            'v\t(intransitive, archaic) To make a loud, heavy, or hollow noise; to boom. ',
+            'v\t(printing, dated) To spread out material so as to fill any desired number of pages. ',
+            'v\t(slang, transitive) To assassinate; to bump off. ',
+            'v\t(industrial relations, transitive) To displace (another employee in an organization) on the basis of seniority. ',
+            'v\t(colloquial, dated) To anger, irritate. ',
+            "v\t(card games) In the game of khanhoo, to claim a newly discarded card when it is not one's turn, permitted when one can use
+the card to form a meld other than a sequence. ",
+            'v\tOf a bittern, to make its characteristic breeding call. '
+        ]
+    },
+    {
+        'word': 'hit',
+        'score': 19960411,
+        'tags': ['syn', 'v'],
+        'defs': [
+            'v\t(heading, physical) To strike. ',
+            'v\t(transitive) To administer a blow to, directly or with a weapon or missile. ',
+            'v\t(transitive) To come into contact with forcefully and suddenly. ',
+            'v\t(intransitive) To strike against something. ',
+            'v\t(transitive) To activate a button or key by pressing and releasing it. ',
+            'v\t(transitive, slang) To kill a person, usually on the instructions of a third party. ',
+            'v\t(transitive, military) To attack, especially amphibiously. ',
+            'v\t(figurative, transitive, intransitive) To affect someone, as if dealing a blow to that person. ',
+            'v\t(transitive) To manage to touch (a target) in the right place. ',
+            'v\t(transitive, colloquial) To switch on. ',
+            'v\t(transitive, colloquial) To briefly visit. ',
+            'v\t(transitive, informal) To encounter an obstacle or other difficulty. ',
+            'v\t(heading) To attain, to achieve. ',
+            'v\t(transitive, informal) To reach or achieve. ',
+            'v\t(intransitive) To meet or reach what was aimed at or desired; to succeed, often by luck. ',
+            'v\tTo guess; to light upon or discover. ',
+            'v\t(transitive) To affect negatively. ',
+            'v\t(figuratively) To attack. ',
+            'v\t(heading, games) To make a play. ',
+            'v\t(transitive, card games) In blackjack, to deal a card to. ',
+            'v\t(intransitive, baseball) To come up to bat. ',
+            'v\t(backgammon) To take up, or replace by a piece belonging to the opposing player; said of a single unprotected piece on a 
+point. ',
+            'v\t(transitive, computing, programming) To use; to connect to. ',
+            'v\t(transitive, US, slang) To have sex with. ',
+            'v\t(transitive, US, slang) To inhale an amount of smoke from a narcotic substance, particularly marijuana. ',
+            'v\t(transitive, bodybuilding) (of an exercise) to affect, to work a body part. ',
+            'v\t(transitive, bodybuilding) to work out '
+        ]
+    },
+    {'word': 'get hold', 'score': 10021556, 'tags': ['syn', 'v'], 'defs': ['v\tget something or somebody for a specific purpose']},
+    {
+        'word': 'accepts',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\t(transitive) To receive, especially with a consent, with favour, or with approval. ',
+            'v\t(transitive) To admit to a place or a group. ',
+            'v\t(transitive) To regard as proper, usual, true, or to believe in. ',
+            'v\t(transitive) To receive as adequate or satisfactory. ',
+            'v\t(transitive) To receive or admit to; to agree to; to assent to; to submit to. ',
+            'v\t(transitive) To endure patiently. ',
+            'v\t(transitive) To acknowledge patiently without opposition or resistance. ',
+            'v\t(transitive, law, business) To agree to pay. ',
+            'v\t(transitive) To receive officially. ',
+            'v\t(intransitive) To receive something willingly. '
+        ],
+        'defHeadword': 'accept'
+    },
+    {
+        'word': 'acknowledges',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            "v\t(transitive) To admit the knowledge of; to recognize as a fact or truth; to declare one's belief in ",
+            'v\t(transitive) To own or recognize in a particular quality, character or relationship; to admit the claims or authority of; 
+to give recognition to. ',
+            'v\t(transitive) To be grateful of (e.g. a benefit or a favour) ',
+            'v\t(transitive) To report (the receipt of a message to its sender). ',
+            'v\t(transitive) To own as genuine or valid; to assent to (a legal instrument) to give it validity; to avow or admit in legal 
+form. '
+        ],
+        'defHeadword': 'acknowledge'
+    },
+    {
+        'word': 'agrees',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\t(intransitive) To be in harmony about an opinion, statement, or action; to have a consistent idea between two or more 
+people. ',
+            'v\t(intransitive, followed by "to") To give assent; to accede ',
+            'v\t(transitive, UK, Ireland) To yield assent to; to approve. ',
+            'v\t(intransitive) To make a stipulation by way of settling differences or determining a price; to exchange promises; to come 
+to terms or to a common resolve; to promise. ',
+            'v\t(intransitive) To resemble; to coincide; to correspond. ',
+            'v\t(intransitive, now always with with) To suit or be adapted in its effects; to do well. ',
+            'v\t(intransitive, grammar) To correspond to (another word) in a grammatical category, such as gender, number, case, or 
+person. ',
+            'v\t(intransitive, law) To consent to a contract or to an element of a contract. '
+        ],
+        'defHeadword': 'agree'
+    },
+    {
+        'word': 'anticipates',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\t(transitive) To act before (someone), especially to prevent an action. ',
+            'v\tto take up or introduce (something) prematurely. ',
+            'v\tto know of (something) before it happens; to expect. ',
+            'v\tto eagerly wait for (something) '
+        ],
+        'defHeadword': 'anticipate'
+    },
+    {
+        'word': 'appears',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\t(intransitive) To come or be in sight; to be in view; to become visible. ',
+            'v\t(intransitive) To come before the public. ',
+            'v\t(intransitive) To stand in presence of some authority, tribunal, or superior person, to answer a charge, plead a cause, 
+etc.; to present oneself as a party or advocate before a court, or as a person to be tried. ',
+            'v\t(intransitive) To become visible to the apprehension of the mind; to be known as a subject of observation or 
+comprehension, or as a thing proved; to be obvious or manifest. ',
+            'v\t(intransitive, copulative) To seem; to have a certain semblance; to look. ',
+            'v\t(transitive) To bring into view. '
+        ],
+        'defHeadword': 'appear'
+    },
+    {
+        'word': 'argues',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\tTo show grounds for concluding (that); to indicate, imply. ',
+            'v\t(intransitive) To debate, disagree, or discuss opposing or differing viewpoints. ',
+            'v\t(intransitive) To have an argument, a quarrel. ',
+            'v\t(transitive) To present (a viewpoint or an argument therefor). ',
+            'v\t(obsolete, transitive) To prove. ',
+            'v\t(obsolete, transitive) To accuse. '
+        ],
+        'defHeadword': 'argue'
+    },
+    {
+        'word': 'ascertains',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\tTo find out definitely; to discover or establish. ',
+            'v\t(obsolete) To make (someone) certain or confident about something; to inform. ',
+            'v\t(archaic) To establish, to prove. ',
+            'v\t(archaic) To ensure or effect. '
+        ],
+        'defHeadword': 'ascertain'
+    },
+    {
+        'word': 'asserts',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\tTo declare with assurance or plainly and strongly; to state positively. ',
+            'v\tTo use or exercise and thereby prove the existence of. ',
+            'v\tTo maintain or defend, as a cause or a claim, by words or measures; to vindicate a claim or title to. ',
+            "v\t(reflexive) To insist on the legitimacy of one's rights, opinion, etc; not to allow oneself to be dismissed; to ensure 
+that one is taken into consideration; to make oneself respected; to be assertive. ",
+            'v\t(programming) To declare that a condition or expression must be true at a certain point in the source code (in some cases 
+causing the program to fail if it is not, as a safeguard). ',
+            'v\t(electronics) To set a signal on a line using a voltage or electric current. '
+        ],
+        'defHeadword': 'assert'
+    },
+    {
+        'word': 'assesses',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\t(transitive) To determine, estimate or judge the value of; to evaluate ',
+            'v\t(transitive) To impose or charge, especially as punishment for an infraction. ',
+            'v\t(transitive) To calculate and demand (the tax money due) from a person or entity. '
+        ],
+        'defHeadword': 'assess'
+    },
+    {
+        'word': 'assumes',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\tTo authenticate by means of belief; to surmise; to suppose to be true, especially without proof ',
+            'v\tTo take on a position, duty or form ',
+            'v\tTo adopt a feigned quality or manner; to claim without right; to arrogate ',
+            'v\tTo receive, adopt (a person) ',
+            'v\tTo adopt (an idea or cause) '
+        ],
+        'defHeadword': 'assume'
+    },
+    {'word': 'attaches', 'score': 10021555, 'tags': ['n'], 'defs': ['n\tAlternative form of attachés ']},
+    {
+        'word': 'available',
+        'score': 10021555,
+        'tags': ['adj'],
+        'defs': [
+            'adj\tSuch as one may avail oneself of; capable of being used for the accomplishment of a purpose. ',
+            'adj\tReadily obtainable. ',
+            'adj\t(law) Valid. ',
+            'adj\t(archaic) Having sufficient power, force, or efficacy to achieve the purpose; availing, effective. ',
+            'adj\tFree to meet someone, speak on the telephone, enter a romantic relationship, or the like. '
+        ]
+    },
+    {
+        'word': 'believes',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\t(transitive) To accept as true, particularly without absolute certainty (i.e., as opposed to knowing). ',
+            'v\t(transitive) To accept that someone is telling the truth. ',
+            'v\t(intransitive) To have religious faith; to believe in a greater truth. ',
+            'v\t(transitive) To opine, think, reckon. ',
+            'v\t(transitive with in) ',
+            'v\tTo ascribe existence to. ',
+            'v\tTo believe that (something) is right or desirable. ',
+            'v\tTo have confidence in the ability or power of. '
+        ],
+        'defHeadword': 'believe'
+    },
+    {
+        'word': 'breakthroughs',
+        'score': 10021555,
+        'tags': ['n'],
+        'defs': [
+            'n\t(military) An advance through and past enemy lines. ',
+            'n\tAny major progress; such as a great innovation or discovery that overcomes a significant obstacle. ',
+            "n\t(sports) The penetration of the opposition's defence. ",
+            'n\t(construction) The penetration of a separating wall or the remaining distance to an adjacent hollow (a crosscut in mining)
+or between two parts of a tunnel build from both ends; knockthrough. '
+        ],
+        'defHeadword': 'breakthrough'
+    },
+    {
+        'word': 'check',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\t(transitive) To inspect; to examine. ',
+            'v\t(transitive) To verify the accuracy of a text or translation, usually making some corrections (proofread) or many 
+(copyedit). ',
+            'v\t(transitive, US, often used with "off") To mark items on a list (with a checkmark or by crossing them out) that have been 
+chosen for keeping or removal or that have been dealt with (for example, completed or verified as correct or satisfactory). ',
+            'v\t(transitive) To control, limit, or halt. ',
+            'v\t(transitive) To verify or compare with a source of information. ',
+            'v\t(transitive) To leave in safekeeping. ',
+            'v\t(transitive) To leave with a shipping agent for shipping. ',
+            'v\t(street basketball, transitive) To pass or bounce the ball to an opponent from behind the three-point line and have the 
+opponent pass or bounce it back to start play. ',
+            'v\t(sports, transitive) To disrupt another player with the stick or body to obtain possession of the ball or puck. ',
+            'v\t(poker, transitive) To announce that one is remaining in a hand without betting. ',
+            "v\t(chess, transitive) To make a move which puts an adversary's king in check; to put in check. ",
+            'v\t(transitive) To chide, rebuke, or reprove. ',
+            'v\t(nautical) To slack or ease off, as a brace which is too stiffly extended. ',
+            'v\tTo crack or gape open, as wood in drying; or to crack in small checks, as varnish, paint, etc. ',
+            'v\t(transitive) To make checks or chinks in; to cause to crack. ',
+            'v\t(intransitive, with at) To make a stop; to pause. ',
+            'v\t(obsolete) To clash or interfere. ',
+            'v\tTo act as a curb or restraint. ',
+            'v\t(falconry) To turn, when in pursuit of proper game, and fly after other birds. ',
+            'v\t(transitive) To mark with a check pattern. '
+        ]
+    },
+    {
+        'word': 'checks',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\t(transitive) To inspect; to examine. ',
+            'v\t(transitive) To verify the accuracy of a text or translation, usually making some corrections (proofread) or many 
+(copyedit). ',
+            'v\t(transitive, US, often used with "off") To mark items on a list (with a checkmark or by crossing them out) that have been 
+chosen for keeping or removal or that have been dealt with (for example, completed or verified as correct or satisfactory). ',
+            'v\t(transitive) To control, limit, or halt. ',
+            'v\t(transitive) To verify or compare with a source of information. ',
+            'v\t(transitive) To leave in safekeeping. ',
+            'v\t(transitive) To leave with a shipping agent for shipping. ',
+            'v\t(street basketball, transitive) To pass or bounce the ball to an opponent from behind the three-point line and have the 
+opponent pass or bounce it back to start play. ',
+            'v\t(sports, transitive) To disrupt another player with the stick or body to obtain possession of the ball or puck. ',
+            'v\t(poker, transitive) To announce that one is remaining in a hand without betting. ',
+            "v\t(chess, transitive) To make a move which puts an adversary's king in check; to put in check. ",
+            'v\t(transitive) To chide, rebuke, or reprove. ',
+            'v\t(nautical) To slack or ease off, as a brace which is too stiffly extended. ',
+            'v\tTo crack or gape open, as wood in drying; or to crack in small checks, as varnish, paint, etc. ',
+            'v\t(transitive) To make checks or chinks in; to cause to crack. ',
+            'v\t(intransitive, with at) To make a stop; to pause. ',
+            'v\t(obsolete) To clash or interfere. ',
+            'v\tTo act as a curb or restraint. ',
+            'v\t(falconry) To turn, when in pursuit of proper game, and fly after other birds. ',
+            'v\t(transitive) To mark with a check pattern. '
+        ],
+        'defHeadword': 'check'
+    },
+    {
+        'word': 'claims',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\tTo demand ownership of. ',
+            'v\tTo state a new fact, typically without providing evidence to prove it is true. ',
+            'v\tTo demand ownership or right to use for land. ',
+            'v\t(law) To demand compensation or damages through the courts. ',
+            'v\t(intransitive) To be entitled to anything; to deduce a right or title; to have a claim. ',
+            'v\tTo cause the loss of. ',
+            'v\tTo win as a prize in a sport or competition. ',
+            'v\t(obsolete) To proclaim. ',
+            'v\t(archaic) To call or name. '
+        ],
+        'defHeadword': 'claim'
+    },
+    {
+        'word': 'closes',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\t(physical) To remove a gap. ',
+            'v\t(transitive, intransitive) To move a thing, or part of a thing, nearer to another so that the gap or opening between the 
+two is removed. ',
+            'v\tTo obstruct or block. ',
+            'v\t(transitive, intransitive, engineering, gas and liquid flow, of valve or damper) To move to a position preventing fluid 
+from flowing. ',
+            'v\t(transitive, intransitive, electricity, of a switch, fuse or circuit breaker) To move to a position allowing electricity 
+to flow. ',
+            'v\tTo grapple; to engage in close combat. ',
+            'v\tTo finish, to terminate. ',
+            'v\t(transitive) To put an end to; to conclude. ',
+            'v\t(intransitive) To come to an end. ',
+            'v\t(intransitive, of a business) To cease trading for the day. ',
+            'v\t(ergative, marketing) To conclude (a sale). ',
+            'v\t(transitive, baseball, pitching) To make the final outs, usually three, of a game. ',
+            'v\t(ergative, computing) To terminate an application, window, file or database connection, etc. ',
+            'v\t(transitive, finance) To cancel or reverse (a trading position). ',
+            'v\t(chiefly figurative) To come or gather around; to enclose. ',
+            'v\t(surveying) To have a vector sum of 0; that is, to form a closed polygon. ',
+            'v\t(intransitive) To do the tasks (putting things away, locking doors, etc.) required to prepare a store or other 
+establishment to shut down for the night. ',
+            'v\t(Philippines) To turn off; to switch off. '
+        ],
+        'defHeadword': 'close'
+    },
+    {
+        'word': 'completes',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\t(transitive, intransitive) To finish; to make done; to reach the end. ',
+            'v\t(transitive) To make whole or entire. ',
+            'v\t(poker) To call from the small blind in an unraised pot. '
+        ],
+        'defHeadword': 'complete'
+    },
+    {
+        'word': 'concedes',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\tTo yield or suffer; to surrender; to grant ',
+            'v\tTo grant, as a right or privilege; to make concession of. ',
+            'v\tTo admit or agree to be true; to acknowledge. ',
+            'v\tTo yield or make concession. ',
+            'v\t(sports) To have a goal or point scored against ',
+            "v\t(cricket) (of a bowler) to have runs scored off of one's bowling. "
+        ],
+        'defHeadword': 'concede'
+    },
+    {'word': 'concluded', 'score': 10021555, 'tags': ['adj'], 'defs': ['adj\thaving come or been brought to a conclusion']},
+    {
+        'word': 'concludes',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\t(intransitive) To end; to come to an end. ',
+            'v\t(transitive) To bring to an end; to close; to finish. ',
+            'v\t(transitive) To bring about as a result; to effect; to make. ',
+            'v\t(transitive) To come to a conclusion, to a final decision. ',
+            'v\t(obsolete) To make a final determination or judgment concerning; to judge; to decide. ',
+            'v\tTo shut off; to restrain; to limit; to estop; to bar; generally in the passive. ',
+            'v\t(obsolete) To shut up; to enclose. ',
+            'v\t(obsolete) To include; to comprehend; to shut up together; to embrace; to confine. ',
+            'v\t(logic) to deduce, to infer (develop a causal relation) '
+        ],
+        'defHeadword': 'conclude'
+    },
+    {
+        'word': 'concurs',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\tTo agree (in action or opinion); to have a common opinion; to coincide; to correspond. ',
+            'v\tTo meet in the same point; to combine or conjoin; to contribute or help towards a common object or effect. ',
+            'v\t(obsolete) To run together; to meet. ',
+            'v\t(rare) To converge. '
+        ],
+        'defHeadword': 'concur'
+    },
+    {
+        'word': 'condemns',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\t(transitive) To strongly criticise or denounce; to excoriate the perpetrators of. ',
+            'v\t(transitive) To judicially pronounce (someone) guilty. ',
+            'v\t(transitive) To judicially announce a verdict upon a finding of guilt; To sentence ',
+            'v\t(transitive) To confer eternal divine punishment upon. ',
+            'v\t(transitive) To adjudge (a building) as being unfit for habitation. ',
+            'v\t(transitive) To adjudge (building or construction work) as of unsatisfactory quality, requiring the work to be redone. ',
+            'v\t(transitive) To adjudge (food or drink) as being unfit for human consumption. ',
+            'v\tTo declare something to be unfit for use, or further use. ',
+            'v\t(transitive) To determine and declare (property) to be assigned to public use. See eminent domain. ',
+            'v\t(transitive, law) To declare (a vessel) to be forfeited to the government, to be a prize, or to be unfit for service. '
+        ],
+        'defHeadword': 'condemn'
+    },
+    {
+        'word': 'confirms',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\tTo strengthen; to make firm or resolute. ',
+            'v\t(transitive, Christianity) To administer the sacrament of confirmation on (someone). ',
+            'v\tTo assure the accuracy of previous statements. '
+        ],
+        'defHeadword': 'confirm'
+    },
+    {
+        'word': 'considers',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\t(transitive) To think about seriously. ',
+            'v\t(intransitive) To think about something seriously or carefully: to deliberate. ',
+            'v\t(transitive) To think of doing. ',
+            'v\t(ditransitive) To assign some quality to. ',
+            'v\t(transitive) To look at attentively. ',
+            'v\t(transitive) To take up as an example. ',
+            'v\t(transitive, parliamentary procedure) To debate (or dispose of) a motion. ',
+            'v\tTo have regard to; to take into view or account; to pay due attention to; to respect. ',
+            'v\tTo believe or opine (that). '
+        ],
+        'defHeadword': 'consider'
+    },
+    {
+        'word': 'contains',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\t(transitive) To hold inside. ',
+            'v\t(transitive) To include as a part. ',
+            'v\t(transitive) To put constraints upon; to restrain; to confine; to keep within bounds. ',
+            'v\t(mathematics, of a set etc., transitive) To have as an element or subset. ',
+            'v\t(obsolete, intransitive) To restrain desire; to live in continence or chastity. '
+        ],
+        'defHeadword': 'contain'
+    },
+    {
+        'word': 'contends',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\t(intransitive) To be in opposition; to contest; to dispute; to vie; to quarrel; to fight. ',
+            'v\t(intransitive) To struggle or exert oneself to obtain or retain possession of, or to defend. ',
+            'v\t(intransitive) To be in debate; to engage in discussion; to dispute; to argue. ',
+            'v\t(intransitive) To believe (something is reasonable) and argue (for it); to advocate. ',
+            'v\tcontend with: To try to cope with a difficulty or problem. '
+        ],
+        'defHeadword': 'contend'
+    },
+    {
+        'word': 'decides',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\t(transitive, intransitive) to resolve (a contest, problem, dispute, etc.); to choose, determine, or settle ',
+            'v\t(intransitive) to make a judgment, especially after deliberation ',
+            'v\t(transitive) to cause someone to come to a decision ',
+            'v\t(obsolete) to cut off; to separate '
+        ],
+        'defHeadword': 'decide'
+    },
+    {
+        'word': 'declares',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\t(obsolete, transitive) To make clear, explain, interpret. ',
+            'v\t(transitive, intransitive) To assert or announce formally, officially, explicitly, or emphatically. ',
+            "v\t(card games) To show one's cards in order to score. ",
+            'v\t(intransitive, cricket) For the captain of the batting side to announce the innings complete even though all batsmen have 
+not been dismissed. ',
+            'v\t(intransitive, politics) For a constituency in an election to officially announce the result ',
+            "v\t(transitive) To inform government customs or taxation officials of goods one is importing or of income, expenses, or other
+circumstances affecting one's taxes. ",
+            'v\t(transitive) To make outstanding debts, e.g. taxes, payable. ',
+            'v\t(transitive, programming) To explicitly establish the existence of (a variable, function, etc.) without necessarily 
+describing its content. '
+        ],
+        'defHeadword': 'declare'
+    },
+    {
+        'word': 'deems',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\t(transitive, obsolete) To judge, to pass judgment on; to doom, to sentence. ',
+            'v\t(transitive, obsolete) To adjudge, to decree. ',
+            'v\t(transitive, obsolete) To dispense (justice); to administer (law). ',
+            "v\t(ditransitive) To hold in belief or estimation; to adjudge as a conclusion; to regard as being; to evaluate according to 
+one's beliefs; to account. ",
+            'v\t(transitive, intransitive) To think, judge, or have or hold as an opinion; to decide or believe on consideration; to 
+suppose. '
+        ],
+        'defHeadword': 'deem'
+    },
+    {
+        'word': 'defines',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\tTo determine with precision; to mark out with distinctness; to ascertain or exhibit clearly. ',
+            'v\t(obsolete) To settle, decide (an argument etc.) ',
+            'v\tTo express the essential nature of something. ',
+            'v\tTo state the meaning of a word, phrase, sign, or symbol. ',
+            'v\tTo describe, explain, or make definite and clear; used to request the listener or other person to elaborate or explain 
+more clearly his or her intended meaning of a word or expression. ',
+            'v\tTo demark sharply the outlines or limits of an area or concept. ',
+            'v\t(mathematics) To establish the referent of a term or notation. '
+        ],
+        'defHeadword': 'define'
+    },
+    {
+        'word': 'detects',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\tTo discover or find by careful search, examination, or probing. ',
+            'v\t(intransitive, informal) To work or solve cases as a detective. '
+        ],
+        'defHeadword': 'detect'
+    },
+    {
+        'word': 'determines',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\tTo set the boundaries or limits of. ',
+            'v\tTo ascertain definitely; to figure out, find out, or conclude by analyzing, calculating, or investigating. ',
+            'v\tTo fix the form or character of; to shape; to prescribe imperatively; to regulate; to settle. ',
+            'v\tTo fix the course of; to impel and direct; with a remoter object preceded by to. ',
+            'v\tTo bring to a conclusion, as a question or controversy; to settle authoritative or judicial sentence; to decide. ',
+            'v\tTo resolve (to do something); to establish a fixed intention; to cause (something) to come to a conclusion or decision; to
+lead. ',
+            'v\t(logic) To define or limit by adding a differentia. ',
+            'v\t(law, otherwise obsolete) To bring to an end; to finish. '
+        ],
+        'defHeadword': 'determine'
+    },
+    {
+        'word': 'dictates',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\tTo order, command, control. ',
+            'v\tTo speak in order for someone to write down the words. ',
+            'v\tTo determine or decisively affect. '
+        ],
+        'defHeadword': 'dictate'
+    },
+    {
+        'word': 'discloses',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\t(transitive, obsolete) To open up, unfasten. ',
+            'v\t(transitive) To uncover, physically expose to view. ',
+            'v\t(transitive) To expose to the knowledge of others; to make known, state openly, reveal. '
+        ],
+        'defHeadword': 'disclose'
+    },
+    {
+        'word': 'discovered',
+        'score': 10021555,
+        'tags': ['adj'],
+        'defs': [
+            "adj\tno longer concealed; uncovered as by opening a curtain; `discovered' is archaic and primarily a theater term",
+            'adj\tdiscovered or determined by scientific observation'
+        ]
+    },
+    {
+        'word': 'discoveries',
+        'score': 10021555,
+        'tags': ['n'],
+        'defs': [
+            'n\tSomething discovered. ',
+            'n\t(uncountable) The discovering of new things. ',
+            'n\t(countable, archaic) An act of uncovering or revealing something; a revelation. ',
+            'n\t(law, uncountable) A pre-trial phase in which evidence is gathered. ',
+            'n\t(law, uncountable) Materials revealed to the opposing party during the pre-trial phase in which evidence is gathered. ',
+            'n\t(chess) A discovered attack. '
+        ],
+        'defHeadword': 'discovery'
+    },
+    {
+        'word': 'discovers',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\tTo find or learn something for the first time. ',
+            'v\t(transitive, obsolete) To remove the cover from; to uncover (a head, building etc.). ',
+            'v\t(transitive, now rare) To expose, uncover. ',
+            "v\t(transitive, chess) To create by moving a piece out of another piece's line of attack. ",
+            'v\t(law, transitive) To question (a person) as part of discovery in a lawsuit. ',
+            'v\t(transitive, archaic) To reveal (information); to divulge, make known. ',
+            'v\t(transitive, obsolete) To reconnoitre, explore (an area). ',
+            'v\t(obsolete) To manifest without design; to show; to exhibit. '
+        ],
+        'defHeadword': 'discover'
+    },
+    {
+        'word': 'does',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\t(auxiliary) A syntactic marker. ',
+            'v\t(auxiliary) A syntactic marker in a question whose main verb is not another auxiliary verb or be. ',
+            'v\t(auxiliary) A syntactic marker in negations with the indicative and imperative moods. ',
+            'v\t(auxiliary) A syntactic marker for emphasis with the indicative, imperative, and subjunctive moods. ',
+            'v\t(pro-verb) A syntactic marker that refers back to an earlier verb and allows the speaker to avoid repeating the verb; in 
+most dialects, not used with auxiliaries such as be, though it can be in AAVE. ',
+            'v\t(transitive) To perform; to execute. ',
+            'v\t(obsolete, transitive) To cause, make (someone) (do something). ',
+            'v\t(intransitive, transitive) To suffice. ',
+            'v\t(intransitive) To be reasonable or acceptable. ',
+            'v\t(ditransitive) To have (as an effect). ',
+            'v\t(intransitive) To fare, perform (well or poorly). ',
+            'v\t(especially England, intransitive) To fare well; to thrive; to prosper; (of livestock) to fatten. ',
+            "v\t(transitive, chiefly in questions) To have as one's job. ",
+            'v\tTo perform the tasks or actions associated with (something). ',
+            'v\tTo cook. ',
+            'v\t(transitive) To travel in, to tour, to make a circuit of. ',
+            'v\t(transitive) To treat in a certain way. ',
+            'v\t(transitive) To work for or on, by way of caring for, looking after, preparing, cleaning, keeping in order, etc. ',
+            'v\t(intransitive, obsolete) To act or behave in a certain manner; to conduct oneself. ',
+            'v\t(transitive) To spend (time) in jail. (See also do time) ',
+            'v\t(transitive) To impersonate or depict. ',
+            "v\t(with 'a' and the name of a person, place, event, etc.) To copy or emulate the actions or behaviour that is associated 
+with the person or thing mentioned. ",
+            'v\t(transitive, slang) To kill. ',
+            'v\t(transitive, slang) To deal with for good and all; to finish up; to undo; to ruin; to do for. ',
+            'v\t(informal) To punish for a misdemeanor. ',
+            'v\t(transitive, slang) To have sex with. (See also do it) ',
+            'v\t(transitive) To cheat or swindle. ',
+            'v\t(transitive) To convert into a certain form; especially, to translate. ',
+            'v\t(transitive, intransitive) To finish. ',
+            'v\t(archaic, dialectal, transitive, auxiliary) Used to form the present progressive of verbs. ',
+            'v\t(stock exchange) To cash or to advance money for, as a bill or note. ',
+            'v\t(informal, transitive, ditransitive) To make or provide. ',
+            "v\t(informal, transitive) To injure (one's own body part). ",
+            'v\t(transitive) To take drugs. ',
+            'v\t(transitive, in the form be doing [somewhere]) To exist with a purpose or for a reason. '
+        ],
+        'defHeadword': 'do'
+    },
+    {
+        'word': 'encounters',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\t(transitive) To meet (someone) or find (something), especially unexpectedly. ',
+            'v\t(transitive) To confront (someone or something) face to face. ',
+            'v\t(transitive, intransitive) To engage in conflict, as with an enemy. ',
+            'v\t(transitive, India) To execute someone extrajudicially. '
+        ],
+        'defHeadword': 'encounter'
+    },
+    {
+        'word': 'ends',
+        'score': 10021555,
+        'tags': ['n'],
+        'defs': [
+            "n\t(MLE, MTE) The area in close proximity to one's home; neighbourhood. ",
+            'n\t(slang) Money. ',
+            'n\tAcronym of Electronic Nicotine Delivery System., e.g. a vape, e-cigarette, etc. '
+        ]
+    },
+    {
+        'word': 'enters',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\t(intransitive) To go or come into an enclosed or partially enclosed space. ',
+            'v\t(transitive) To cause to go (into), or to be received (into); to put in; to insert; to cause to be admitted. ',
+            'v\t(figuratively) To go or come into (a state or profession). ',
+            'v\t(transitive) To type (something) into a computer; to input. ',
+            'v\t(transitive) To record (something) in an account, ledger, etc. ',
+            'v\t(intransitive, law) To become a party to an agreement, treaty, etc. ',
+            'v\t(law, intransitive) To become effective; to come into effect. ',
+            'v\t(law) To go into or upon, as lands, and take actual possession of them. ',
+            'v\t(transitive, law) To place in regular form before the court, usually in writing; to put upon record in proper from and 
+order ',
+            'v\tTo make report of (a vessel or its cargo) at the custom house; to submit a statement of (imported goods), with the 
+original invoices, to the proper customs officer for estimating the duties. See entry. ',
+            'v\t(transitive, US, dated, historical) To file, or register with the land office, the required particulars concerning (a 
+quantity of public land) in order to entitle a person to a right of preemption. ',
+            'v\tTo deposit for copyright the title or description of (a book, picture, map, etc.). ',
+            'v\t(transitive, obsolete) To initiate; to introduce favourably. '
+        ],
+        'defHeadword': 'enter'
+    },
+    {
+        'word': 'establishes',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\t(transitive) To make stable or firm; to confirm. ',
+            'v\t(transitive) To form; to found; to institute; to set up in business. ',
+            'v\t(transitive) To appoint or adopt, as officers, laws, regulations, guidelines, etc.; to enact; to ordain. ',
+            'v\t(transitive) To prove and cause to be accepted as true; to establish a fact; to demonstrate. '
+        ],
+        'defHeadword': 'establish'
+    },
+    {
+        'word': 'esteem',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\tTo set a high value on; to regard with respect or reverence. ',
+            'v\tTo regard something as valuable; to prize. ',
+            'v\tTo look upon something in a particular way. ',
+            'v\t(dated) To judge; to estimate; to appraise '
+        ]
+    },
+    {
+        'word': 'estimate',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\tTo calculate roughly, often from imperfect data. ',
+            'v\tTo judge and form an opinion of the value of, from imperfect data. '
+        ]
+    },
+    {
+        'word': 'estimates',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\tTo calculate roughly, often from imperfect data. ',
+            'v\tTo judge and form an opinion of the value of, from imperfect data. '
+        ],
+        'defHeadword': 'estimate'
+    },
+    {
+        'word': 'evidences',
+        'score': 10021555,
+        'tags': ['n'],
+        'defs': [
+            'n\tFacts or observations presented in support of an assertion. ',
+            'n\t(law) Anything admitted by a court to prove or disprove alleged matters of fact in a trial. ',
+            'n\tOne who bears witness. ',
+            'n\tA body of objectively verifiable facts that are positively indicative of, and/or exclusively concordant with, that one 
+conclusion over any other. '
+        ],
+        'defHeadword': 'evidence'
+    },
+    {
+        'word': 'expects',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\t(transitive, intransitive) To predict or believe that something will happen ',
+            'v\tTo consider obligatory or required. ',
+            'v\tTo consider reasonably due. ',
+            'v\t(continuous aspect only, of a woman or couple) To be pregnant, to consider a baby due. ',
+            'v\t(obsolete, transitive) To wait for; to await. ',
+            'v\t(obsolete, intransitive) To wait; to stay. '
+        ],
+        'defHeadword': 'expect'
+    },
+    {
+        'word': 'expresses',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\t(transitive) To convey or communicate; to make known or explicit. ',
+            'v\t(transitive) To press, squeeze out (especially said of milk). ',
+            'v\t(biochemistry) To translate messenger RNA into protein. ',
+            'v\t(biochemistry) To transcribe deoxyribonucleic acid into messenger RNA. '
+        ],
+        'defHeadword': 'express'
+    },
+    {
+        'word': 'feels',
+        'score': 10021555,
+        'tags': ['n', 'adj', 'v'],
+        'defs': ['n\t(colloquial) Feelings; emotions. ', 'adj\t(colloquial) Synonym of emotional ']
+    },
+    {
+        'word': 'has',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\t(auxiliary, followed by a past participle) Used to form the past perfect tense, expressing an action that took place prior
+to a reference point that is itself in the past. ',
+            'v\t(auxiliary, now rare) As past subjunctive: would have. '
+        ],
+        'defHeadword': 'had'
+    },
+    {
+        'word': 'holds',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\t(transitive) To grasp or grip. ',
+            'v\t(transitive) To contain or store. ',
+            'v\t(heading) To maintain or keep to a position or state. ',
+            'v\t(transitive) To have and keep possession of something. ',
+            'v\t(transitive) To reserve. ',
+            'v\t(transitive) To cause to wait or delay. ',
+            'v\t(transitive) To detain. ',
+            'v\t(intransitive, copulative) To be or remain valid; to apply (usually in the third person). ',
+            'v\t(intransitive, copulative) To keep oneself in a particular state. ',
+            'v\t(transitive) To impose restraint upon; to limit in motion or action; to bind legally or morally; to confine; to restrain. 
+',
+            'v\t(transitive) To bear, carry, or manage. ',
+            'v\t(intransitive, chiefly imperative) Not to move; to halt; to stop. ',
+            'v\t(intransitive) Not to give way; not to part or become separated; to remain unbroken or unsubdued. ',
+            'v\tTo remain continent; to control an excretory bodily function. ',
+            'v\t(heading) To maintain or keep to particular opinions, promises, actions. ',
+            'v\t(transitive) To maintain, to consider, to opine. ',
+            'v\t(transitive) To bind (someone) to a consequence of his or her actions. ',
+            'v\tTo maintain in being or action; to carry on; to prosecute, as a course of conduct or an argument; to continue; to sustain.
+',
+            'v\tTo accept, as an opinion; to be the adherent of, openly or privately; to persist in, as a purpose; to maintain; to 
+sustain. ',
+            'v\t(archaic) To restrain oneself; to refrain; to hold back. ',
+            "v\t(tennis, transitive, intransitive) To win one's own service game. ",
+            'v\tTo take place, to occur. ',
+            'v\tTo organise an event or meeting (usually in passive voice). ',
+            'v\t(archaic) To derive right or title. ',
+            'v\t(imperative) In a food or drink order at an informal restaurant etc., requesting that a component normally included in 
+that order be omitted. ',
+            'v\t(slang, intransitive) To be in possession of illicit drugs for sale. '
+        ],
+        'defHeadword': 'hold'
+    },
+    {
+        'word': 'identifies',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\t(transitive) To establish the identity of someone or something. ',
+            'v\t(transitive) To disclose the identity of someone. ',
+            'v\t(transitive, biology) To establish the taxonomic classification of an organism. ',
+            'v\t(transitive) To equate or make the same; to unite or combine into one. ',
+            'v\t(reflexive) To have a strong affinity with; to feel oneself to be modelled on or connected to. ',
+            'v\t(intransitive) To associate oneself with some group; to feel, or believe one feels, the same way. ',
+            'v\t(reflexive, with as) To claim an identity; to describe oneself as a member of a group; to assert the use of a particular 
+term to describe oneself. '
+        ],
+        'defHeadword': 'identify'
+    },
+    {
+        'word': 'indicates',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\tTo point out; to discover; to direct to a knowledge of; to show; to make known. ',
+            'v\tTo show or manifest by symptoms; to point to as the proper remedies. ',
+            'v\tTo signal in a vehicle the desire to turn right or left. ',
+            'v\tTo investigate the condition or power of, as of steam engine, by means of an indicator. '
+        ],
+        'defHeadword': 'indicate'
+    },
+    {
+        'word': 'judges',
+        'score': 10021555,
+        'tags': ['n'],
+        'defs': ['n\t(biblical) The seventh book of the Old Testament, and a book of the Hebrew Tanakh. '],
+        'defHeadword': 'Judges'
+    },
+    {'word': 'lies', 'score': 10021555, 'tags': ['adj'], 'defs': ['adj\t(Mid-Ulster) Great, wonderful ']},
+    {
+        'word': 'locates',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\t(transitive) To place; to set in a particular spot or position. ',
+            'v\t(transitive) To find out where something is located. ',
+            'v\t(transitive) To designate the site or place of; to define the limits of (Note: the designation may be purely descriptive: 
+it need not be prescriptive.) ',
+            "v\t(intransitive, colloquial) To place oneself; to take up one's residence; to settle. "
+        ],
+        'defHeadword': 'locate'
+    },
+    {'word': 'looks', 'score': 10021555, 'tags': ['n', 'v'], 'defs': ["n\tOne's appearance or attractiveness. "]},
+    {
+        'word': 'maintains',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\tTo keep up; to preserve; to uphold (a state, condition etc.). ',
+            'v\tTo declare or affirm (a clause) to be true; to assert. ',
+            'v\tTo keep in good condition and working order. ',
+            'v\t(obsolete, transitive) To support (someone), to back up or assist (someone) in an action. '
+        ],
+        'defHeadword': 'maintain'
+    },
+    {
+        'word': 'note',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\t(transitive) To notice with care; to observe; to remark; to heed. ',
+            'v\t(transitive) To record in writing; to make a memorandum of. ',
+            'v\t(transitive) To denote; to designate. ',
+            'v\t(transitive) To annotate. ',
+            'v\t(transitive) To set down in musical characters. ',
+            'v\t(transitive, law) To record on the back of (a bill, draft, etc.) a refusal of acceptance, as the ground of a protest, 
+which is done officially by a notary. '
+        ]
+    },
+    {
+        'word': 'notes',
+        'score': 10021555,
+        'tags': ['n'],
+        'defs': ['n\tAcronym of natural orifice transluminal endoscopic surgery. '],
+        'defHeadword': 'NOTES'
+    },
+    {
+        'word': 'notices',
+        'score': 10021555,
+        'tags': ['n'],
+        'defs': [
+            'n\t(chiefly uncountable) The act of observing; perception. ',
+            'n\t(countable) A written or printed announcement. ',
+            'n\t(countable) A formal notification or warning. ',
+            'n\t(chiefly uncountable) Advance notification of termination of employment, given by an employer to an employee or vice 
+versa. ',
+            'n\t(countable) A published critical review of a play or the like. ',
+            'n\t(uncountable) Prior notification. ',
+            'n\t(dated) Attention; respectful treatment; civility. '
+        ],
+        'defHeadword': 'notice'
+    },
+    {
+        'word': 'observes',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\t(transitive) To notice or view, especially carefully or with attention to detail. ',
+            'v\t(transitive) To follow or obey the custom, practice, or rules (especially of a religion). ',
+            'v\t(transitive) To take note of and celebrate (a holiday or similar occurrence), to keep; to follow (a type of time or 
+calendar reckoning). ',
+            'v\t(intransitive) To comment on something; to make an observation. '
+        ],
+        'defHeadword': 'observe'
+    },
+    {'word': 'opinion', 'score': 10021555, 'tags': ['v'], 'defs': ['v\t(transitive, archaic) To have or express as an opinion. ']},
+    {
+        'word': 'perceives',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\t(transitive) To become aware of, through the physical senses, to see; to understand. ',
+            'v\tTo interpret something in a particular way '
+        ],
+        'defHeadword': 'perceive'
+    },
+    {
+        'word': 'provides',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\tTo make a living; earn money for necessities. ',
+            'v\tTo act to prepare for something. ',
+            'v\tTo establish as a previous condition; to stipulate. ',
+            'v\tTo give what is needed or desired, especially basic needs. ',
+            'v\tTo furnish (with), cause to be present. ',
+            'v\tTo make possible or attainable. ',
+            'v\t(obsolete, Latinism) To foresee, to consider in advance. ',
+            'v\tTo appoint to an ecclesiastical benefice before it is vacant. See provisor. '
+        ],
+        'defHeadword': 'provide'
+    },
+    {'word': 'reaches', 'score': 10021555, 'tags': ['n', 'v'], 'defs': ['n\tThe extreme limits ']},
+    {
+        'word': 'realizes',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\t(slightly formal, transitive) To make real; to convert from the imaginary or fictitious into reality; to bring into real 
+existence ',
+            'v\t(transitive) To become aware of (a fact or situation, especially of something that has been true for a long time). ',
+            'v\t(transitive) To cause to seem real to other people. ',
+            "v\t(transitive) To sense vividly or strongly; to make one's own in thought or experience. ",
+            'v\t(transitive, business) To acquire as an actual possession; to obtain as the result of plans and efforts; to gain; to get 
+',
+            'v\t(transitive, business, finance) To convert any kind of property into money, especially property representing investments, 
+such as shares, bonds, etc. ',
+            'v\t(transitive, business, obsolete) To convert into real property; to make real estate of. ',
+            "v\t(transitive, linguistics) To turn an abstract linguistic object into actual language, especially said of a phoneme's 
+conversion into speech sound. "
+        ],
+        'defHeadword': 'realize'
+    },
+    {
+        'word': 'reckons',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\tTo count; to enumerate; to number; also, to compute; to calculate. ',
+            'v\tTo count as in a number, rank, or series; to estimate by rank or quality; to place by estimation; to account; to esteem; 
+to repute. ',
+            'v\tTo charge, attribute, or adjudge to one, as having a certain quality or value. ',
+            'v\t(colloquial) To conclude, as by an enumeration and balancing of chances; hence, to think; to suppose; -- followed by an 
+objective clause ',
+            "v\tTo reckon with something or somebody or not, i.e to reckon without something or somebody: to take into account, deal with,
+consider or not, i.e. to misjudge, ignore, not take into account, not deal with, not consider or fail to consider; e.g. reckon without 
+one's host ",
+            'v\t(intransitive) To make an enumeration or computation; to engage in numbering or computing. ',
+            'v\tTo come to an accounting; to draw up or settle accounts; to examine and strike the balance of debt and credit; to adjust 
+relations of desert or penalty. '
+        ],
+        'defHeadword': 'reckon'
+    },
+    {
+        'word': 'recognises',
+        'score': 10021555,
+        'tags': ['v'],
+        'defs': [
+            'v\tNon-Oxford British English standard spelling of recognize. [(transitive) To match (something or someone which one 
+currently perceives) to a memory of some previous encounter with the same person or thing.] '
+        ],
+        'defHeadword': 'recognise'
+    }
+]
