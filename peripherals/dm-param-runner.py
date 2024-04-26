@@ -52,5 +52,6 @@ def main(*words):
 
 if __name__ == "__main__":
     args = argv[1:]
-    args = "late gondola car trunk wreak sample".split()
+    if not args:
+        args = "wreak sample".split()
     main(*args)

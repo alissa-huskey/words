@@ -17,3 +17,6 @@
 2024-04-23 dict: remove moby-thesaurus from default list of dbs (when that exists)
 2024-04-23 datamuse: add moby-thesaurus results to syn
 2024-04-23 datamuse: add --and/--or flags (to be manually applied)
+2024-04-23 support wordnik API @maybe
+2024-04-23 define: fix: `words words --ml "not recommended"` @bug
+2024-04-23 feature: add commands to launch websites @maybe

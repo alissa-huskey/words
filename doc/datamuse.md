@@ -60,21 +60,21 @@ Related word constraints: require that the results, when paired with the word in
 
 [code] is a three-letter identifier from the list below.
 
-| [code] | Description                                                                   | Example            |
-|--------|-------------------------------------------------------------------------------|--------------------|
-| jja    | Popular nouns modified by the given adjective, per Google Books Ngrams        | gradual → increase |
-| jjb    | Popular adjectives used to modify the given noun, per Google Books Ngrams     | beach → sandy      |
-| syn    | Synonyms (words contained within the same WordNet synset)                     | ocean → sea        |
-| trg    | "Triggers", statistically associated words                                    | cow → milking      |
-| ant    | Antonyms (per WordNet)                                                        | late → early       |
-| spc    | "Kind of" (direct hypernyms, per WordNet)                                     | gondola → boat     |
-| gen    | "More general than" (direct hyponyms, per WordNet)                            | boat → gondola     |
-| com    | "Comprises" (direct holonyms, per WordNet)                                    | car → accelerator  |
-| par    | "Part of" (direct meronyms, per WordNet)                                      | trunk → tree       |
-| bga    | Frequent followers (w′ such that P(w′ w) ≥ 0.001, per Google Books Ngrams)    | wreak → havoc      |
-| bgb    | Frequent predecessors (w′ such that P(w w′) ≥ 0.001, per Google Books Ngrams) | havoc → wreak      |
-| hom    | Homophones (sound-alike words)                                                | course → coarse    |
-| cns    | Consonant match                                                               | sample → simple    |
+| [code] | Description                                                                   | Example           |
+|--------|-------------------------------------------------------------------------------|-------------------|
+| jja    | Popular nouns modified by the given word, per Google Books Ngrams             | raspy → voice     |
+| jjb    | Popular adjectives used to modify the given noun, per Google Books Ngrams     | beach → sandy     |
+| syn    | Synonyms (words contained within the same WordNet synset)                     | ocean → sea       |
+| trg    | "Triggers", statistically associated words                                    | cow → milking     |
+| ant    | Antonyms (per WordNet)                                                        | late → early      |
+| spc    | "Kind of" (direct hypernyms, per WordNet)                                     | gondola → boat    |
+| gen    | "More general than" (direct hyponyms, per WordNet)                            | boat → gondola    |
+| com    | "Comprises" (direct holonyms, per WordNet)                                    | car → accelerator |
+| par    | "Part of" (direct meronyms, per WordNet)                                      | trunk → tree      |
+| bga    | Frequent followers (w′ such that P(w′ w) ≥ 0.001, per Google Books Ngrams)    | wreak → havoc     |
+| bgb    | Frequent predecessors (w′ such that P(w w′) ≥ 0.001, per Google Books Ngrams) | havoc → wreak     |
+| hom    | Homophones (sound-alike words)                                                | course → coarse   |
+| cns    | Consonant match                                                               | sample → simple   |
 
 ### Vocabulary sources
 
