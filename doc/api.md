@@ -23,10 +23,32 @@ A set of square brackets (`[]`) indicates no matches, or very occasionally that
 there are no matches except for propositions, derived forms of the word, or
 words that seem made up.
 
+| orig (s) | orig (l)                   | datamuse desciption                     | Technical             | natural language                                            | verb          | noun                              |
+|----------|----------------------------|-----------------------------------------|-----------------------|-------------------------------------------------------------|---------------|-----------------------------------|
+| ml       | means-like                 | reverse dictionary                      |                       | defined-as                                                  | means         |                                   |
+| sl       | sounds-like                | pronounced similarly                    | minimal-pair          | sounds-close, phonetically-close, pronounced-like           |               |                                   |
+| sp       | spelled-like               | similar spelling/match wildcard pattern |                       | text-search search, spell-search                            | search        | match                             |
+| rel-jja  | related-modified-by        | popular per Google Books Ngrams         |                       | modified-by, described-as                                   | describes     | nouns                             |
+| rel-jjb  | related-used-to-modify     | per Google Books Ngrams                 | attributive adjective | descriptions-for, can-be                                    | seems         | adjectives                        |
+| rel-syn  | related-synonyms           | same WordNet synset                     | synonym               | words-for                                                   | like          | synonyms                          |
+| rel-ant  | related-antonyms           | per WordNet                             | antonym               | opposite-of                                                 | unlike        | antonyms                          |
+| rel-trg  | related-triggers           | statistically associated                |                       | said-with, concurent, associated                            | with          | neighbor, sibling                 |
+| rel-spc  | related-specific           | direct hypernym, per WordNet            | hypernym              | class-of, superset-of, models-for                           | superclasses  | superset                          |
+| rel-gen  | related-general            | more general than, per WordNet          | hyponym               | [subtype/sebset/example/child/model]-of                     | subclasses    | subset                            |
+| rel-com  | related-comprises          | "Comprises" direct                      | holonyms              | made-of, members-of, comprises                              | has           | meronym, part, member             |
+| rel-par  | related-part-of            | "Part-of",  per WordNet                 | meronyms              | part-of, belongs-to                                         | is-a          | holonym, whole, sum, constituant  |
+| rel-bga  | related-google-books-after | Frequently after, Google Books Ngrams   |                       | follows, comes-after, is-after                              | follows       | follower                          |
+| rel-bgb  | related-google-books-after | Frequently before, Google Books Ngrams  |                       | comes-before, preceeds that-precede                         | preceeds      | antecedent, forerunner, preceeder |
+| rel-hom  | related-homophones         | sound-alike words                       | homophones            | same-sound, sound/s(same/identical/matches), prounounced-as | pronunciation | pronunciation                     |
+| rel-cns  | related-consonant          | consonant match                         |                       | same-consonants                                             |               |                                   |
+
 ### ml
 
 > Means like
 > Words with similar dictionary definitions.
+>
+> API: defined-as, means, means-like, ml
+>
 
 provoke → molest, hassle, arouse, harry, elicit, kindle, plague
 awake → alert, alive, up, sleepless
@@ -49,26 +71,19 @@ wreak → havoc, inflict, provoke, spread, create, unleash
 
 ### sl
 
-> Sounds like
+> * [Wikipedia > Minimal Pair](https://en.wikipedia.org/wiki/Minimal_pair)
+
+A set of two words or phrases that, when spoken, differ in only one
+phonological element.
+
 > Words that are pronounced similarly.
 > Usually the same number of syllables
 >
-> * [The CMU Pronouncing Dictionary](http://www.speech.cs.cmu.edu/cgi-bin/cmudict
+> sl, sounds-like, sounds-close, phonetically-like, minimal-pairs
 >
-> similar, alike, near-same, almost-same, like, close
-> audibly, to the ear, verbally/vocally, when spoken, orally, heard, pronounced, said, dictated
 >
 > phonetic, phoneme, sound patterns, substitution of one phoneme, speech sounds, distinct speech sound
 > one phoneme difference, minimal pair
->
-> * [Wikipedia > Minimal Pair](https://en.wikipedia.org/wiki/Minimal_pair
-> * [Phoneme](https://en.wikipedia.org/wiki/Phoneme)
->
-> BEACH  B IY1 CH
-> BATCH  B AE1 CH
-> BUTCH  B UH1 CH
-> BOTCH  B AA1 CH
-> PEACH  P IY1 CH
 >
 
 slack → slick
@@ -85,6 +100,8 @@ car → core, carr, corps, cower
 trunk → trank, drunk, drink, shrunk
 wreak → reek, reak, rack, wreak
 
+* minimal-pairs
+* phoneticly-like
 * sound-like, sl
 * sounds-close-to
 * near-sound
@@ -96,6 +113,22 @@ wreak → reek, reak, rack, wreak
 * alike-sound
 * like-sound
 * approx-sound
+* similar
+* alike
+* near-same
+* almost-same
+* like
+* close
+* audibly
+* to the ear
+* verbally/vocally
+* when spoken
+* orally
+* heard
+* pronounced
+* said
+* dictated
+* voiced
 
 ### sp
 
@@ -103,6 +136,9 @@ wreak → reek, reak, rack, wreak
 > Words that are spelled similarly.
 > Also find words using patterns with wildcards.
 > Find words by spelling
+>
+> sp, spelled-like, text-search, search
+>
 
 dessert → desert
 awake → wake, aware, awoke
@@ -125,10 +161,14 @@ trunk → truck, drunk, thunk, trank, crunk
 * expression
 * char-pattern
 * text/spell/spelling search/lookup
+* modified by
 
 ### rel-jja
 
 > Popular nouns modified by the given word, per Google Books Ngrams
+>
+> rel-jja, modified-by, described-as, seem, nouns
+>
 
 raspy → voice
 awake → nights, state, thinking, monkeys, man
@@ -138,10 +178,12 @@ cow → dung, boy, milk, tail, wheat, pens
 slack → water, season, time, demand, rope, hand, mouth
 dessert → spoon
 sandy → soil, beach, hair, bottom, clay, areas
+car → family, train, smell, garage, fleet, races
 late → century, afternoon, years, war, hour
 gondola → days
-car → family, train, smell, garage, fleet, races
 trunk → maker, line, fish, armour, legs, rotation
+
+sandy describes beach
 
 * described-as
 * seems
@@ -151,7 +193,6 @@ trunk → maker, line, fish, armour, legs, rotation
 * nouns-described-as
 * described-by
 * nouns-called
-* nouns
 * nouns
 * nouns-labeled
 * represented-as
@@ -173,6 +214,9 @@ trunk → maker, line, fish, armour, legs, rotation
 ### rel-jjb
 
 > Popular adjectives used to modify the given noun, per Google Books Ngrams
+>
+> rel-jjb, descriptions-for, adjectives
+>
 
 beach → sandy
 awake → wide, stay, lay, lie
@@ -187,15 +231,19 @@ gondola → venetian, black, large, open, private, single, overturned
 car → new, old, private, motor, used, street, black, armored
 trunk → main, old, common, large, hollow, arterial, fallen
 
+car seems new
+
 * descriptions-for
 * adjectives-for
-* describes
 * adj
 * adj-for
 
 ### rel-syn
 
 > Synonyms (words contained within the same WordNet synset)
+>
+> rel-syn, words-for, synonyms, like
+>
 
 ocean → sea
 awake → alive, arouse, wake, alert, come alive
@@ -217,6 +265,9 @@ trunk → body, boot torso, bole, luggage compartment
 ### rel-ant
 
 > Antonyms (per WordNet)
+>
+> rel-ant, opposite-of, unlike, antonyms
+>
 
 late → early
 awake → doze off, drift off, fall asleep, nod off
@@ -238,6 +289,9 @@ trunk → []
 ### rel-trg
 
 > "Triggers", statistically associated words
+>
+> rel-trg, said-with, goes-with,
+>
 
 cow → milking
 awake → everlasting, rem, dreaming, breathe
@@ -254,8 +308,42 @@ trunk → buttressed, scaly, lid, circumference, branches, tree
 
 * said-together
 * with
+* coincides-with
+* co-exists
+* happens-with
+* goes-with
+* affinity
+* sibling
+* tied-to
+* accompanies
+* co-occurrent
 * said-together-with
+* attends
+* fellow / fellowship
+* frequents
+* mingles
+* company
+* pal
+* complement
+* mate
+* partner
+* complementary, complement
+* associate
+* companion
+* peer
+* counterpart
+* neighbor
+* affiliate
+* consort
+* sidekick
+* accomplice
 * often-said-with
+* colleague
+* complement
+* affiliated
+* acquaintance
+* associate
+* concurent
 * linked-to
 * triggered-by
 * often-with
@@ -277,9 +365,12 @@ trunk → buttressed, scaly, lid, circumference, branches, tree
 * paired
 * paired-with
 
-### rel-spc
+### rel-spc (specific)
 
 > "Kind of" (direct hypernyms, per WordNet)
+>
+> rel-spc, kind-of, class-of, parents
+>
 
 beach → land, formation, geology
 elephant → animal
@@ -302,13 +393,10 @@ more specific → more general
 * superset-of
 * class-of
 * model-of
-* general-type-of
 * broad/general/overarching
 * type/category/kind
 * is-a
-* can-be-a
-* can-include
-* words that are a subtype of 
+* words that are a subtype of
 * type
 * parent
 * category
@@ -339,6 +427,7 @@ more general → more specific
 * example-of
 * specific-type-of
 * models-for
+* model-of
 * examples-of
 * subtypes
 * hyponyms
@@ -348,12 +437,13 @@ more general → more specific
 
 > "Comprises" (direct holonyms, per WordNet)
 > container
+> whole → part
 
+cow → bag, poll, udder
 car → accelerator
 awake → []
 provoke → []
 beach → []
-cow → bag, poll, udder
 slack → []
 dessert → []
 sandy → []
@@ -363,7 +453,6 @@ car → lift, funicular, airship, elevator
 trunk → back, side, chest, belly, bark
 face → eye
 
-whole → part
 
 * member-of
 * has
@@ -380,6 +469,8 @@ whole → part
 
 > "Part of" (direct meronyms, per WordNet)
 > member
+> meronym
+> part -> whole
 
 trunk → tree
 awake → []
@@ -420,6 +511,9 @@ part →  whole
 ### rel-bga
 
 > Frequent followers (w′ such that P(w′ w) ≥ 0.001, per Google Books Ngrams)
+>
+>
+>
 
 wreak → havoc
 awake → and, for, when, until, again
@@ -496,6 +590,9 @@ trunk → []
 ### rel-cns
 
 > Consonant match
+>
+> I l
+>
 
 sample → simple
 awake → awoke, awork, a work, ai work, eye work, high work

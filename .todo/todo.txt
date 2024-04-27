@@ -20,3 +20,4 @@
 2024-04-23 support wordnik API @maybe
 2024-04-23 define: fix: `words words --ml "not recommended"` @bug
 2024-04-23 feature: add commands to launch websites @maybe
+2024-04-26 dict, datamuse: remove plural / find base word

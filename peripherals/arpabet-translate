@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+#
+# Translate a given english word to ARPABET pronouncion, print to the screen,
+# and copy to clipboard.
+#
+# Example:
+#
+#  $  ./peripherals/arpabet-translate cat 
+#  K AE1 T
+#
+
+rootdir="$(cd "${0%/*}/." && pwd -P)"
+
+define() {
+   IFS=$'\n' read -r -d '' ${1} || true
+}
+
+translate() {
+  local script dictionary="${rootdir}/cmudict-0.7b"
+
+  define script <<EOF
+/^${1}\s+/I {          # case-insensitive whole-word start-of-line search
+  s/^${1}\s+//I        # remove the word itself
+  s/\r//p ;            # remove the carriage return
+}
+EOF
+  
+  sed -nEe "${script}"           \
+    "${dictionary}"              \
+    | tr -d '\n'                 \
+    | tee >(pbcopy) && echo
+}
+
+translate "${1}"

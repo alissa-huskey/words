@@ -76,6 +76,29 @@ Related word constraints: require that the results, when paired with the word in
 | hom    | Homophones (sound-alike words)                                                | course → coarse   |
 | cns    | Consonant match                                                               | sample → simple   |
 
+#### cns: Consonant Match
+
+Words that match when all vowel phenomes are removed from the words phonetic
+Pronunciation transcription.
+
+Here you can see several examples of shared ARPABET pronunciation after the
+vowel phenomes have been removed.
+
+┏━━━━━━━━┳━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┓
+┃ Word   ┃ Pronunciation   ┃ Only Consonants ┃
+┡━━━━━━━━╇━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ sample │ S AE1 M P AH0 L │ S - M P - L     │
+│ simple │ S IH1 M P AH0 L │ S - M P - L     │
+│ cow    │ K AW1           │ K -             │
+│ key    │ K IY1           │ K -             │
+│ coo    │ K UW1           │ K -             │
+│ late   │ L EY1 T         │ L - T           │
+│ lit    │ L IH1 T         │ L - T           │
+│ loot   │ L UW1 T         │ L - T           │
+└────────┴─────────────────┴─────────────────┘
+
+For more information see [ARPABET Notation](doc/pronunciation.md#ARPABET Notation).
+
 ### Vocabulary sources
 
 * default: a 550,000-term vocabulary of English words and multiword expressions is used.
