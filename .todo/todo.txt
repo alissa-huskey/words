@@ -6,7 +6,6 @@
 2024-04-22 @datamuse fix no results bug 'words --ml etcetra' @bug
 2024-04-23 @dict cache dictionary definitions
 2024-04-23 @dict cache list of databases
-2024-04-23 @dict choose a list of default databases to search through
 2024-04-23 @define add --host option @maybe
 2024-04-23 @define add --num optoin @maybe
 2024-04-23 @define group entries by dictionary in DefinitionRequest and CLI output

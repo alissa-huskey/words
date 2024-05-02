@@ -70,7 +70,7 @@ def strategies():
 
 @run.command("def")
 @click.argument("word")
-@click.option("--db", default="*", help="Database(s) to search.")
+@click.option("--db", default="*", help="Databases of common English word definitions.")
 def define(word: str, db: None):
     """Get the definition of a word."""
     rsp = DefinitionRequest(word, db=db)

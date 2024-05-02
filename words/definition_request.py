@@ -16,6 +16,7 @@ class DefinitionRequest(Object):
 
     HOST = "dict.org"
     PORT = 2628
+    DEFAULT_DBS = ["gcide", "wn"]
 
     _client: DictClient = None
     _databases: dict = {}
@@ -59,8 +60,7 @@ class DefinitionRequest(Object):
         if search:
             dbs = {k: v for k, v in dbs.items() if search.lower() in v.lower()}
         if default:
-            dbs = {k: v for k, v in dbs.items()
-                   if not k.startswith("fd-") and "thesaurus" not in k}
+            dbs = {k: v for k, v in dbs.items() if k in self.DEFAULT_DBS}
         return dbs
 
     @property

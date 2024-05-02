@@ -3,10 +3,10 @@
 2024-04-21 @datamuse ensure --ipa isn't passed if falsy
 2024-04-21 @datamuse fix tag setting so that it looks at parts of speech list, not just add whatever's there
 2024-04-21 @datamuse figure out what "syn" means as a tag; (probably because --rel-syn WORD)
-2024-04-22 @datamuse fix no results bug 'words --ml etcetra' @bug'
+2024-04-22 @datamuse fix no results bug 'words --ml etcetra' @bug
 2024-04-23 @dict cache dictionary definitions
 2024-04-23 @dict cache list of databases
-2024-04-23 @dict choose a list of default databases to search through
+x 2024-05-02 2024-04-23 @dict choose a list of default databases to search through
 2024-04-23 @define add --host option @maybe
 2024-04-23 @define add --num optoin @maybe
 2024-04-23 @define group entries by dictionary in DefinitionRequest and CLI output
@@ -17,4 +17,4 @@
 2024-04-23 @datamuse fix `words words --ml "not recommended"` @bug
 2024-04-23 @feature add commands to launch websites @maybe
 2024-04-26 @feature remove plural / find base word
-2024-05-02 @dict remove send_request
+2024-05-02 @dict remove send_request from DefinitionRequest

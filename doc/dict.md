@@ -487,6 +487,48 @@ C: MATCH wn substring "abcdefgh"
 S: 552 No match
 ```
 
+Databases
+---------
+
+Informaton on some of the databases currently listed on dict.org.
+
+| Database                                                       | Year  | Description                                                               | Name           | Example          |
+|----------------------------------------------------------------|-------|---------------------------------------------------------------------------|----------------|------------------|
+| [Bouvier's Law Dictionary][bouvier]                            | 1856  | Condensed encyclopedia of American law.                                   | bouvier        | amnesty          |
+| [CIA World Factbook][world02]                                  | 2002  | CIA intelligence on international entities.                               | world02        | china            |
+| [Easton's 1897 Bible Dictionary][easton]                       | 1897  | Reference work on topics related to the Christian Bible.                  | easton         | covenant         |
+| [FreeDict][freedict]+[WikDict][wikdict] Translations           | 2018  | Bilingual dictionaries.                                                   | fd-*           | fd-fra-eng mal   |
+| [Hitchcock's Bible Names Dictionary][hitchcock]                | 1800s | Bible and Bible related proper names and their meanings.                  | hitchcock      | iscariot         |
+| [Moby Thesaurus II][moby]                                      | 2002  | Root words, synonyms and related terms.                                   | moby-thesaurus | related          |
+| [The Collaborative International Dictionary of English][gcide] | 1913  | Dictionary derived from Webster's Revised Unabridged Dictionary.          | gcide          | revised          |
+| [The Devil's Dictionary][devil]                                | 1906  | Common words followed by humorous and satirical definitions.              | devil          | siren            |
+| [The Elements][elements]                                       | 2000  | Periodic table of chemical elements.                                      | elements       | silver           |
+| [The Free On-line Dictionary of Computing][foldoc]             | 2028  | Encyclopedic dictionary of computing subjects.                            | foldoc         | compiler         |
+| [The Jargon File][jargon]                                      | 2003  | Glossary and usage dictionary of slang used by computer programmer.       | jargon         | fubar            |
+| [U.S. Gazetteer][gazetteer] (Counties/Places/Zips)             | 2000  | US Census data on geographic areas.                                       | gaz2k-*        | gaz2k-zips 90210 |
+| [V.E.R.A. -- Virtual Entity of Relevant Acronyms][vera]        | 2016  | Collection of common and not so common acronyms in the field of computing | vera           | gnu              |
+| [WordNet][wordnet]                                             | 2006  | Lexical database of semantic relations between words.                     | wn             | boat             |
+| English Monolingual Dictionaries                               |       | All databases excluding translation dictionaries.                         | english        | anoint           |
+| Translating Dictionaries                                       |       | Only translation dictionaries.                                            | trans          | girl             |
+| All Dictionaries                                               |       |                                                                           | all            | cohesive         |
+
+
+[bouvier]: https://en.wikipedia.org/wiki/Bouvier%27s_Law_Dictionary
+[devil]: https://www.thedevilsdictionary.com/
+[easton]: https://biblesnet.com/eastons_bible_dictionary/index.htm
+[elements]: http://www.elementsdatabase.com/
+[foldoc]: https://foldoc.org/
+[freedict]: https://freedict.org/
+[gazetteer]: https://www.census.gov/geographies/reference-files/time-series/geo/gazetteer-files.html
+[gcide]: https://gcide.gnu.org.ua/
+[hitchcock]: https://biblehub.com/dictionary/hitchcock.htm
+[jargon]: http://www.catb.org/~esr/jargon/
+[moby]: https://www.moby-thesaurus.org/
+[vera]: https://savannah.gnu.org/projects/vera/
+[wikdict]: https://www.wikdict.com/
+[wordnet]: https://wordnet.princeton.edu/
+[world02]: https://www.cia.gov/the-world-factbook/
+
 Python Dict Client
 ------------------
 
