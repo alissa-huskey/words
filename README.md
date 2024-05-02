@@ -67,6 +67,18 @@ Status
 
 Unsuited for not-me users.
 
+Install
+-------
+
+You really shouldn't. But if you insist.
+
+```bash
+git clone https://github.com/alissa-huskey/words.git && cd words
+pip install dist/*.whl
+command -v asdf > /dev/null && asdf reshim python
+command -v pyenv > /dev/null && pyenv rehash
+```
+
 Credits
 ------------
 
