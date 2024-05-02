@@ -40,24 +40,24 @@ nite
 
 ``` text
 $ words def homophone
-╭────────────── The Collaborative International Dictionary of English v.0.48 ───────────────╮
-│ Homophone \Hom"o*phone\, n. [Cf. F. homophone. See                                        │
-│    {Homophonous}.]                                                                        │
-│    1. A letter or character which expresses a like sound with                             │
-│       another. --Gliddon.                                                                 │
-│       [1913 Webster]                                                                      │
-│                                                                                           │
-│    2. A word having the same sound as another, but differing                              │
-│       from it in meaning and usually in spelling; as, all and                             │
-│       awl; bare and bear; rite, write, right, and wright.                                 │
-│       Homophonic                                                                          │
-╰───────────────────────────────────────────────────────────────────────────────────────────╯
-╭───────────────────────────────── WordNet (r) 3.0 (2006) ──────────────────────────────────╮
-│ homophone                                                                                 │
-│     n 1: two words are homophones if they are pronounced the same                         │
-│          way but differ in meaning or spelling or both (e.g. bare                         │
-│          and bear)                                                                        │
-╰───────────────────────────────────────────────────────────────────────────────────────────╯
+╭──── The Collaborative International Dictionary of English v.0.48 ─────╮
+│ Homophone \Hom"o*phone\, n. [Cf. F. homophone. See                    │
+│    {Homophonous}.]                                                    │
+│    1. A letter or character which expresses a like sound with         │
+│       another. --Gliddon.                                             │
+│       [1913 Webster]                                                  │
+│                                                                       │
+│    2. A word having the same sound as another, but differing          │
+│       from it in meaning and usually in spelling; as, all and         │
+│       awl; bare and bear; rite, write, right, and wright.             │
+│       Homophonic                                                      │
+╰───────────────────────────────────────────────────────────────────────╯
+╭─────────────────────── WordNet (r) 3.0 (2006) ────────────────────────╮
+│ homophone                                                             │
+│     n 1: two words are homophones if they are pronounced the same     │
+│          way but differ in meaning or spelling or both (e.g. bare     │
+│          and bear)                                                    │
+╰───────────────────────────────────────────────────────────────────────╯
 ```
 
 Status
