@@ -1,68 +1,36 @@
 """DatamuseAPI API Wrapper."""
 
-from enum import Enum, EnumMeta
-
+import click
 from rich import print as rprint
 from rich.console import Console
 from rich.panel import Panel
 from rich.table import Table
 from rich.traceback import install as rich_tracebacks
-from typer import BadParameter, Option, Typer
-from typing_extensions import Annotated
 
 from words.compat import BdbQuit
 from words.datamuse_api import DatamuseAPI
 from words.definition_request import DefinitionRequest
 from words.word_presenter import WordPresenter
 
-cli = Typer()
 console = Console(stderr=True)
 rich_tracebacks(show_locals=True)
+bp = breakpoint
 
 
-class EnumContains(EnumMeta):
-    """Metaclass to allow membership checking."""
-
-    def __contains__(cls, value):
-        """Return True if value is a name or value of any enum object in class."""
-        if value in cls.__members__:
-            return True
-        try:
-            cls(value)
-        except ValueError:
-            return False
-        return True
+def err(message):
+    """Print an error message and exit."""
+    rprint(f"[red]Error[/red] {message}")
+    exit(1)
 
 
-class MetadataFlags(str, Enum, metaclass=EnumContains):
-    """Possible values for the Metadata (`--md`) parameter.
-
-    Flags representing categories of extra lexical knowledge to include.
-    """
-
-    d = "d"    # "Definitions"
-    p = "p"    # "Parts of Speech"
-    s = "s"    # "Syllable count"
-    r = "r"    # "Pronunciation"
-    f = "f"    # "Word frequency"
-
-    def __init__(self, title):
-        """Use the name as the value for typer Option."""
-        self.flag, self.title = self._name_, title
-        self._value_ = self.flag
+@click.group()
+def run():
+    """Command line thesaurus, dictionary and more."""
+    pass
 
 
-def check_metadata(value: str):
-    """Validate all letters for metadata."""
-    if not value:
-        return
-    for flag in iter(value):
-        if flag not in MetadataFlags:
-            raise BadParameter(f"Invalid metadata (--md) flag: {flag}")
-    return value
-
-
-@cli.command()
+@run.command()
+@click.argument("word")
 def define(word: str):
     """Get the definition of a word."""
     rsp = DefinitionRequest(word)
@@ -73,39 +41,63 @@ def define(word: str):
         rprint(panel)
 
 
-@cli.command()
-def words(
-    ml: Annotated[str, Option(help="Meaning like.", metavar="WORD")] = "",
-    md: Annotated[str, Option(
-        metavar="FLAG",
-        case_sensitive=False,
-        help="Metadata to include.",
-        callback=check_metadata,
-        show_default=False,
-    )] = None,
-    max: Annotated[int, Option(help="Max results.", metavar="NUMBER")] = 30,
-    ipa: Annotated[int, Option(
-        help="Use International Phonetic Alphabet pronunciation format.",
-    )] = 0,
-    json: Annotated[bool, Option(
-        "--json",
-        help="Export as raw JSON",
-        show_default=False,
-    )] = False,
-    long: Annotated[bool, Option(
-        "--long", "-l",
-        help="Print word list in long format.",
-    )] = False,
-):
-    """Print results from the primary datamuse_api endpoint."""
-    api = DatamuseAPI(ml=ml, md=md, max=max, ipa=ipa)
+#  @run.command()
+#  @click.option("--ml", help="Reverse dictionary search.", metavar="WORD")
+#  @click.option("--sl", help="Pronounced similarly.", metavar="WORD")
+#  @click.option("--sp", help="Text and pattern search.", metavar="PATTERN")
+#  @click.option("--rel-jja", help="Nouns that can be described by the given adjective.", metavar="ADJECTIVE")
+#  @click.option("--rel-jjb", help="Adjectives that can be used to described the given noun.", metavar="NOUN")
+#  @click.option("--rel-syn", help="Synonyms.", metavar="WORD")
+#  @click.option("--rel-ant", help="Antonyms.", metavar="WORD")
+#  @click.option("--rel-trg", help="Words often said together.", metavar="WORD")
+#  @click.option("--rel-spc", help="Broad categories, general concepts or umbrella terms that cover the more specific given term. (hypernyms)", metavar="SUBTYPE")
+#  @click.option("--rel-gen", help="Specific examples, instances, or subtypes that falls within the broader given term. (hyponyms)", metavar="SUPERTYPE")
+#  @click.option("--rel-com", help="Parts or members that belong to something whole. (holonyms)", metavar="WHOLE")
+#  @click.option("--rel-par", help="A whole thing where the given term is a parts or member. (meronyms)", metavar="PART")
+#  @click.option("--rel-bga", help="Words often said after.", metavar="WORD BEFORE")
+#  @click.option("--rel-bgb", help="Words often said before.", metavar="WORD AFTER")
+#  @click.option("--rel-hom", help="Different words that sound exactly the same. (homophones)", metavar="WORD")
+#  @click.option("--rel-cns", help="Words with the same consonant phoneme sounds.", metavar="WORD")
+#  @click.option("--md", multiple=True,
+#                type=click.Choice(["d", "p", "s", "r", "f"]),
+#                help="Additional metadata to include.",)
+#  @click.option("--max", type=int, help="Max results", default=30)
+#  @click.option("--ipa", is_flag=True,
+#                help="Use International Phonetic Alphabet pronunciation format.")
+#  @click.option("--json", is_flag=True, help="Export as raw JSON.")
+#  @click.option("--long", is_flag=True, help="Print word list in long format.")
+def dm(**kwargs):
+    """Datamuse search."""
+    required = [
+        "ml",
+        "sl",
+        "sp",
+        "rel_jja",
+        "rel_syn",
+        "rel_ant",
+        "rel_trg",
+        "rel_spc",
+        "rel_gen",
+        "rel_com",
+        "rel_par",
+        "rel_bga"
+        "rel_bgb",
+        "rel_hom",
+        "rel-cns",
+    ]
+    has_required = filter(None, map(kwargs.get, required))
+    if not tuple(has_required):
+        err("No search option provided.")
+        return
+
+    api = DatamuseAPI(**kwargs)
     api.get()
 
-    if json:
+    if api.args.json:
         rprint(api.data)
         return
 
-    if long:
+    if api.args.long:
         table = Table(*WordPresenter.headers())
         for w in api.words:
             word = WordPresenter(w)
@@ -115,17 +107,39 @@ def words(
         for word in api.words:
             print(word)
 
+run.add_command(click.Command("dm", callback=dm, help=dm.__doc__, params=[
+    click.Option(["--ml"], help="Reverse dictionary search.", metavar="WORD"),
+    click.Option(["--sl"], help="Pronounced similarly.", metavar="WORD"),
+    click.Option(["--sp"], help="Text and pattern search.", metavar="PATTERN"),
+    click.Option(["--rel-jja"], help="Nouns that can be described by the given adjective.", metavar="ADJECTIVE"),
+    click.Option(["--rel-jjb"], help="Adjectives that can be used to described the given noun.", metavar="NOUN"),
+    click.Option(["--rel-syn"], help="Synonyms.", metavar="WORD"),
+    click.Option(["--rel-ant"], help="Antonyms.", metavar="WORD"),
+    click.Option(["--rel-trg"], help="Words often said together.", metavar="WORD"),
+    click.Option(["--rel-spc"], help="Broad categories, general concepts or umbrella terms that cover the more specific given term. (hypernyms)", metavar="SUBTYPE"),
+    click.Option(["--rel-gen"], help="Specific examples, instances, or subtypes that falls within the broader given term. (hyponyms)", metavar="SUPERTYPE"),
+    click.Option(["--rel-com"], help="Parts or members that belong to something whole. (holonyms)", metavar="WHOLE"),
+    click.Option(["--rel-par"], help="A whole thing where the given term is a parts or member. (meronyms)", metavar="PART"),
+    click.Option(["--rel-bga"], help="Words often said after.", metavar="WORD BEFORE"),
+    click.Option(["--rel-bgb"], help="Words often said before.", metavar="WORD AFTER"),
+    click.Option(["--rel-hom"], help="Different words that sound exactly the same. (homophones)", metavar="WORD"),
+    click.Option(["--rel-cns"], help="Words with the same consonant phoneme sounds.", metavar="WORD"),
+    click.Option(["--md"], multiple=True,
+                type=click.Choice(["d", "p", "s", "r", "f"]),
+                help="Additional metadata to include.",),
+    click.Option(["--max"], type=int, help="Max results", default=30),
+    click.Option(["--ipa"], is_flag=True,
+                help="Use International Phonetic Alphabet pronunciation format."),
+    click.Option(["--json"], is_flag=True, help="Export as raw JSON."),
+    click.Option(["--long"], is_flag=True, help="Print word list in long format."),
+]))
 
-def run():
-    """Command line runner."""
+
+if __name__ == "__main__":
     try:
-        cli()
+        click()
     except (SystemExit, BdbQuit):
         ...
     #  except BaseException as e:
     #      rprint("[red]Error[/red]", e)
     #      exit(1)
-
-
-if __name__ == "__main__":
-    run()

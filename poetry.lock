@@ -816,7 +816,7 @@ test = ["pytest"]
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.10, <4.0"
-content-hash = "e4d5395d93969ab5c4e12cc270a9f6b7f11995b8d3b6b9bca6ea579b6775c6ca"
+content-hash = "b5a40561ab3ff8a2e627d549d42a3f5dd65117600841a46672252252f3422c6d"
 
 [metadata.files]
 asttokens = [

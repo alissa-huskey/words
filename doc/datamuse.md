@@ -52,7 +52,9 @@ Hard constraints filter the result set.
 
 ### Spelled Like
 
-Accepts wildcard patterns.
+Accepts [wildcard patterns][wildcards].
+
+[wildcards]: https://onelook.com/thesaurus/#help
 
 ### Related Words
 

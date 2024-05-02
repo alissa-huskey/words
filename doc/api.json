@@ -16,7 +16,7 @@
       "returns": ""
     },
     "examples": {
-      "": [""]
+      "cat": ["hat", "bat"]
     }
   },
   {
@@ -220,7 +220,7 @@
     }
   },
   {
-    "summary": "A whole thing where the given term is a parts or member.",
+    "summary": "Parts or members that belong to something whole.",
     "grammatical": "holonym",
     "opposite": "meronym",
     "source": {"name": "WordNet", "details": ""},
@@ -243,7 +243,7 @@
     }
   },
   {
-    "summary": "Parts or members that belong to something whole.",
+    "summary": "A whole thing where the given term is a parts or member.",
     "grammatical": "meronym",
     "opposite": "holonym",
     "source": {"name": "WordNet", "details": ""},

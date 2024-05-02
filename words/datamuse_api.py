@@ -27,6 +27,13 @@ class DatamuseAPI(Object):
         "ipa",
     ]
 
+    data: list = []
+
+    def __init__(self, **kwargs):
+        """Create object."""
+        self.args = Object(**kwargs)
+        super().__init__(**kwargs)
+
     @property
     def query(self):
         """Return a dictionary of params to include in request."""
@@ -46,5 +53,5 @@ class DatamuseAPI(Object):
     def words(self) -> list[Word]:
         """Return a list of Word objects."""
         if not self.data:
-            return
+            return []
         return [Word(**data) for data in self.data]
