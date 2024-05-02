@@ -23,24 +23,24 @@ A set of square brackets (`[]`) indicates no matches, or very occasionally that
 there are no matches except for propositions, derived forms of the word, or
 words that seem made up.
 
-| orig (s) | orig (l)                   | datamuse desciption                     | Technical             | natural language                                            | verb          | noun                              |
-|----------|----------------------------|-----------------------------------------|-----------------------|-------------------------------------------------------------|---------------|-----------------------------------|
-| ml       | means-like                 | reverse dictionary                      |                       | defined-as                                                  | means         |                                   |
-| sl       | sounds-like                | pronounced similarly                    | minimal-pair          | sounds-close, phonetically-close, pronounced-like           |               |                                   |
-| sp       | spelled-like               | similar spelling/match wildcard pattern |                       | text-search search, spell-search                            | search        | match                             |
-| rel-jja  | related-modified-by        | popular per Google Books Ngrams         |                       | modified-by, described-as                                   | describes     | nouns                             |
-| rel-jjb  | related-used-to-modify     | per Google Books Ngrams                 | attributive adjective | descriptions-for, can-be                                    | seems         | adjectives                        |
-| rel-syn  | related-synonyms           | same WordNet synset                     | synonym               | words-for                                                   | like          | synonyms                          |
-| rel-ant  | related-antonyms           | per WordNet                             | antonym               | opposite-of                                                 | unlike        | antonyms                          |
-| rel-trg  | related-triggers           | statistically associated                |                       | said-with, concurent, associated                            | with          | neighbor, sibling                 |
-| rel-spc  | related-specific           | direct hypernym, per WordNet            | hypernym              | class-of, superset-of, models-for                           | superclasses  | superset                          |
-| rel-gen  | related-general            | more general than, per WordNet          | hyponym               | [subtype/sebset/example/child/model]-of                     | subclasses    | subset                            |
-| rel-com  | related-comprises          | "Comprises" direct                      | holonyms              | made-of, members-of, comprises                              | has           | meronym, part, member             |
-| rel-par  | related-part-of            | "Part-of",  per WordNet                 | meronyms              | part-of, belongs-to                                         | is-a          | holonym, whole, sum, constituant  |
-| rel-bga  | related-google-books-after | Frequently after, Google Books Ngrams   |                       | follows, comes-after, is-after                              | follows       | follower                          |
-| rel-bgb  | related-google-books-after | Frequently before, Google Books Ngrams  |                       | comes-before, preceeds that-precede                         | preceeds      | antecedent, forerunner, preceeder |
-| rel-hom  | related-homophones         | sound-alike words                       | homophones            | same-sound, sound/s(same/identical/matches), prounounced-as | pronunciation | pronunciation                     |
-| rel-cns  | related-consonant          | consonant match                         |                       | same-consonants                                             |               |                                   |
+| orig (s) | orig (l)           | datamuse desciption                     | Technical             | natural language                                            | action        | returns                           |
+|----------|--------------------|-----------------------------------------|-----------------------|-------------------------------------------------------------|---------------|-----------------------------------|
+| ml       | means-like         | reverse dictionary                      |                       | defined-as                                                  | means         |                                   |
+| sl       | sounds-like        | pronounced similarly                    | minimal-pair          | sounds-close, phonetically-close, pronounced-like           |               |                                   |
+| sp       | spelled-like       | similar spelling/match wildcard pattern |                       | text-search search, spell-search                            | search        | match                             |
+| rel-jja  |                    | popular per Google Books Ngrams         |                       | modified-by, described-as                                   | describes     | nouns                             |
+| rel-jjb  |                    | per Google Books Ngrams                 | attributive adjective | descriptions-for, can-be                                    | seems         | adjectives                        |
+| rel-syn  | related-synonyms   | same WordNet synset                     | synonym               | words-for                                                   | like          | synonyms                          |
+| rel-ant  | related-antonyms   | per WordNet                             | antonym               | opposite-of                                                 | unlike        | antonyms                          |
+| rel-trg  | related-triggers   | statistically associated                |                       | said-with, concurent, associated                            | with          | neighbor, sibling                 |
+| rel-spc  | related-specific   | direct hypernym, per WordNet            | hypernym              | class-of, superset-of, models-for                           | superclasses  | superset                          |
+| rel-gen  | related-general    | more general than, per WordNet          | hyponym               | [subtype/sebset/example/child/model]-of                     | subclasses    | subset                            |
+| rel-com  | related-comprises  | "Comprises"                             | holonyms              | made-of, members-of, comprises                              | has           | meronym, part, member             |
+| rel-par  | related-part-of    | "Part-of",  per WordNet                 | meronyms              | part-of, belongs-to                                         | is-a          | holonym, whole, sum               |
+| rel-bga  | related-bg-after   | Frequently after, Google Books Ngrams   |                       | follows, comes-after, is-after                              | follows       | follower                          |
+| rel-bgb  | related-bg-before  | Frequently before, Google Books Ngrams  |                       | comes-before, preceeds that-precede                         | preceeds      | antecedent, forerunner, preceeder |
+| rel-hom  | related-homophones | sound-alike words                       | homophones            | same-sound, sound/s(same/identical/matches), prounounced-as |               | pronunciation                     |
+| rel-cns  | related-consonant  | consonant match                         |                       | same-consonants                                             |               |                                   |
 
 ### ml
 
