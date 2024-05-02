@@ -42,12 +42,15 @@ def dict_api():
 
 @dict_api.command()
 @click.option("--search", metavar="PHRASE", help="Filter results.")
-def dbs(search=None):
+@click.option("--default", is_flag=True,
+              help="Display the default databases used for for definition searches.")
+def dbs(search=None, default=False):
     """List databases."""
     rsp = DefinitionRequest()
+    dbs = rsp.dbs(search, default).items()
 
     table = Table("Name", "Description")
-    for db in rsp.dbs(search).items():
+    for db in dbs:
         table.add_row(*db)
     rprint(table)
 
@@ -56,24 +59,26 @@ def dbs(search=None):
 def strategies():
     """List strategies."""
     rsp = DefinitionRequest()
+    strategies = rsp.client.strategies.items()
 
     header("Strategies")
     table = Table("Name", "Description")
-    for db in rsp.client.strategies.items():
+    for db in strategies:
         table.add_row(*db)
     rprint(table)
 
 
 @run.command("def")
 @click.argument("word")
-def define(word: str):
+@click.option("--db", default="*", help="Database(s) to search.")
+def define(word: str, db: None):
     """Get the definition of a word."""
-    rsp = DefinitionRequest(word)
+    rsp = DefinitionRequest(word, db=db)
 
     if not rsp.count:
         rprint("Not found.")
     for e in rsp.entries:
-        panel = Panel(e.definition, title=e.db)
+        panel = Panel(e.definition, title=e.dbname)
         rprint(panel)
 
 

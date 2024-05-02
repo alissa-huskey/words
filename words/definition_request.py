@@ -5,10 +5,10 @@ from socket import gaierror
 from dictionary_client import DictionaryClient as DictClient
 from dictionary_client.response import DefineWordResponse
 
+from words import WordsError
 from words.dictionary_entry import DictionaryEntry
 from words.object import Object
 from words.response_status import ResponseStatus
-from words import WordsError
 
 
 class DefinitionRequest(Object):
@@ -18,12 +18,14 @@ class DefinitionRequest(Object):
     PORT = 2628
 
     _client: DictClient = None
+    _databases: dict = {}
 
     response: DefineWordResponse = None
 
-    def __init__(self, word=None, client=None, send_request=True, **kwargs):
+    def __init__(self, word=None, client=None, db="*", send_request=True, **kwargs):
         """Initialize and make request unless send_request is False."""
         self.word = word
+        self.db = db
         self.client = client
         super().__init__(**kwargs)
 
@@ -33,17 +35,32 @@ class DefinitionRequest(Object):
     def lookup(self) -> DefineWordResponse:
         """Query dict.com for a definition."""
         try:
-            self.response = self.client.define(self.word)
+            self.response = self.client.define(self.word, self.db)
         except BrokenPipeError:
             self._client = None
             self.lookup()
         return self.response
 
-    def dbs(self, search=None):
+    @property
+    def databases(self):
+        """Get databases."""
+        if not self._databases:
+            self._databases = self.client.databases
+        return self._databases
+
+    @databases.setter
+    def databases(self, value):
+        """Set databases."""
+        self._databases = value
+
+    def dbs(self, search=None, default=False):
         """Return a list of databases."""
-        dbs = self.client.databases
+        dbs = self.databases
         if search:
             dbs = {k: v for k, v in dbs.items() if search.lower() in v.lower()}
+        if default:
+            dbs = {k: v for k, v in dbs.items()
+                   if not k.startswith("fd-") and "thesaurus" not in k}
         return dbs
 
     @property
@@ -76,7 +93,8 @@ class DefinitionRequest(Object):
         """Return a list of DefinitionEntry objects from response."""
         if not self.response.content:
             return []
-        return [DictionaryEntry(word=self.word, **d) for d in self.response.content]
+        return [DictionaryEntry(word=self.word, **d, dbname=self.databases.get(d["db"]))
+                for d in self.response.content]
 
     @property
     def status(self) -> ResponseStatus:

@@ -10,10 +10,6 @@ from tests.mock_socket import MockSocket
 from words import WordsError
 from words.definition_request import DefinitionRequest
 
-# gaierror
-
-
-
 DBS = ("gcide", "wn", "moby-thesaurus", "elements", "english", "all", "easton")
 
 
@@ -86,6 +82,19 @@ def test_definition_request_databases_filter():
     assert "foldoc" in dbs
 
 
+def test_definition_request_databases_default():
+    """
+    GIVEN: a DefinitionRequest object
+    WHEN: .databases() is called with default=True
+    THEN: it should return a truncated dictionary of databases
+    """
+    request = DefinitionRequest(client=make_client("db.show"))
+    dbs = request.dbs(default=True)
+
+    assert dbs
+    assert "fd-spa-ast" not in dbs
+
+
 def test_definition_request_word_no_send():
     """
     WHEN: DefinitionRequest is created with a word
@@ -112,6 +121,26 @@ def test_definition_request_lookup():
     request = DefinitionRequest(
         "moon",
         make_client("moon.def"),
+        send_request=False,
+    )
+    actual_response = request.lookup()
+
+    assert actual_response.content
+    assert actual_response.content == response.content
+
+
+def test_definition_request_lookup_database():
+    """
+    GIVEN: a DefinitionRequest object with a word
+    WHEN: when request.lookup() is called with a database
+    THEN: responses should be restricted to that database
+    """
+
+    response = fake_response("moon.def")
+    request = DefinitionRequest(
+        "moon",
+        make_client("moon.def"),
+        db="*",
         send_request=False,
     )
     actual_response = request.lookup()

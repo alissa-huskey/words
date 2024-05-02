@@ -3,5 +3,6 @@
 from collections import namedtuple
 
 
-class DictionaryEntry(namedtuple('DictionaryEntry', ("word", "db", "definition"))):
+class DictionaryEntry(namedtuple('DictionaryEntry',
+                                 ("word", "db", "definition", "dbname"))):
     """Class representing a single match received from a dictionary request response."""
