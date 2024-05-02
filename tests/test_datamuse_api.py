@@ -5,6 +5,11 @@ def test_datamuse_api():
     assert DatamuseAPI()
 
 
+def test_datamuse_params():
+    params = DatamuseAPI.params
+    assert "ml" in params
+
+
 def test_datamuse_empty_words():
     """
     GIVEN: A datamuse object with no results.

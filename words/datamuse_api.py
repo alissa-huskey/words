@@ -4,40 +4,29 @@ from functools import cached_property
 
 from datamuse import Datamuse as DatamuseClient
 
+from words.datamuse_options import DatamuseOptions
 from words.object import Object
 from words.word import Word
+
+bp = breakpoint
 
 
 class DatamuseAPI(Object):
     """DatamuseAPI API Client."""
 
-    PARAMS = [
-        "ml",
-        "sl",
-        "sp",
-        "v",
-        "md",
-        "ipa",
-        "topics",
-        "lc",
-        "rc",
-        "max",
-        "md",
-        "qe",
-        "ipa",
-    ]
-
     data: list = []
 
-    def __init__(self, **kwargs):
-        """Create object."""
-        self.args = Object(**kwargs)
-        super().__init__(**kwargs)
+    @classmethod
+    @property
+    def params(cls):
+        """Return a list of valid Datamuse params."""
+        return DatamuseOptions.params
 
     @property
     def query(self):
         """Return a dictionary of params to include in request."""
-        return {k: getattr(self, k) for k in self.PARAMS if hasattr(self, k)}
+        query_params = {k: getattr(self, k) for k in self.params if hasattr(self, k)}
+        return query_params
 
     def get(self):
         """Send a request to the client."""
