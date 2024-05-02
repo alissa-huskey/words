@@ -7,7 +7,12 @@ from dictionary_client.response import DefineWordResponse
 
 from tests import Stub, read_file
 from tests.mock_socket import MockSocket
+from words import WordsError
 from words.definition_request import DefinitionRequest
+
+# gaierror
+
+
 
 DBS = ("gcide", "wn", "moby-thesaurus", "elements", "english", "all", "easton")
 
@@ -36,6 +41,49 @@ def fake_response(response_file: str):
 def test_definition_request():
     request = DefinitionRequest()
     assert request
+
+
+def test_definition_no_connection(monkeypatch):
+    """
+    GIVEN: a DefinitionRequest object
+    WHEN: .databases() is called
+    THEN: it should return a dictionary of databases
+    """
+    monkeypatch.setattr(DefinitionRequest, "HOST", "wrongdict.org")
+
+    with pytest.raises(WordsError):
+        client = DefinitionRequest()
+        client.dbs()
+
+
+def test_definition_request_databases():
+    """
+    GIVEN: a DefinitionRequest object
+    WHEN: .databases() is called
+    THEN: it should return a dictionary of databases
+    """
+    request = DefinitionRequest(client=make_client("db.show"))
+    dbs = request.dbs()
+
+    assert dbs
+
+
+def test_definition_request_databases_filter():
+    """
+    GIVEN: a DefinitionRequest object
+    WHEN: .databases() is called with a search argument
+    THEN: it should return a dictionary of databases
+    AND: the results should include any databases with names that
+         contain the search phrase
+    AND: the results should not include any databases with names that do not
+         contain the search phrase
+    """
+    request = DefinitionRequest(client=make_client("db.show"))
+    dbs = request.dbs("free")
+
+    assert dbs
+    assert "gcide" not in dbs
+    assert "foldoc" in dbs
 
 
 def test_definition_request_word_no_send():

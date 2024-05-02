@@ -15,7 +15,7 @@ syllabifier = { git = "https://github.com/dippedrusk/arpabet-syllabifier.git" }
 click = "^8.1.7"
 
 [tool.poetry.scripts]
-words = "words.cli.cli:run"
+words = "words.cli.cli:main"
 
 [tool.pytest.ini_options]
 addopts = "-vx --disable-socket"

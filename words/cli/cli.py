@@ -1,5 +1,4 @@
 """DatamuseAPI API Wrapper."""
-
 import click
 from rich import print as rprint
 from rich.console import Console
@@ -7,14 +6,15 @@ from rich.panel import Panel
 from rich.table import Table
 from rich.traceback import install as rich_tracebacks
 
+from words import WordsError
 from words.compat import BdbQuit
 from words.datamuse_api import DatamuseAPI
 from words.datamuse_options import DatamuseOptions
 from words.definition_request import DefinitionRequest
 from words.word_presenter import WordPresenter
 
-console = Console(stderr=True)
 rich_tracebacks(show_locals=True)
+console = Console(stderr=True)
 bp = breakpoint
 
 
@@ -24,17 +24,52 @@ def err(message):
     exit(1)
 
 
+def header(title):
+    """Print a section header."""
+    console.rule(f"[bold green]{title}")
+
+
 @click.group()
 def run():
     """Command line thesaurus, dictionary and more."""
     pass
 
 
-@run.command()
+@run.group("dict")
+def dict_api():
+    """Dict.org API commands."""
+
+
+@dict_api.command()
+@click.option("--search", metavar="PHRASE", help="Filter results.")
+def dbs(search=None):
+    """List databases."""
+    rsp = DefinitionRequest()
+
+    table = Table("Name", "Description")
+    for db in rsp.dbs(search).items():
+        table.add_row(*db)
+    rprint(table)
+
+
+@dict_api.command()
+def strategies():
+    """List strategies."""
+    rsp = DefinitionRequest()
+
+    header("Strategies")
+    table = Table("Name", "Description")
+    for db in rsp.client.strategies.items():
+        table.add_row(*db)
+    rprint(table)
+
+
+@run.command("def")
 @click.argument("word")
 def define(word: str):
     """Get the definition of a word."""
     rsp = DefinitionRequest(word)
+
     if not rsp.count:
         rprint("Not found.")
     for e in rsp.entries:
@@ -43,25 +78,8 @@ def define(word: str):
 
 
 def dm(**kwargs):
-    """Datamuse search."""
-    required = [
-        "ml",
-        "sl",
-        "sp",
-        "rel_jja",
-        "rel_syn",
-        "rel_ant",
-        "rel_trg",
-        "rel_spc",
-        "rel_gen",
-        "rel_com",
-        "rel_par",
-        "rel_bga"
-        "rel_bgb",
-        "rel_hom",
-        "rel-cns",
-    ]
-    has_required = filter(None, map(kwargs.get, required))
+    """Datamuse word search."""
+    has_required = filter(None, map(kwargs.get, DatamuseOptions.cli_required))
     if not tuple(has_required):
         err("No search option provided.")
         return
@@ -91,11 +109,11 @@ run.add_command(click.Command("dm", callback=dm, help=dm.__doc__, params=[
 ]))
 
 
-if __name__ == "__main__":
+def main():
+    """CLI entrypoint."""
     try:
-        click()
+        run()
     except (SystemExit, BdbQuit):
         ...
-    #  except BaseException as e:
-    #      rprint("[red]Error[/red]", e)
-    #      exit(1)
+    except WordsError as e:
+        err(e)

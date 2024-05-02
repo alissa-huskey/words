@@ -496,6 +496,14 @@ class DatamuseOptions(Object):
 
     @classmethod
     @property
+    def cli_required(cls):
+        """Return a list of exclusively required CLI options."""
+        return [p.get("datamuse", {}).get("param", "").replace("-", "_")
+                for p in DatamuseOptions.PARAMS
+                if p.get("required")]
+
+    @classmethod
+    @property
     def cli_options(cls):
         """Return a list of valid Datamuse params."""
         options = [

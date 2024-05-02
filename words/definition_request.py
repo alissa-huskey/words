@@ -1,11 +1,14 @@
 """DefinitionRequest module for interacting with dict.org."""
 
+from socket import gaierror
+
 from dictionary_client import DictionaryClient as DictClient
 from dictionary_client.response import DefineWordResponse
 
 from words.dictionary_entry import DictionaryEntry
 from words.object import Object
 from words.response_status import ResponseStatus
+from words import WordsError
 
 
 class DefinitionRequest(Object):
@@ -36,6 +39,13 @@ class DefinitionRequest(Object):
             self.lookup()
         return self.response
 
+    def dbs(self, search=None):
+        """Return a list of databases."""
+        dbs = self.client.databases
+        if search:
+            dbs = {k: v for k, v in dbs.items() if search.lower() in v.lower()}
+        return dbs
+
     @property
     def count(self) -> int:
         """Number of matches found."""
@@ -45,7 +55,10 @@ class DefinitionRequest(Object):
     def client(self) -> DictClient:
         """Return or create DictClient object."""
         if not self._client:
-            self._client = DictClient("dict.org")
+            try:
+                self._client = DictClient(self.HOST)
+            except gaierror:
+                raise WordsError("No internet connection?")
         return self._client
 
     @client.setter
