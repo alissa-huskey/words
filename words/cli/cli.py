@@ -13,7 +13,7 @@ from words.datamuse_options import DatamuseOptions
 from words.definition_request import DefinitionRequest
 from words.word_presenter import WordPresenter
 
-rich_tracebacks(show_locals=True)
+rich_tracebacks(show_locals=True, suppress=[click])
 console = Console(stderr=True)
 bp = breakpoint
 
@@ -74,6 +74,7 @@ def strategies():
 def define(word: str, db: None):
     """Get the definition of a word."""
     rsp = DefinitionRequest(word, db=db)
+    rsp.lookup()
 
     if not rsp.count:
         rprint("Not found.")

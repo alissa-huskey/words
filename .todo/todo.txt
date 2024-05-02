@@ -16,4 +16,3 @@
 2024-04-23 @datamuse fix `words words --ml "not recommended"` @bug
 2024-04-23 @feature add commands to launch websites @maybe
 2024-04-26 @feature remove plural / find base word
-2024-05-02 @dict remove send_request from DefinitionRequest

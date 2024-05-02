@@ -10,6 +10,8 @@ from words.dictionary_entry import DictionaryEntry
 from words.object import Object
 from words.response_status import ResponseStatus
 
+bp = breakpoint
+
 
 class DefinitionRequest(Object):
     """A request to dict.org via a DictionaryCient."""
@@ -23,15 +25,12 @@ class DefinitionRequest(Object):
 
     response: DefineWordResponse = None
 
-    def __init__(self, word=None, client=None, db="*", send_request=True, **kwargs):
-        """Initialize and make request unless send_request is False."""
+    def __init__(self, word=None, client=None, db="*", **kwargs):
+        """Initialize."""
         self.word = word
         self.db = db
         self.client = client
         super().__init__(**kwargs)
-
-        if word and send_request:
-            self.response = self.lookup()
 
     def lookup(self) -> DefineWordResponse:
         """Query dict.com for a definition."""
@@ -91,7 +90,7 @@ class DefinitionRequest(Object):
     @property
     def entries(self) -> list:
         """Return a list of DefinitionEntry objects from response."""
-        if not self.response.content:
+        if not (self.response and self.response.content):
             return []
         return [DictionaryEntry(word=self.word, **d, dbname=self.databases.get(d["db"]))
                 for d in self.response.content]
