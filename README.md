@@ -9,13 +9,14 @@ CLI tool to look up words using the [datamuse][datamuse] and [dict.org][dict] AP
 Usage
 -----
 
-```
+```text
 words -- Command line thesaurus, dictionary and more.
 
 COMMANDS:
   def   Get the definition of a word.
   dict  Dict.org API commands.
   dm    Datamuse word search.
+  rand  Print one or more random things.
 ```
 
 For more detailed usage `words [COMMAND] --help`.
@@ -36,6 +37,17 @@ appreciation
 $ words dm --rel-hom night
 knight
 nite
+```
+
+``` bash
+$ words rand name --girl --num 5
+╭─ Girl Names ─╮
+│ Vivien       │
+│ Ileen        │
+│ Ashton       │
+│ Kellie       │
+│ Fe           │
+╰──────────────╯
 ```
 
 ``` text
