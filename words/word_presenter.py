@@ -40,4 +40,4 @@ class WordPresenter(Object):
     @property
     def columns(self):
         """Return a formatted list of word columns values."""
-        return (fr"\[{self.parts}]", str(self))
+        return (fr"{self.parts}", str(self))

@@ -2,10 +2,13 @@
 
 from words.object import Object
 
+bp = breakpoint
+
 
 class Word(Object):
     """Word class."""
 
+    PARTS_OF_SPEECH = ('a', 'adj', 'adv', 'n', 'prop', 'u', 'v')
     word: str = None
 
     def __init__(self, **kwargs):
@@ -33,13 +36,15 @@ class Word(Object):
     @tags.setter
     def tags(self, value):
         """Set tags, parts and other "key:value" formatted values based on tags."""
-        self._tags = value
         for text in value:
-            if ":" not in text:
-                self.parts.append(text)
+            if text.lower() in self.PARTS_OF_SPEECH:
+                self._parts.append(text)
                 continue
-            k, v = text.split(":")
-            setattr(self, k, v)
+            elif ":" in text:
+                k, v = text.split(":")
+                setattr(self, k, v)
+            else:
+                self._tags.append(text)
 
     @property
     def parts(self):

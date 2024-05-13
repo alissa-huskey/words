@@ -7,3 +7,6 @@ x 2024-05-02 2024-04-23 @dict choose a list of default databases to search throu
 x 2024-05-02 2024-05-02 @dict remove send_request from DefinitionRequest
 x 2024-05-13 2024-05-12 @quality move needed files from peripherals to assets
 x 2024-05-13 2024-04-23 @dict remove moby-thesaurus from default list of dbs (when that exists)
+x 2024-05-13 2024-04-21 @datamuse figure out what "syn" means as a tag; (probably because --rel-syn WORD)
+x 2024-05-13 2024-04-23 @datamuse add moby-thesaurus results to syn
+x 2024-05-13 2024-04-21 @datamuse fix tag setting so that it looks at parts of speech list, not just add whatever's there

@@ -2,6 +2,8 @@ import pytest
 
 from words.word import Word
 
+bp = breakpoint
+
 
 def test_word():
     """
@@ -32,32 +34,20 @@ def test_word_str_no_word():
     assert str(word) == repr(word)
 
 
-def test_word_():
-    """
-    GIVEN: ...
-    WHEN: ...
-    THEN: ...
-    """
-    word = Word()
-    assert word
-
-
-@pytest.mark.parametrize(("tags", "parts", "skip"), (
-        (["n"], ["n"], False),
-        (["n", "a"], ["n", "a"], False),
-        (["n", "pron:K R IY1 M "], ["n"], False),
-        (['syn', 'v'], ["v"], "TODO"),
+@pytest.mark.parametrize(("tags", "parts"), (
+        (['syn', 'v'], ["v"]),
+        (["n", "a"], ["n", "a"]),
+        (["n"], ["n"]),
+        (["n", "pron:K R IY1 M "], ["n"]),
+        (['v'], ["v"]),
 ))
-def test_word_parts(tags, parts, skip):
+def test_word_parts(tags, parts):
     """
     GIVEN: a tags list containing some number of parts of speech
            {"score": 20051203, "tags": ["n", "pron:K R IY1 M "], "word": "cream"},
     WHEN: word.tags is assigned
     THEN: word.parts should return a list of those parts
     """
-
-    if skip:
-        pytest.skip(skip)
     word = Word(tags=tags)
     assert word.parts == parts
 

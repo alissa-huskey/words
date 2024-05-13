@@ -1,14 +1,11 @@
 2024-04-21 @datamuse change --ipa to --format=ipa/apc or --proun=ipa/apc @maybe
 2024-04-21 @datamuse ensure --ipa isn't passed if falsy
-2024-04-21 @datamuse fix tag setting so that it looks at parts of speech list, not just add whatever's there
-2024-04-21 @datamuse figure out what "syn" means as a tag; (probably because --rel-syn WORD)
 2024-04-22 @datamuse fix no results bug 'words --ml etcetra' @bug
 2024-04-23 @dict cache dictionary definitions
 2024-04-23 @dict cache list of databases
 2024-04-23 @define add --host option @maybe
 2024-04-23 @define add --num optoin @maybe
 2024-04-23 @define group entries by dictionary in DefinitionRequest and CLI output
-2024-04-23 @datamuse add moby-thesaurus results to syn
 2024-04-23 @datamuse add --and/--or flags (to be manually applied) @maybe
 2024-04-23 @feature support wordnik API @maybe
 2024-04-23 @datamuse fix `words words --ml "not recommended"` @bug
@@ -33,3 +30,8 @@
 2024-05-13 @rand use /usr/share/dict/words for random word @maybe @feature
 2024-05-13 @define add back --db option
 2024-05-13 @dict possibly add define subcommand
+2024-05-13 @define split off to its own file @maybe
+2024-05-13 @datamuse add --topics --lc and --rc options
+2024-05-13 @syn add a custom DefinitionEntry for MobyThesaurusEntry
+2024-05-13 @syn limit the number of synonyms in some sane way
+2024-05-13 @syn look up parts of speech for moby words somehow @maybe

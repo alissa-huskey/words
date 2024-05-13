@@ -8,6 +8,7 @@ from words.cli import err
 from words.cli.dict_cli import define, dict_api
 from words.cli.dm_cli import dm_command
 from words.cli.rand_cli import rand
+from words.cli.syn_cli import syn_cmd
 from words.compat import BdbQuit
 
 rich_tracebacks(show_locals=True, suppress=[click])
@@ -24,6 +25,7 @@ run.add_command(rand)
 run.add_command(define)
 run.add_command(dict_api)
 run.add_command(dm_command)
+run.add_command(syn_cmd)
 
 
 def main():
