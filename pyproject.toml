@@ -4,10 +4,7 @@ version = "0.2.0"
 description = "Simple wrapper for datamuse API."
 authors = ["Alissa Huskey <alissa.huskey@gmail.com>"]
 readme = "README.md"
-include = [
-  "peripherals/*-names.txt",
-  "peripherals/colors/simple-colors.txt",
-]
+include = ["assets/*"]
 
 [tool.poetry.dependencies]
 python = ">=3.10, <4.0"

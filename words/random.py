@@ -9,7 +9,7 @@ from words import WordsError
 class Random():
     """Get a random line from a file."""
 
-    ROOT = Path(__file__).parent.parent / "peripherals"
+    ROOT = Path(__file__).parent.parent / "assets" / "names"
 
     def __init__(self, file=None, max=0):
         """Create an object."""

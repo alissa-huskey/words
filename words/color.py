@@ -53,7 +53,7 @@ class Color(Object):
 class Colors(dict):
     """Mapping of color names -> Color objects."""
 
-    DATADIR = ROOT_DIR / "peripherals" / "colors"
+    DATADIR = ROOT_DIR / "assets" / "colors"
 
     data = {}
     _maxlen = 0

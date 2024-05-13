@@ -5,3 +5,4 @@ x 2024-05-02 2024-04-23 define: add a --list-db option (or similar)
 x 2024-05-02 2024-04-23 define: add name of dictionary to DictionaryEntry and CLI output
 x 2024-05-02 2024-04-23 @dict choose a list of default databases to search through
 x 2024-05-02 2024-05-02 @dict remove send_request from DefinitionRequest
+x 2024-05-13 2024-05-12 @quality move needed files from peripherals to assets
