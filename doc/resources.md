@@ -1,8 +1,8 @@
 Resources
 =========
 
-APIs
-----
+Data Generating APIs
+--------------------
 
 ### ASDFast
 
@@ -59,8 +59,16 @@ curl "https://dinoipsum.com/api/?format=json&words=10&paragraphs=1"
 ```bash
 ```
 
-Sources
--------
+Word Lists
+----------
+
+* [SCOWL (Spell Checker Oriented Word Lists)](http://wordlist.aspell.net/) 
+* [12Dicts](http://wordlist.aspell.net/12dicts/): a collection of dictionaries focused on common words
+* [Automatically Generated Inflection Database (AGID)](http://wordlist.aspell.net/agid-readme/)
+* [dariusk/corpora](https://github.com/dariusk/corpora): json files containing lists of data like animals, colors, foods, mythology, sports, etc
+
+Datamuse Sources
+----------------
 
 ### WordNet
 

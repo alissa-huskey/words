@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+#
+# script to filter unwanted words out of the SCOWL word list generated here:
+#
+#   http://app.aspell.net/create
+#
+# specifically:
+#
+#   http://app.aspell.net/create?max_size=10&spelling=US&max_variant=0&diacritic=strip&download=wordlist&encoding=utf-8&format=inline
+#
+
+rootdir="$(cd "${0%/*}/.." && pwd -P)"
+
+define() {
+   IFS=$'\n' read -r -d '' ${1} || true
+}
+
+abort() {
+  printf '\033[31mError\033[0m %s\n' "${*}" >&2
+  exit 1
+}
+
+main() {
+  local script datadir infile outfile
+
+  datadir="${rootdir}/assets/wordlists"
+  infile="${datadir}/scowl-dictionary.txt"
+  outfile="${datadir}/dictionary.txt"
+
+  [[ -d "${datadir}" ]] || abort "No such directory: ${datadir}"
+  [[ -f "${infile}" ]] || abort "No such file: ${infile}"
+  command -v sed > /dev/null || abort "You don't appear to have sed."
+
+define script <<'EOF'
+  1,/^---/d       ; # remove everything up to the "---" line that indictes the header end
+  /'/d            ; # remove all words that include an apostrophe
+  /[A-Z]/d        ; # remove all words that include capital letters
+  /^[a-z]{1,2}$/d ; # remove all words that are 1-2 characters long
+EOF
+
+  sed -Ee "${script}" "${infile}" > "${outfile}"
+}
+
+main
