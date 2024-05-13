@@ -9,6 +9,8 @@ from words import WordsError
 class Random():
     """Get a random line from a file."""
 
+    ROOT = Path(__file__).parent.parent / "peripherals"
+
     def __init__(self, file=None, max=0):
         """Create an object."""
         self.file = file and Path(file)
@@ -32,8 +34,6 @@ class Random():
 
 class RandomName(Random):
     """Get a random name."""
-
-    ROOT = Path(__file__).parent.parent / "peripherals"
 
     def __init__(self, name, **kwargs):
         """Create the object."""

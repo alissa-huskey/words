@@ -16,3 +16,10 @@
 2024-04-23 @datamuse fix `words words --ml "not recommended"` @bug
 2024-04-23 @feature add commands to launch websites @maybe
 2024-04-26 @feature remove plural / find base word
+2024-05-12 @rand color: add --source option to include other color files
+2024-05-12 @quality move needed files from peripherals to assets
+2024-05-12 @rand word: add @feature
+2024-05-12 @rand password: add @feature
+2024-05-12 @rand sentence: add @feature
+2024-05-12 @rand lorem ipsum: (or something) add @feature
+2024-05-12 @rand animal: add @feature

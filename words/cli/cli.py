@@ -8,6 +8,7 @@ from rich.table import Table
 from rich.traceback import install as rich_tracebacks
 
 from words import WordsError
+from words.color import Colors
 from words.compat import BdbQuit
 from words.datamuse_api import DatamuseAPI
 from words.datamuse_options import DatamuseOptions
@@ -203,6 +204,32 @@ def name(selection, full, num, limit):
         panels.append(panel)
 
     rprint(Columns(panels))
+
+
+@rand.command()
+@click.option(
+    "-s", "--simple", "output_format",
+    flag_value="simple",
+    default=True,
+    show_default="true",
+    help="Print a simple list of color names.",
+)
+@click.option(
+    "-v", "--verbose", "output_format",
+    flag_value="verbose",
+    help="Display color swatches and all details.",
+)
+@click.option(
+    "-n", "--num",
+    type=int,
+    default=1,
+    help="Number of colors to print.",
+)
+def color(output_format, num):
+    """Print one or more random colors."""
+    clist = Colors(output_format, num=num)
+    obj = clist.render()
+    rprint(obj)
 
 
 def main():
