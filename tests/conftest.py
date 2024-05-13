@@ -10,7 +10,7 @@ from words.definition_request import DefinitionRequest
 
 @pytest.fixture
 def dict_request(dict_client, dict_databases):
-    """."""
+    """Return a function that will provide a DefinitionRequest object."""
     def wrapped(word=None, response_file=None, **kwargs):
         """Return a DefinitionRequest object.
 
@@ -46,7 +46,7 @@ def dict_databases():
 
 @pytest.fixture
 def dict_client():
-    """."""
+    """Return a function to make a DictionaryClient object."""
     def wrapped(response_file):
         """Return a DictionaryClient object.
 

@@ -1,5 +1,4 @@
 2024-04-21 @datamuse change --ipa to --format=ipa/apc or --proun=ipa/apc @maybe
-
 2024-04-21 @datamuse ensure --ipa isn't passed if falsy
 2024-04-21 @datamuse fix tag setting so that it looks at parts of speech list, not just add whatever's there
 2024-04-21 @datamuse figure out what "syn" means as a tag; (probably because --rel-syn WORD)
@@ -9,7 +8,6 @@
 2024-04-23 @define add --host option @maybe
 2024-04-23 @define add --num optoin @maybe
 2024-04-23 @define group entries by dictionary in DefinitionRequest and CLI output
-2024-04-23 @dict remove moby-thesaurus from default list of dbs (when that exists)
 2024-04-23 @datamuse add moby-thesaurus results to syn
 2024-04-23 @datamuse add --and/--or flags (to be manually applied) @maybe
 2024-04-23 @feature support wordnik API @maybe
@@ -30,3 +28,8 @@
 2024-05-13 @cli make some flags global like --json, --plain, --fancy
 2024-05-13 @quality refactor to move renderers into one place (ie WordPresenter, Color.render)
 2024-05-13 @rand name: validate --num should be positive
+2024-05-13 @def add --verb/--noun/etc flags to filter defs
+2024-05-13 @dict add translate command (dict -d fd-eng-spa "how are you?") @feature
+2024-05-13 @rand use /usr/share/dict/words for random word @maybe @feature
+2024-05-13 @define add back --db option
+2024-05-13 @dict possibly add define subcommand

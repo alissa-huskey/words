@@ -74,6 +74,20 @@ def test_definition_request_databases_default(dict_request):
     assert "fd-spa-ast" not in dbs
 
 
+def test_definition_request_init_default_dbs(dict_request):
+    """
+    WHEN: DefinitionRequest is created with default=True
+    THEN: request.db should be "*"
+    AND: request.use_defaults should be true
+    AND: the request.entries should be filtered to only those from the default dbs
+    """
+    request = dict_request("moon", "moon.def", default=True)
+
+    assert request.db == "*"
+    assert request.use_defaults
+    assert len(request.entries) == 4
+
+
 def test_definition_request_word_no_send():
     """
     WHEN: DefinitionRequest is created with a word

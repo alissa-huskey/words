@@ -25,11 +25,12 @@ class DefinitionRequest(Object):
 
     response: DefineWordResponse = None
 
-    def __init__(self, word=None, client=None, db="*", **kwargs):
+    def __init__(self, word=None, client=None, db="*", default=False, **kwargs):
         """Initialize."""
         self.word = word
         self.db = db
         self.client = client
+        self.use_defaults = default
         super().__init__(**kwargs)
 
     def lookup(self) -> DefineWordResponse:
@@ -92,8 +93,12 @@ class DefinitionRequest(Object):
         """Return a list of DefinitionEntry objects from response."""
         if not (self.response and self.response.content):
             return []
-        return [DictionaryEntry(word=self.word, **d, dbname=self.databases.get(d["db"]))
-                for d in self.response.content]
+        entries = [
+            DictionaryEntry(word=self.word, **d, dbname=self.databases.get(d["db"]))
+            for d in self.response.content
+            if not self.use_defaults or d["db"] in self.DEFAULT_DBS
+        ]
+        return entries
 
     @property
     def status(self) -> ResponseStatus:

@@ -49,18 +49,21 @@ def strategies():
 @click.command("def")
 @click.argument("word")
 @click.option(
-    "--db",
-    metavar="DBNAME",
-    default="*",
-    help="Databases of common English word definitions."
+    "-n", "--num",
+    type=int,
+    default=1,
+    help="Number of definitions to print.",
 )
-def define(word: str, db: None):
+def define(word: str, num: int):
     """Get the definition of a word."""
-    rsp = DefinitionRequest(word, db=db)
+    rsp = DefinitionRequest(word, default=True)
     rsp.lookup()
 
     if not rsp.count:
         rprint("Not found.")
-    for e in rsp.entries:
+    for i, e in enumerate(rsp.entries):
+        bp()
         panel = Panel(e.definition, title=e.dbname)
         rprint(panel)
+        if i >= num:
+            break
