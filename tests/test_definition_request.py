@@ -2,75 +2,15 @@ from random import choice
 from socket import socket
 
 import pytest
-from dictionary_client import DictionaryClient
-from dictionary_client.response import DefineWordResponse
 
-from tests import Stub, read_file
-from tests.mock_socket import MockSocket
 from words import WordsError
 from words.definition_request import DefinitionRequest
 
+from . import Stub, fake_response
+from .mock_socket import MockSocket
+
 DBS = ("gcide", "wn", "moby-thesaurus", "elements", "english", "all", "easton")
 bp = breakpoint
-
-
-@pytest.fixture
-def make_client():
-    def wrapped(response_file):
-        """Return a DictionaryClient object.
-
-        The client will fake a connection with a a MockSocket which will respond
-        with the contents of response_file.
-        """
-        MockSocket.set_responses(response_file)
-        client = DictionaryClient(sock_class=MockSocket)
-        return client
-    return wrapped
-
-
-@pytest.fixture
-def make_request(make_client, databases):
-    def wrapped(word=None, response_file=None, **kwargs):
-        """Return a DefinitionRequest object.
-
-        The client will fake a connection with a a MockSocket which will respond
-        with the contents of response_file.
-        """
-        params = []
-        word and params.append(word)
-        if response_file:
-            params.append(make_client(response_file))
-
-        response = fake_response(response_file)
-        request = DefinitionRequest(*params, **kwargs)
-        request.databases = databases
-        request.response = response
-        return request
-    return wrapped
-
-
-@pytest.fixture
-def databases():
-    """Return a list of databases."""
-    databases = {
-        'foldoc': 'The Free On-line Dictionary of Computing (30 December 2018)',
-        'gcide': 'The Collaborative International Dictionary of English v.0.48',
-        'wn': 'WordNet (r) 3.0 (2006)',
-        'english': 'English Monolingual Dictionaries',
-        'trans': 'Translating Dictionaries',
-        'all': 'All Dictionaries (English-Only and Translating)',
-    }
-    return databases
-
-
-def fake_response(response_file: str):
-    """Return a DefineWordResponse object.
-
-    To parse the contents of the response_file.
-    """
-    contents = read_file(response_file)
-    response = DefineWordResponse(contents)
-    return response
 
 
 def test_definition_request():
@@ -91,19 +31,19 @@ def test_definition_no_connection(monkeypatch):
         client.dbs()
 
 
-def test_definition_request_databases(make_request, databases):
+def test_definition_request_databases(dict_request, dict_databases):
     """
     GIVEN: a DefinitionRequest object
     WHEN: .databases() is called
     THEN: it should return a dictionary of databases
     """
-    request = make_request(response_file="db.show")
+    request = dict_request(response_file="db.show")
     dbs = request.dbs()
 
     assert dbs
 
 
-def test_definition_request_databases_filter(make_request):
+def test_definition_request_databases_filter(dict_request):
     """
     GIVEN: a DefinitionRequest object
     WHEN: .databases() is called with a search argument
@@ -113,7 +53,7 @@ def test_definition_request_databases_filter(make_request):
     AND: the results should not include any databases with names that do not
          contain the search phrase
     """
-    request = make_request(response_file="db.show")
+    request = dict_request(response_file="db.show")
     dbs = request.dbs("free")
 
     assert dbs
@@ -121,13 +61,13 @@ def test_definition_request_databases_filter(make_request):
     assert "foldoc" in dbs
 
 
-def test_definition_request_databases_default(make_request):
+def test_definition_request_databases_default(dict_request):
     """
     GIVEN: a DefinitionRequest object
     WHEN: .databases() is called with default=True
     THEN: it should return a truncated dictionary of databases
     """
-    request = make_request(response_file="db.show")
+    request = dict_request(response_file="db.show")
     dbs = request.dbs(default=True)
 
     assert dbs
@@ -147,7 +87,7 @@ def test_definition_request_word_no_send():
     assert not request.response
 
 
-def test_definition_request_lookup(make_request):
+def test_definition_request_lookup(dict_request):
     """
     GIVEN: a DefinitionRequest object with a word
     WHEN: when request.lookup() is called
@@ -156,14 +96,14 @@ def test_definition_request_lookup(make_request):
     """
 
     response = fake_response("moon.def")
-    request = make_request("moon", "moon.def")
+    request = dict_request("moon", "moon.def")
     actual_response = request.lookup()
 
     assert actual_response.content
     assert actual_response.content == response.content
 
 
-def test_definition_request_lookup_database(make_request):
+def test_definition_request_lookup_database(dict_request):
     """
     GIVEN: a DefinitionRequest object with a word
     WHEN: when request.lookup() is called with a database
@@ -171,7 +111,7 @@ def test_definition_request_lookup_database(make_request):
     """
 
     response = fake_response("moon.def")
-    request = make_request("moon", "moon.def", db="*")
+    request = dict_request("moon", "moon.def", db="*")
     actual_response = request.lookup()
 
     assert actual_response.content
@@ -181,13 +121,13 @@ def test_definition_request_lookup_database(make_request):
 @pytest.mark.parametrize(("word", "response_file", "count"), [
     ("moon", "moon.def", 6), ("xxxxx", "xxxxx.def", 0)
 ])
-def test_definition_request_count(word, response_file, count, make_request):
+def test_definition_request_count(word, response_file, count, dict_request):
     """
     GIVEN: a DefinitionRequest object with a response
     WHEN: request.count is accessed
     THEN: the correct number of entires should be returned
     """
-    request = make_request(word, response_file)
+    request = dict_request(word, response_file)
 
     assert request.count == count
 
@@ -203,12 +143,12 @@ def test_definition_request_no_client():
     assert isinstance(request.client.sock, socket)
 
 
-def test_definition_request_with_client(make_request):
+def test_definition_request_with_client(dict_request):
     """
     WHEN: a DefinitionRequest object is created with a client
     THEN: that client should be assigned
     """
-    request = make_request("moon", "moon.def")
+    request = dict_request("moon", "moon.def")
 
     assert request.client
     assert isinstance(request.client.sock, MockSocket)
@@ -227,26 +167,26 @@ def test_definition_request_definitions_no_entries():
     assert len(request.definitions) == 0
 
 
-def test_definition_request_definitions(make_request):
+def test_definition_request_definitions(dict_request):
     """
     GIVEN: a DefinitionRequest object with a response with results
     WHEN: request.definitions is accessed
     THEN: the definitions should be returned
     """
-    request = make_request("moon", "moon.def")
+    request = dict_request("moon", "moon.def")
     defn = choice(request.definitions or [None])
 
     assert len(request.definitions) == 6
     assert "Moon" in defn
 
 
-def test_definition_request_entries(make_request):
+def test_definition_request_entries(dict_request):
     """
     GIVEN: a DefinitionRequest object with a response with results
     WHEN: request.entries is accessed
     THEN: the entires should be returned
     """
-    request = make_request("moon", "moon.def")
+    request = dict_request("moon", "moon.def")
     entry = choice(request.entries or [None])
 
     assert len(request.entries) == 6
@@ -254,13 +194,13 @@ def test_definition_request_entries(make_request):
     assert entry.db in DBS
 
 
-def test_definition_request_entries_empty(make_request):
+def test_definition_request_entries_empty(dict_request):
     """
     GIVEN: a DefinitionRequest object with a response with no results
     WHEN: request.entries is accessed
     THEN: an empty list should be returned
     """
-    request = make_request("xxxxx", "xxxxx.def")
+    request = dict_request("xxxxx", "xxxxx.def")
 
     assert len(request.entries) == 0
 

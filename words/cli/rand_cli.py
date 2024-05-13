@@ -32,7 +32,7 @@ def rand():
 
 @rand.command()
 @click.option(
-    "-b", "--male", "selection",
+    "-b", "--boy", "selection",
     multiple=True,
     flag_value="boy",
     is_eager=True,

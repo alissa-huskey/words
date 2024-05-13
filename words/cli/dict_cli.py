@@ -48,7 +48,12 @@ def strategies():
 
 @click.command("def")
 @click.argument("word")
-@click.option("--db", default="*", help="Databases of common English word definitions.")
+@click.option(
+    "--db",
+    metavar="DBNAME",
+    default="*",
+    help="Databases of common English word definitions."
+)
 def define(word: str, db: None):
     """Get the definition of a word."""
     rsp = DefinitionRequest(word, db=db)

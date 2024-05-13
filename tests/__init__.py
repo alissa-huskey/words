@@ -2,6 +2,8 @@
 
 from pathlib import Path
 
+from dictionary_client.response import DefineWordResponse
+
 DATADIR = Path(__file__).parent / "data"
 
 
@@ -37,3 +39,13 @@ def read_file(path, mode="rb"):
         contents = fp.read()
 
     return contents
+
+
+def fake_response(response_file: str):
+    """Return a DefineWordResponse object.
+
+    To parse the contents of the response_file.
+    """
+    contents = read_file(response_file)
+    response = DefineWordResponse(contents)
+    return response
