@@ -1,10 +1,10 @@
 [tool.poetry]
 name = "words"
-version = "0.2.0"
+version = "0.3.0"
 description = "Simple wrapper for datamuse API."
 authors = ["Alissa Huskey <alissa.huskey@gmail.com>"]
 readme = "README.md"
-include = ["assets/*"]
+include = ["assets/*/*"]
 
 [tool.poetry.dependencies]
 python = ">=3.10, <4.0"
