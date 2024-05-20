@@ -2,6 +2,7 @@
 
 import click
 from rich import print as rprint
+from rich.panel import Panel
 from rich.table import Table
 from rich.traceback import install as rich_tracebacks
 
@@ -43,3 +44,41 @@ def strategies_cmd():
     for db in strategies:
         table.add_row(*db)
     rprint(table)
+
+
+@dict_group.command("define")
+@click.argument("word")
+@click.option(
+    "-n", "--num",
+    type=int,
+    default=None,
+    show_default="all",
+    help="Number of definitions to print.",
+)
+@click.option(
+    "-d", "--db",
+    default="*",
+    metavar="DB",
+    show_default="all",
+    help="Database to search.",
+)
+def define_cmd(word: str, num: int, db: str):
+    """Get the definition of a word."""
+    args = []
+    if db == "defaults":
+        args = {"default": True}
+    elif db:
+        args = {"db": db}
+    else:
+        args = {}
+
+    rsp = DefinitionRequest(word, **args)
+    rsp.lookup()
+
+    if not rsp.count:
+        rprint("Not found.")
+    for i, e in enumerate(rsp.entries, 1):
+        panel = Panel(e.definition, title=e.dbname)
+        rprint(panel)
+        if num and i >= num:
+            break

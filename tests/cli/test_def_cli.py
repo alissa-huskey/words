@@ -10,6 +10,8 @@ def test_words_def_help():
     """
     runner = CliRunner()
     result = runner.invoke(def_cmd, ["--help"])
-    assert result.exit_code == 0
 
+    assert result.exit_code == 0
     assert "def [OPTIONS] WORD" in result.output
+    for opt in ("--num INTEGER"):
+        assert opt in result.output

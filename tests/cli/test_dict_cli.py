@@ -1,6 +1,6 @@
 from click.testing import CliRunner
 
-from words.cli.dict_cli import dbs_cmd, dict_group, strategies_cmd
+from words.cli.dict_cli import dbs_cmd, define_cmd, dict_group, strategies_cmd
 
 
 def test_words_dict_help():
@@ -37,3 +37,17 @@ def test_words_dict_strategies_help():
     runner = CliRunner()
     result = runner.invoke(strategies_cmd, ["--help"])
     assert result.exit_code == 0
+
+
+def test_words_define_help():
+    """
+    WHEN: words define --help
+    THEN: all arguments should be listed
+    """
+    runner = CliRunner()
+    result = runner.invoke(define_cmd, ["--help"])
+
+    assert result.exit_code == 0
+    assert "define [OPTIONS] WORD" in result.output
+    for opt in ("--db DB", "--num INTEGER"):
+        assert opt in result.output

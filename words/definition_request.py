@@ -93,11 +93,17 @@ class DefinitionRequest(Object):
         """Return a list of DefinitionEntry objects from response."""
         if not (self.response and self.response.content):
             return []
+
+        pred = lambda x: True
+        if self.use_defaults:
+            pred = lambda x: x in self.DEFAULT_DBS
+
         entries = [
             DictionaryEntry(word=self.word, **d, dbname=self.databases.get(d["db"]))
             for d in self.response.content
-            if not self.use_defaults or d["db"] in self.DEFAULT_DBS
+            if pred(d["db"])
         ]
+
         return entries
 
     @property
