@@ -5,7 +5,8 @@ from rich.traceback import install as rich_tracebacks
 
 from words import WordsError
 from words.cli import err
-from words.cli.dict_cli import def_cmd, dict_group
+from words.cli.def_cli import def_cmd
+from words.cli.dict_cli import dict_group
 from words.cli.dm_cli import dm_cmd
 from words.cli.rand_cli import rand_group
 from words.cli.syn_cli import syn_cmd

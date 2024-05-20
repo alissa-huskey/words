@@ -1,8 +1,7 @@
-"""CLI for words dict and def commands."""
+"""CLI for words dict group."""
 
 import click
 from rich import print as rprint
-from rich.panel import Panel
 from rich.table import Table
 from rich.traceback import install as rich_tracebacks
 
@@ -44,26 +43,3 @@ def strategies_cmd():
     for db in strategies:
         table.add_row(*db)
     rprint(table)
-
-
-@click.command("def")
-@click.argument("word")
-@click.option(
-    "-n", "--num",
-    type=int,
-    default=1,
-    help="Number of definitions to print.",
-)
-def def_cmd(word: str, num: int):
-    """Get the definition of a word."""
-    rsp = DefinitionRequest(word, default=True)
-    rsp.lookup()
-
-    if not rsp.count:
-        rprint("Not found.")
-    for i, e in enumerate(rsp.entries):
-        bp()
-        panel = Panel(e.definition, title=e.dbname)
-        rprint(panel)
-        if i >= num:
-            break

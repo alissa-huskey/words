@@ -1,6 +1,6 @@
 from click.testing import CliRunner
 
-from words.cli.dict_cli import def_cmd
+from words.cli.def_cli import def_cmd
 
 
 def test_words_def_help():

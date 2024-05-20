@@ -11,3 +11,4 @@ x 2024-05-13 2024-04-21 @datamuse figure out what "syn" means as a tag; (probabl
 x 2024-05-13 2024-04-23 @datamuse add moby-thesaurus results to syn
 x 2024-05-13 2024-04-21 @datamuse fix tag setting so that it looks at parts of speech list, not just add whatever's there
 x 2024-05-19 2024-05-13 @quality CLI: rename all methods x_group or x_command for consistency @maybe
+x 2024-05-19 2024-05-13 @define split off to its own file @maybe

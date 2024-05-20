@@ -29,7 +29,6 @@
 2024-05-13 @rand use /usr/share/dict/words for random word @maybe @feature
 2024-05-13 @define add back --db option
 2024-05-13 @dict possibly add define subcommand
-2024-05-13 @define split off to its own file @maybe
 2024-05-13 @datamuse add --topics --lc and --rc options
 2024-05-13 @syn add a custom DefinitionEntry for MobyThesaurusEntry
 2024-05-13 @syn limit the number of synonyms in some sane way
