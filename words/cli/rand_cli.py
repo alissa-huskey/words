@@ -5,8 +5,9 @@ from rich import print as rprint
 from rich.columns import Columns
 from rich.panel import Panel
 
+from words.cli.param_types import RangeType
 from words.color import Colors
-from words.random import RandomName
+from words.random import RandomName, RandomWord
 
 bp = breakpoint
 
@@ -123,3 +124,23 @@ def color(output_format, num):
     clist = Colors(output_format, num=num)
     obj = clist.render()
     rprint(obj)
+
+
+@rand.command("word")
+@click.option(
+    "-n", "--num",
+    type=int,
+    default=1,
+    help="Number of words to print.",
+)
+@click.option(
+    "-l", "--len", "length",
+    type=RangeType(),
+    help="Constrain the length of words.",
+)
+def word_cmd(num: int, length):
+    """Print one or more random words."""
+    f = RandomWord(length_range=length)
+    wordlist = f.get(num)
+    panel = Panel("\n".join(wordlist), title="words", expand=False)
+    rprint(panel)

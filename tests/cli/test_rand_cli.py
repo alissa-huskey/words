@@ -3,7 +3,7 @@ from re import compile as re_compile
 import pytest
 from click.testing import CliRunner
 
-from words.cli.rand_cli import color, name, rand
+from words.cli.rand_cli import color, name, rand, word_cmd
 
 from .. import Stub
 
@@ -115,7 +115,7 @@ def test_words_rand_name_help():
         exclude=("Girl Names",),
     ),
 ])
-def test_words_rand_name(params):
+def test_words_rand_name_gender(params):
     """
     WHEN: words rand name [OPTIONS]
     THEN: the results should be as expected
@@ -200,7 +200,7 @@ def test_words_rand_name_errors(params):
         desc="Colors panels 6 lines high, title is name, and include the hex code.",
     ),
 ])
-def test_words_rand_name(params):
+def test_words_rand_name_verbosity(params):
     """
     WHEN: words rand color [OPTIONS]
     THEN: the results should be as expected
@@ -223,3 +223,66 @@ def test_words_rand_name(params):
 
     for pattern, should_match in params.patterns.items():
         assert bool(pattern.search(result.output)) == should_match
+
+
+def test_words_rand_word_help():
+    """
+    WHEN: words rand word
+    THEN: it should work
+    AND: all of the options should be present
+    """
+    runner = CliRunner()
+    result = runner.invoke(word_cmd, ["--help"])
+
+    assert result.exit_code == 0
+
+    for opt in ("-n, --num INTEGER", "-l, --len [MIN]-[MAX]"):
+        assert f"\n  {opt} " in result.output
+
+
+def test_words_rand_word_num():
+    """
+    WHEN: words rand word --num INT
+    THEN: it should work
+    AND: INT random number should be printed
+    """
+    runner = CliRunner()
+    result = runner.invoke(word_cmd, ["--num", 10])
+
+    assert result.exit_code == 0
+
+    assert len(result.output.splitlines()) == 12
+
+
+@pytest.mark.parametrize(
+    ["input_length", "pred", "input_msg", "output_msg"], [
+        ["5", lambda x: len(x) <= 5, "MAX_INT", "less than or equal to MAX_INT"],
+        ["-10", lambda x: len(x) <= 10, "-MAX_INT", "less than or equal to MAX_INT"],
+        ["10-", lambda x: len(x) >= 10, "MIN_INT-", "greater than or equal to MIN_INT"],
+        [
+            "5-10",
+            lambda x: len(x) >= 5 and len(x) <= 10,
+            "MIN_INT-MAX_INT",
+            "between MIN_INT and MAX_INT inclusive",
+        ],
+    ]
+)
+def test_words_rand_word_length(
+    input_length, pred, input_msg, output_msg
+):
+    """
+    WHEN: words rand word --len RANGE
+    THEN: it should work
+    AND: the length of all words should be constrained to the values within RANGE
+    """
+    runner = CliRunner()
+    result = runner.invoke(word_cmd, ["--len", input_length])
+
+    lines = result.output.splitlines()[1:-1]
+    words = (line[2:-2].strip() for line in lines)
+
+    assert result.exit_code == 0
+    assert all(map(pred, words)), (
+        f"When input range is {input_msg}, "
+        f"the length of all words should be {output_msg}"
+    )
