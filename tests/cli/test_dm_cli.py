@@ -3,7 +3,7 @@ from click.testing import CliRunner
 from words.cli.dm_cli import dm_cmd
 
 
-def test_words_dm_help():
+def test_cli_dm_help():
     """
     WHEN: words dm --help
     THEN: all options should be listed

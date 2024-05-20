@@ -3,7 +3,7 @@ from click.testing import CliRunner
 from words.cli.cli import run
 
 
-def test_words_help():
+def test_cli_words_help():
     """
     WHEN: words --help
     THEN: all commands should be listed

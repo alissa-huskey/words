@@ -4,7 +4,7 @@ from click.testing import CliRunner
 from words.cli.syn_cli import syn_cmd
 
 
-def test_words_syn_help():
+def test_cli_syn_help():
     """
     WHEN: words syn --help
     THEN: it should work

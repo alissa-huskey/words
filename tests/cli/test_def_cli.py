@@ -3,7 +3,7 @@ from click.testing import CliRunner
 from words.cli.def_cli import def_cmd
 
 
-def test_words_def_help():
+def test_cli_def_help():
     """
     WHEN: words def --help
     THEN: all arguments should be listed

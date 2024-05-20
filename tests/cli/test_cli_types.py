@@ -12,7 +12,7 @@ from words.cli.param_types import RangeType
     (None, None, None, None),
     ((0, 10), (0, 10), "tuple(INT, INT)", "MIN_INT,MAX_INT"),
 ])
-def test_cli_type_range(input_value, expected, input_msg, output_msg):
+def test_cli_types_range(input_value, expected, input_msg, output_msg):
     """
     GIVEN: a RangeType
     WHEN: .convert() is called with a valid input value
@@ -33,7 +33,10 @@ def test_cli_type_range(input_value, expected, input_msg, output_msg):
     [""], ["xxx"], ["xxx-1"], ["1-xxx"], ["1-2-3"], ["10-5"],
     [(1, 2, 3)], [("1", 2)], [{}], [10],
 ])
-def test_cli_type_range_invalid(input_value):
+def test_cli_types_range_invalid(input_value):
+
+
+
     """
     GIVEN: a RangeType
     WHEN: .convert() is called with an invalid input value

@@ -13,7 +13,7 @@ bp = breakpoint
 
 
 def _(**kwargs):
-    """Datamuse word search."""
+    """Datamuse API."""
     has_required = filter(None, map(kwargs.get, DatamuseOptions.cli_required))
     if not tuple(has_required):
         err("No search option provided.")

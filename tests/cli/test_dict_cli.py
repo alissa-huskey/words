@@ -3,7 +3,7 @@ from click.testing import CliRunner
 from words.cli.dict_cli import dbs_cmd, define_cmd, dict_group, strategies_cmd
 
 
-def test_words_dict_help():
+def test_cli_dict_help():
     """
     WHEN: words dict --help
     THEN: all commands should be listed
@@ -16,7 +16,7 @@ def test_words_dict_help():
         assert f"\n  {cmd} " in result.output
 
 
-def test_words_dict_dbs_help():
+def test_cli_dict_dbs_help():
     """
     WHEN: words dict dbs --help
     THEN: all options should be listed
@@ -29,7 +29,7 @@ def test_words_dict_dbs_help():
         assert f"\n  {opt} " in result.output
 
 
-def test_words_dict_strategies_help():
+def test_cli_dict_strategies_help():
     """
     WHEN: words dict strategies --help
     THEN: it should work
@@ -39,7 +39,7 @@ def test_words_dict_strategies_help():
     assert result.exit_code == 0
 
 
-def test_words_define_help():
+def test_cli_dict_define_help():
     """
     WHEN: words define --help
     THEN: all arguments should be listed

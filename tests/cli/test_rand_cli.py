@@ -24,7 +24,7 @@ class Params(Stub):
     message: str = None
 
 
-def test_words_rand_help():
+def test_cli_rand_help():
     """
     WHEN: words rand --help
     THEN: all commands should be listed
@@ -37,7 +37,7 @@ def test_words_rand_help():
         assert f"\n  {cmd} " in result.output
 
 
-def test_words_rand_color_help():
+def test_cli_rand_color_help():
     """
     WHEN: words rand --help
     THEN: all options should be listed
@@ -56,7 +56,7 @@ def test_words_rand_color_help():
         assert f"\n  {opt} " in result.output
 
 
-def test_words_rand_name_help():
+def test_cli_rand_name_help():
     """
     WHEN: words rand --help
     THEN: all commands should be listed
@@ -115,7 +115,7 @@ def test_words_rand_name_help():
         exclude=("Girl Names",),
     ),
 ])
-def test_words_rand_name_gender(params):
+def test_cli_rand_name_gender(params):
     """
     WHEN: words rand name [OPTIONS]
     THEN: the results should be as expected
@@ -157,7 +157,7 @@ def test_words_rand_name_gender(params):
         skip="TODO"
     ),
 ])
-def test_words_rand_name_errors(params):
+def test_cli_rand_name_errors(params):
     """
     WHEN: invalid options are passed to words rand name
     THEN: the the program should exit with a non-zero exit code
@@ -200,7 +200,7 @@ def test_words_rand_name_errors(params):
         desc="Colors panels 6 lines high, title is name, and include the hex code.",
     ),
 ])
-def test_words_rand_name_verbosity(params):
+def test_cli_rand_name_verbosity(params):
     """
     WHEN: words rand color [OPTIONS]
     THEN: the results should be as expected
@@ -225,7 +225,7 @@ def test_words_rand_name_verbosity(params):
         assert bool(pattern.search(result.output)) == should_match
 
 
-def test_words_rand_word_help():
+def test_cli_rand_word_help():
     """
     WHEN: words rand word
     THEN: it should work
@@ -240,7 +240,7 @@ def test_words_rand_word_help():
         assert f"\n  {opt} " in result.output
 
 
-def test_words_rand_word_num():
+def test_cli_rand_word_num():
     """
     WHEN: words rand word --num INT
     THEN: it should work
@@ -267,7 +267,7 @@ def test_words_rand_word_num():
         ],
     ]
 )
-def test_words_rand_word_length(
+def test_cli_rand_word_length(
     input_length, pred, input_msg, output_msg
 ):
     """
