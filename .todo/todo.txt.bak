@@ -17,7 +17,7 @@
 2024-05-12 @rand sentence: add @feature
 2024-05-12 @rand lorem ipsum: (or something) add @feature
 2024-05-12 @rand animal: add @feature
-2024-05-13 @quality CLI: rename all methods x_group or x_command for consistency @maybe
+x 2024-05-19 2024-05-13 @quality CLI: rename all methods x_group or x_command for consistency @maybe
 2024-05-13 @quality CLI: figure out how to test without making real requests
 2024-05-13 @quality docs: cleanup assorted docs
 2024-05-13 @rand name: if --girl or --boy is not passed, randomly choose and list gender @maybe
@@ -34,3 +34,4 @@
 2024-05-13 @datamuse add --topics --lc and --rc options
 2024-05-13 @syn add a custom DefinitionEntry for MobyThesaurusEntry
 2024-05-13 @syn limit the number of synonyms in some sane way
+2024-05-13 @syn look up parts of speech for moby words somehow @maybe

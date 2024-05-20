@@ -1,6 +1,6 @@
 from click.testing import CliRunner
 
-from words.cli.dm_cli import dm_command
+from words.cli.dm_cli import dm_cmd
 
 
 def test_words_dm_help():
@@ -9,7 +9,7 @@ def test_words_dm_help():
     THEN: all options should be listed
     """
     runner = CliRunner()
-    result = runner.invoke(dm_command, ["--help"])
+    result = runner.invoke(dm_cmd, ["--help"])
     assert result.exit_code == 0
 
     options = (

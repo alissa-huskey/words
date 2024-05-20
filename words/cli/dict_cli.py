@@ -14,15 +14,15 @@ bp = breakpoint
 
 
 @click.group("dict")
-def dict_api():
+def dict_group():
     """Dict.org API commands."""
 
 
-@dict_api.command()
+@dict_group.command("dbs")
 @click.option("--search", metavar="PHRASE", help="Filter results.")
 @click.option("--default", is_flag=True,
               help="Display the default databases used for for definition searches.")
-def dbs(search=None, default=False):
+def dbs_cmd(search=None, default=False):
     """List databases."""
     rsp = DefinitionRequest()
     dbs = rsp.dbs(search, default).items()
@@ -33,8 +33,8 @@ def dbs(search=None, default=False):
     rprint(table)
 
 
-@dict_api.command()
-def strategies():
+@dict_group.command("strategies")
+def strategies_cmd():
     """List strategies."""
     rsp = DefinitionRequest()
     strategies = rsp.client.strategies.items()
@@ -54,7 +54,7 @@ def strategies():
     default=1,
     help="Number of definitions to print.",
 )
-def define(word: str, num: int):
+def def_cmd(word: str, num: int):
     """Get the definition of a word."""
     rsp = DefinitionRequest(word, default=True)
     rsp.lookup()

@@ -3,7 +3,7 @@ from re import compile as re_compile
 import pytest
 from click.testing import CliRunner
 
-from words.cli.rand_cli import color, name, rand, word_cmd
+from words.cli.rand_cli import color_cmd, name_cmd, rand_group, word_cmd
 
 from .. import Stub
 
@@ -30,7 +30,7 @@ def test_words_rand_help():
     THEN: all commands should be listed
     """
     runner = CliRunner()
-    result = runner.invoke(rand, ["--help"])
+    result = runner.invoke(rand_group, ["--help"])
     assert result.exit_code == 0
 
     for cmd in ("color", "name"):
@@ -43,7 +43,7 @@ def test_words_rand_color_help():
     THEN: all options should be listed
     """
     runner = CliRunner()
-    result = runner.invoke(color, ["--help"])
+    result = runner.invoke(color_cmd, ["--help"])
     assert result.exit_code == 0
 
     options = (
@@ -62,7 +62,7 @@ def test_words_rand_name_help():
     THEN: all commands should be listed
     """
     runner = CliRunner()
-    result = runner.invoke(name, ["--help"])
+    result = runner.invoke(name_cmd, ["--help"])
     assert result.exit_code == 0
 
     options = (
@@ -121,7 +121,7 @@ def test_words_rand_name_gender(params):
     THEN: the results should be as expected
     """
     runner = CliRunner()
-    result = runner.invoke(name, [*params.options,])
+    result = runner.invoke(name_cmd, [*params.options,])
     assert result.exit_code == 0
 
     if params.size:
@@ -166,7 +166,7 @@ def test_words_rand_name_errors(params):
         pytest.skip(reason=params.skip)
 
     runner = CliRunner()
-    result = runner.invoke(name, [*params.options,])
+    result = runner.invoke(name_cmd, [*params.options,])
     assert result.exit_code != 0
     assert params.message in result.output
 
@@ -209,7 +209,7 @@ def test_words_rand_name_verbosity(params):
         pytest.skip(reason=params.skip)
 
     runner = CliRunner()
-    result = runner.invoke(color, [*params.options,])
+    result = runner.invoke(color_cmd, [*params.options,])
 
     assert result.exit_code == 0
 

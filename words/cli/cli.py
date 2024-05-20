@@ -5,9 +5,9 @@ from rich.traceback import install as rich_tracebacks
 
 from words import WordsError
 from words.cli import err
-from words.cli.dict_cli import define, dict_api
-from words.cli.dm_cli import dm_command
-from words.cli.rand_cli import rand
+from words.cli.dict_cli import def_cmd, dict_group
+from words.cli.dm_cli import dm_cmd
+from words.cli.rand_cli import rand_group
 from words.cli.syn_cli import syn_cmd
 from words.compat import BdbQuit
 
@@ -21,10 +21,10 @@ def run():
     pass
 
 
-run.add_command(rand)
-run.add_command(define)
-run.add_command(dict_api)
-run.add_command(dm_command)
+run.add_command(rand_group)
+run.add_command(def_cmd)
+run.add_command(dict_group)
+run.add_command(dm_cmd)
 run.add_command(syn_cmd)
 
 

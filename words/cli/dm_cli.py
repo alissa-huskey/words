@@ -12,7 +12,7 @@ from words.word_presenter import WordPresenter
 bp = breakpoint
 
 
-def dm(**kwargs):
+def _(**kwargs):
     """Datamuse word search."""
     has_required = filter(None, map(kwargs.get, DatamuseOptions.cli_required))
     if not tuple(has_required):
@@ -37,7 +37,7 @@ def dm(**kwargs):
             print(word)
 
 
-dm_command = click.Command("dm", callback=dm, help=dm.__doc__, params=[
+dm_cmd = click.Command("dm", callback=_, help=_.__doc__, params=[
     *DatamuseOptions.cli_options,
     click.Option(["--json"], is_flag=True, help="Export as raw JSON."),
     click.Option(["--long"], is_flag=True, help="Print word list in long format."),

@@ -1,6 +1,6 @@
 from click.testing import CliRunner
 
-from words.cli.dict_cli import dbs, dict_api, strategies
+from words.cli.dict_cli import dbs_cmd, dict_group, strategies_cmd
 
 
 def test_words_dict_help():
@@ -9,7 +9,7 @@ def test_words_dict_help():
     THEN: all commands should be listed
     """
     runner = CliRunner()
-    result = runner.invoke(dict_api, ["--help"])
+    result = runner.invoke(dict_group, ["--help"])
     assert result.exit_code == 0
 
     for cmd in ("dbs", "strategies"):
@@ -22,7 +22,7 @@ def test_words_dict_dbs_help():
     THEN: all options should be listed
     """
     runner = CliRunner()
-    result = runner.invoke(dbs, ["--help"])
+    result = runner.invoke(dbs_cmd, ["--help"])
     assert result.exit_code == 0
 
     for opt in ("--search PHRASE", "--default"):
@@ -35,5 +35,5 @@ def test_words_dict_strategies_help():
     THEN: it should work
     """
     runner = CliRunner()
-    result = runner.invoke(strategies, ["--help"])
+    result = runner.invoke(strategies_cmd, ["--help"])
     assert result.exit_code == 0

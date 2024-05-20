@@ -26,12 +26,12 @@ def validate_full(ctx, param, value):
     return value
 
 
-@click.group()
-def rand():
+@click.group("rand")
+def rand_group():
     """Print one or more random things."""
 
 
-@rand.command()
+@rand_group.command("name")
 @click.option(
     "-b", "--boy", "selection",
     multiple=True,
@@ -69,7 +69,7 @@ def rand():
     type=int,
     help="Maximum number of lines from top (most popular names) to include.",
 )
-def name(selection, full, num, limit):
+def name_cmd(selection, full, num, limit):
     """Print one or more random names."""
     if not selection:
         raise click.UsageError(
@@ -100,7 +100,7 @@ def name(selection, full, num, limit):
     rprint(Columns(panels))
 
 
-@rand.command()
+@rand_group.command("color")
 @click.option(
     "-s", "--simple", "output_format",
     flag_value="simple",
@@ -119,14 +119,14 @@ def name(selection, full, num, limit):
     default=1,
     help="Number of colors to print.",
 )
-def color(output_format, num):
+def color_cmd(output_format, num):
     """Print one or more random colors."""
     clist = Colors(output_format, num=num)
     obj = clist.render()
     rprint(obj)
 
 
-@rand.command("word")
+@rand_group.command("word")
 @click.option(
     "-n", "--num",
     type=int,
