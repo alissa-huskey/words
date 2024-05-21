@@ -1,0 +1,24 @@
+#!/usr/bin/env sed -Ef
+#
+# replace replace smart quotes with dumb, em/en-dash with dash
+#   and other similar character replacements
+#
+
+s/“/"/g   ; # U+201C  LEFT DOUBLE QUOTATION MARK
+s/”/"/g   ; # U+201D  RIGHT DOUBLE QUOTATION MARK
+s/❝/"/g   ; # U+275D  HEAVY DOUBLE TURNED COMMA QUOTATION MARK ORNAMENT
+s/❞/"/g   ; # U+275E  HEAVY DOUBLE COMMA QUOTATION MARK ORNAMENT
+s/’/'/g   ; # U+2018  LEFT SINGLE QUOTATION MARK
+s/‘/'/g   ; # U+2019  RIGHT SINGLE QUOTATION MARK
+s/‛/'/g   ; # U+201B  SINGLE HIGH-REVERSED-9 QUOTATION MARK
+s/–/-/g   ; # U+2013  EN DASH
+s/—/-/g   ; # U+2014  EM DASH
+s/‑/-/g   ; # U+2011  NON-BREAKING HYPHEN
+s/‒/-/g   ; # U+2012  FIGURE DASH
+s/❛/'/g   ; # U+275C  HEAVY SINGLE COMMA QUOTATION MARK ORNAMENT
+s/❜/'/g   ; # U+275B  HEAVY SINGLE TURNED COMMA QUOTATION MARK ORNAMENT
+s/_//g    ; # remove underscores
+s/\r$//g  ; # replace CLRF with LF
+
+s/\xef\xbb\xbf//g # non-breaking spaces
+

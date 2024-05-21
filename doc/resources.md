@@ -52,6 +52,13 @@ Random list of dinosaurs.
 curl "https://dinoipsum.com/api/?format=json&words=10&paragraphs=1"
 ```
 
+### Wordnik
+
+* [API Docs](https://developer.wordnik.com/docs)
+* [Endpoints](https://developer.wordnik.com/docs#/words)
+* [Getting Started](https://developer.wordnik.com/gettingstarted)
+* [Python Client](https://github.com/wordnik/wordnik-python3)
+
 ### 
 
 * []()
@@ -59,8 +66,14 @@ curl "https://dinoipsum.com/api/?format=json&words=10&paragraphs=1"
 ```bash
 ```
 
-Word Lists
-----------
+Data Sources
+------------
+
+### Books
+
+* [Project Gutenberg](https://www.gutenberg.org/ebooks/)
+
+### Word Lists
 
 * [SCOWL (Spell Checker Oriented Word Lists)](http://wordlist.aspell.net/) 
 * [12Dicts](http://wordlist.aspell.net/12dicts/): a collection of dictionaries focused on common words
@@ -88,3 +101,11 @@ Here are some other word-related tools that I like.
 * [Wiktionary](https://en.wiktionary.org/)
 * [Rhyme Zone](https://www.rhymezone.com/)
 * [Civic Search](https://civicsearch.org/): Search millions of comments made at recent local government meetings
+
+
+Python Packages
+---------------
+
+* [nltk](https://www.nltk.org/): Natural Language Toolkit [How to Create a Text Generator with Python](https://reintech.io/blog/how-to-create-a-text-generator-with-python)
+* [Faker](https://faker.readthedocs.io/en/master/): [Using Faker to Generate Random Text](https://www.slingacademy.com/article/python-using-faker-to-generate-random-text/)
+* [python-lorem](https://github.com/sfischer13/python-lorem)

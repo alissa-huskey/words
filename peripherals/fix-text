@@ -1,0 +1,11 @@
+#/usr/bin/env bash
+#
+# fix-text -- cleanup text files
+#
+#              remove more than double spaces
+#              and replace smart quotes and other
+#              special charcters with 
+
+rootdir="$(cd "${0%/*}/." && pwd -P)"
+
+${rootdir}/dumb-quotes "$1" | cat -s
