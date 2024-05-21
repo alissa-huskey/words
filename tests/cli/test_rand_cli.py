@@ -3,7 +3,8 @@ from re import compile as re_compile
 import pytest
 from click.testing import CliRunner
 
-from words.cli.rand_cli import color_cmd, name_cmd, rand_group, word_cmd
+from words.cli.rand_cli import (color_cmd, name_cmd, rand_group, text_cmd,
+                                word_cmd)
 
 from .. import Stub
 
@@ -286,3 +287,23 @@ def test_cli_rand_word_length(
         f"When input range is {input_msg}, "
         f"the length of all words should be {output_msg}"
     )
+
+
+def test_cli_rand_text_help():
+    """
+    WHEN: words rand text
+    THEN: it should work
+    AND: all of the options should be present
+    """
+    runner = CliRunner()
+    result = runner.invoke(text_cmd, ["--help"])
+
+    assert result.exit_code == 0
+
+    options = (
+        "-n, --num MAX",
+        "-u, --unit",
+    )
+
+    for opt in options:
+        assert f"\n  {opt} " in result.output

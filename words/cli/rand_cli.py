@@ -1,6 +1,8 @@
 """CLI for words rand command group."""
 
 import click
+from more_itertools import flatten
+from rich import box
 from rich.columns import Columns
 from rich.panel import Panel
 
@@ -8,7 +10,7 @@ from words import WordsError, bp  # noqa
 from words.cli import console, pager
 from words.cli.param_types import RangeType
 from words.color import Colors
-from words.random import RandomName, RandomWord
+from words.random import RandomBooks, RandomName, RandomWord
 
 
 def validate_full(ctx, param, value):
@@ -151,3 +153,44 @@ def word_cmd(num: int, length):
 
     with pager:
         console.print(panel)
+
+
+@rand_group.command("text")
+@click.option(
+    "-u", "--unit",
+    help="Unit of text to print.",
+    default="sent",
+    type=click.Choice(
+        ["para", "sent"],
+        case_sensitive=False,
+    ),
+    show_choices=True,
+)
+@click.option(
+    "-n", "--num",
+    metavar="MAX",
+    type=int,
+    default=1,
+    help="Number to print.",
+)
+def text_cmd(unit: str, num: int):
+    """Text."""
+    books = RandomBooks()
+    files = books.get(num)
+    items = list(flatten((f.get() for f in files)))
+
+    if unit == "sent":
+        items = flatten((p.get() for p in items))
+
+    for item in items:
+        panel = Panel(
+            item.text,
+            padding=(1, 3),
+            subtitle=f"-- {item.title}",
+            subtitle_align="right",
+            box=box.MINIMAL,
+            width=80,
+        )
+
+        console.print(panel)
+    console.line()

@@ -12,9 +12,7 @@
 2024-04-23 @feature add commands to launch websites @maybe
 2024-04-26 @feature remove plural / find base word
 2024-05-12 @rand color: add --source option to include other color files
-2024-05-12 @rand word: add @feature
 2024-05-12 @rand password: add @feature
-2024-05-12 @rand sentence: add @feature
 2024-05-12 @rand lorem ipsum: (or something) add @feature
 2024-05-12 @rand animal: add @feature
 2024-05-13 @quality CLI: figure out how to test without making real requests
@@ -39,3 +37,6 @@
 2024-05-21 @dict add SHOW SERVER command @feature
 2024-05-21 @cli add --pager/--no-pager options
 2024-05-21 @cli rand names: rename --max to --rank or --top
+2024-05-21 @quality rename the various Random classes related to text to make more sense
+2024-05-21 @cli random text: add plain output
+2024-05-21 @rand sentences/paragraphs: strip mid-sentence excess whitespace

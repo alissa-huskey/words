@@ -19,12 +19,14 @@ groq = "^0.5.0"
 pydantic = "^2.7.1"
 inflect = "^7.2.1"
 nltk = "^3.8.1"
+lorem = "^0.1.1"
 
 [tool.poetry.scripts]
 words = "words.cli.cli:main"
 
 [tool.pytest.ini_options]
 addopts = "-vx --disable-socket"
+testpaths = "tests"
 
 [tool.poetry.group.dev.dependencies]
 flake8-docstrings = "^1.7.0"

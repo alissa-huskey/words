@@ -15,3 +15,5 @@ x 2024-05-19 2024-05-13 @define split off to its own file @maybe
 x 2024-05-19 2024-05-13 @dict define subcommand @feature
 x 2024-05-20 2024-05-13 @define add back --db option
 x 2024-05-21 2024-05-20 @cli Use command epilog to add more help info
+x 2024-05-21 2024-05-12 @rand word: add @feature
+x 2024-05-21 2024-05-12 @rand sentence: add @feature
