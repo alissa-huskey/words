@@ -1,5 +1,7 @@
 """CLI for words dict group."""
 
+from functools import reduce
+
 import click
 from rich import print as rprint
 from rich.panel import Panel
@@ -82,3 +84,24 @@ def define_cmd(word: str, num: int, db: str):
         rprint(panel)
         if num and i >= num:
             break
+
+
+@dict_group.command("match")
+@click.argument("word")
+def match_cmd(word: str):
+    """MATCH command.
+
+    Search for a word.
+    """
+    client = DefinitionRequest()
+    rsp = client.client.match(word)
+
+    func = (lambda item, prev: item+[ (v, prev[0]) for v in prev[1] ])
+    flat = reduce(func, rsp.content.items(), [])
+    words = sorted(flat, key=lambda w: w[0].lower())
+
+    table = Table("DB", "Word")
+    for word, db in words:
+        table.add_row(db, word)
+
+    rprint(table)
