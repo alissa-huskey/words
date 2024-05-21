@@ -18,7 +18,7 @@ bp = breakpoint
 @click.option("--json", is_flag=True, help="Export as raw JSON.")
 @click.option("--long", is_flag=True, help="Print word list in long format.")
 def syn_cmd(word: str, max: int, json: bool, long: bool):
-    """Find synonyms."""
+    """Synonyms."""
     synonyms = []
 
     # get synonyms from datamuse
@@ -50,7 +50,9 @@ def syn_cmd(word: str, max: int, json: bool, long: bool):
         word = WordPresenter(w)
         table.add_row(*word.columns)
         done.append(w.word)
-    console.print(table)
+
+    with console.pager():
+        console.print(table)
     #  else:
     #      for word in api.words:
     #          print(word)

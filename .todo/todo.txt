@@ -5,7 +5,7 @@
 2024-04-23 @dict cache list of databases
 2024-04-23 @define add --host option @maybe
 2024-04-23 @define add --num optoin @maybe
-2024-04-23 @define group entries by dictionary in DefinitionRequest and CLI output
+2024-04-23 @define group entries by dictionary in DefinitionRequest and CLI output @maybe
 2024-04-23 @datamuse add --and/--or flags (to be manually applied) @maybe
 2024-04-23 @feature support wordnik API @maybe
 2024-04-23 @datamuse fix `words words --ml "not recommended"` @bug
@@ -26,10 +26,12 @@
 2024-05-13 @rand name: validate --num should be positive
 2024-05-13 @def add --verb/--noun/etc flags to filter defs
 2024-05-13 @cli add translate command (dict -d fd-eng-spa "how are you?") @feature
-2024-05-13 @rand use /usr/share/dict/words for random word @maybe @feature
 2024-05-13 @datamuse add --topics --lc and --rc options
 2024-05-13 @syn add a custom DefinitionEntry for MobyThesaurusEntry
 2024-05-13 @syn limit the number of synonyms in some sane way
 2024-05-13 @syn look up parts of speech for moby words somehow @maybe
 2024-05-19 @dict @dict add match subcommand @feature
 2024-05-19 @dict define: more help info for --db
+2024-05-20 @syn add --related flag to include --ml and moby thes words @maybe
+2024-05-20 @quality move datamuse_options.py to cli/
+2024-05-20 @cli Use command epilog to add more help info

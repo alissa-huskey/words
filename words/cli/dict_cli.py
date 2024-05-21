@@ -15,7 +15,7 @@ bp = breakpoint
 
 @click.group("dict")
 def dict_group():
-    """Dict.org API commands."""
+    """Dict.org API wrapper."""
 
 
 @dict_group.command("dbs")
@@ -23,7 +23,7 @@ def dict_group():
 @click.option("--default", is_flag=True,
               help="Display the default databases used for for definition searches.")
 def dbs_cmd(search=None, default=False):
-    """List databases."""
+    """SHOW DATABASES command."""
     rsp = DefinitionRequest()
     dbs = rsp.dbs(search, default).items()
 
@@ -35,7 +35,7 @@ def dbs_cmd(search=None, default=False):
 
 @dict_group.command("strategies")
 def strategies_cmd():
-    """List strategies."""
+    """SHOW DATABASES command."""
     rsp = DefinitionRequest()
     strategies = rsp.client.strategies.items()
 
@@ -63,7 +63,7 @@ def strategies_cmd():
     help="Database to search.",
 )
 def define_cmd(word: str, num: int, db: str):
-    """Get the definition of a word."""
+    """DEFINE command."""
     args = []
     if db == "defaults":
         args = {"default": True}

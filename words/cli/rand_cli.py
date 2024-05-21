@@ -28,7 +28,7 @@ def validate_full(ctx, param, value):
 
 @click.group("rand")
 def rand_group():
-    """Print one or more random things."""
+    """Random data."""
 
 
 @rand_group.command("name")
@@ -70,7 +70,7 @@ def rand_group():
     help="Maximum number of lines from top (most popular names) to include.",
 )
 def name_cmd(selection, full, num, limit):
-    """Print one or more random names."""
+    """People names."""
     if not selection:
         raise click.UsageError(
             "Need at least one of: --girl, --boy, or --last"
@@ -120,7 +120,7 @@ def name_cmd(selection, full, num, limit):
     help="Number of colors to print.",
 )
 def color_cmd(output_format, num):
-    """Print one or more random colors."""
+    """Colors."""
     clist = Colors(output_format, num=num)
     obj = clist.render()
     rprint(obj)
@@ -139,7 +139,7 @@ def color_cmd(output_format, num):
     help="Constrain the length of words.",
 )
 def word_cmd(num: int, length):
-    """Print one or more random words."""
+    """Words."""
     f = RandomWord(length_range=length)
     wordlist = f.get(num)
     panel = Panel("\n".join(wordlist), title="words", expand=False)

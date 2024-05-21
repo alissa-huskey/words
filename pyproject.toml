@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "words"
 version = "0.3.0"
-description = "Simple wrapper for datamuse API."
+description = "Command line thesaurus, dictionary and more."
 authors = ["Alissa Huskey <alissa.huskey@gmail.com>"]
 readme = "README.md"
 include = ["assets/*/*"]

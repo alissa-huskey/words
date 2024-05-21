@@ -20,5 +20,5 @@ bp = breakpoint
 )
 @click.pass_context
 def def_cmd(ctx, *args, **kwargs):
-    """Get the definition of a word."""
+    """Definition lookup."""
     ctx.invoke(define_cmd, *args, db=None, **kwargs)
