@@ -1,15 +1,14 @@
 """CLI for words rand command group."""
 
 import click
-from rich import print as rprint
 from rich.columns import Columns
 from rich.panel import Panel
 
+from words import WordsError, bp  # noqa
+from words.cli import console, pager
 from words.cli.param_types import RangeType
 from words.color import Colors
 from words.random import RandomName, RandomWord
-
-bp = breakpoint
 
 
 def validate_full(ctx, param, value):
@@ -66,6 +65,7 @@ def rand_group():
 )
 @click.option(
     "-m", "--max", "limit",
+    metavar="MAX",
     type=int,
     help="Maximum number of lines from top (most popular names) to include.",
 )
@@ -97,7 +97,8 @@ def name_cmd(selection, full, num, limit):
         panel = Panel("\n".join(names), title=title)
         panels.append(panel)
 
-    rprint(Columns(panels))
+    with pager:
+        console.print(Columns(panels))
 
 
 @rand_group.command("color")
@@ -115,6 +116,7 @@ def name_cmd(selection, full, num, limit):
 )
 @click.option(
     "-n", "--num",
+    metavar="MAX",
     type=int,
     default=1,
     help="Number of colors to print.",
@@ -123,12 +125,15 @@ def color_cmd(output_format, num):
     """Colors."""
     clist = Colors(output_format, num=num)
     obj = clist.render()
-    rprint(obj)
+
+    with pager:
+        console.print(obj)
 
 
 @rand_group.command("word")
 @click.option(
     "-n", "--num",
+    metavar="MAX",
     type=int,
     default=1,
     help="Number of words to print.",
@@ -143,4 +148,6 @@ def word_cmd(num: int, length):
     f = RandomWord(length_range=length)
     wordlist = f.get(num)
     panel = Panel("\n".join(wordlist), title="words", expand=False)
-    rprint(panel)
+
+    with pager:
+        console.print(panel)

@@ -1,5 +1,6 @@
 """AttrDict module."""
 
+from words import WordsError, bp  # noqa
 from words.object import Object
 
 

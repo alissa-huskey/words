@@ -50,7 +50,7 @@ def test_cli_dict_define_help():
 
     assert result.exit_code == 0
     assert "define [OPTIONS] WORD" in result.output
-    for opt in ("--db DB", "--num INTEGER"):
+    for opt in ("--db DB", "--num MAX"):
         assert opt in result.output
 
 
@@ -65,5 +65,10 @@ def test_cli_dict_match_help():
 
     assert result.exit_code == 0
     assert "match [OPTIONS] WORD" in result.output
-    #  for opt in ("--db DB", "--num INTEGER"):
-    #      assert opt in result.output
+    options = (
+        "-s, --strat STRATEGY",
+        "-d, --db DB",
+    )
+
+    for opt in options:
+        assert opt in result.output

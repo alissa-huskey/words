@@ -34,4 +34,8 @@
 2024-05-19 @dict define: more help info for --db
 2024-05-20 @syn add --related flag to include --ml and moby thes words @maybe
 2024-05-20 @quality move datamuse_options.py to cli/
-2024-05-20 @cli Use command epilog to add more help info
+2024-05-21 @dict add help command
+2024-05-21 @dict add SHOW INFO db command
+2024-05-21 @dict add SHOW SERVER command @feature
+2024-05-21 @cli add --pager/--no-pager options
+2024-05-21 @cli rand names: rename --max to --rank or --top

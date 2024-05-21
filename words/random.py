@@ -3,9 +3,7 @@
 from pathlib import Path
 from random import choices
 
-from words import WordsError
-
-bp = breakpoint
+from words import WordsError, bp  # noqa
 
 
 class Random():

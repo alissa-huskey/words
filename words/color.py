@@ -11,10 +11,9 @@ from rich.panel import Panel
 from rich.style import Style
 from rich.text import Text
 
-from words import WordsError
+from words import WordsError, bp  # noqa
 from words.object import Object
 
-bp = breakpoint
 ROOT_DIR = Path(__file__).parent.parent
 
 

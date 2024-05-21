@@ -11,7 +11,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-...
+#### CLI
+
+- New command: `words dict match` with options:
+    - `--db`
+    - `--strat`
+- Paginate all output when sensible.
+- Expand help text.
+- Add short help option `-h`.
 
 ### Changed
 

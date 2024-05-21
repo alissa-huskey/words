@@ -2,6 +2,8 @@
 
 from re import compile as re_compile
 
+from words import WordsError, bp  # noqa
+
 
 class ResponseStatus():
     """Status and message from a dict response."""

@@ -3,10 +3,10 @@
 import click
 from rich.traceback import install as rich_tracebacks
 
+from words import WordsError, bp  # noqa
 from words.cli.dict_cli import define_cmd
 
 rich_tracebacks(show_locals=True, suppress=[click])
-bp = breakpoint
 
 
 @click.command("def")
@@ -15,10 +15,19 @@ bp = breakpoint
     "-n", "--num",
     type=int,
     default=1,
+    metavar="MAX",
     show_default=True,
     help="Number of definitions to print.",
 )
 @click.pass_context
 def def_cmd(ctx, *args, **kwargs):
-    """Definition lookup."""
+    """Definition lookup.
+
+    Look up a word in the common english word dictionaries using dict.org.
+
+    This is essentially a shorthand with sensible defaults to the command:
+
+    \b
+        words dict define WORD
+    """
     ctx.invoke(define_cmd, *args, db=None, **kwargs)

@@ -1,8 +1,7 @@
 """Word module."""
 
+from words import WordsError, bp  # noqa
 from words.object import Object
-
-bp = breakpoint
 
 
 class Word(Object):

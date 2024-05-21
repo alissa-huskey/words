@@ -2,9 +2,8 @@
 
 from click import Choice, Option
 
+from words import WordsError, bp  # noqa
 from words.object import Object
-
-bp = breakpoint
 
 
 class DatamuseOptions(Object):
@@ -459,7 +458,7 @@ class DatamuseOptions(Object):
         {
             "summary": "Max results",
             "click": {
-                "default": 10,
+                "default": 20,
                 "type": int,
             },
             "datamuse": {

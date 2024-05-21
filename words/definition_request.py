@@ -5,12 +5,10 @@ from socket import gaierror
 from dictionary_client import DictionaryClient as DictClient
 from dictionary_client.response import DefineWordResponse
 
-from words import WordsError
+from words import WordsError, bp  # noqa
 from words.dictionary_entry import DictionaryEntry
 from words.object import Object
 from words.response_status import ResponseStatus
-
-bp = breakpoint
 
 
 class DefinitionRequest(Object):

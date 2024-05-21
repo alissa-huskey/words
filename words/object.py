@@ -1,5 +1,7 @@
 """Custom base object class."""
 
+from words import WordsError, bp  # noqa
+
 
 class Object():
     """Arbitrary object class."""

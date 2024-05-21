@@ -3,22 +3,31 @@
 import click
 from rich.table import Table
 
-from words.cli import console
+from words import WordsError, bp  # noqa
+from words.cli import console, pager
 from words.datamuse_api import DatamuseAPI
 from words.definition_request import DefinitionRequest
 from words.word import Word
 from words.word_presenter import WordPresenter
 
-bp = breakpoint
-
 
 @click.command("syn")
 @click.argument("word")
 @click.option("--max", type=int, default=10, help="Max results.")
-@click.option("--json", is_flag=True, help="Export as raw JSON.")
+@click.option("--json", is_flag=True, help="Export as JSON.")
 @click.option("--long", is_flag=True, help="Print word list in long format.")
 def syn_cmd(word: str, max: int, json: bool, long: bool):
-    """Synonyms."""
+    """Synonyms.
+
+    Look up a synonyms via dict.org and Datamuse APIs.
+
+    Essentially a combination of:
+
+    \b
+        words dm --ml WORD
+        words dm --rel-syn WORD
+        words dict define --db moby-thesaurus WORD
+    """
     synonyms = []
 
     # get synonyms from datamuse
@@ -39,10 +48,7 @@ def syn_cmd(word: str, max: int, json: bool, long: bool):
         _, _, text = entry.partition("\n")
         synonyms += ([Word(word=w.strip()) for w in text.split(",")])
 
-    #  bp()
-
     done = []
-    #  if long:
     table = Table(*WordPresenter.headers())
     for w in synonyms:
         if w.word in done:
@@ -51,8 +57,5 @@ def syn_cmd(word: str, max: int, json: bool, long: bool):
         table.add_row(*word.columns)
         done.append(w.word)
 
-    with console.pager():
+    with pager:
         console.print(table)
-    #  else:
-    #      for word in api.words:
-    #          print(word)

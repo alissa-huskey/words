@@ -8,16 +8,22 @@ from rich.panel import Panel
 from rich.table import Table
 from rich.traceback import install as rich_tracebacks
 
-from words.cli import header
+from words import WordsError, bp  # noqa
+from words.cli import console, header, pager
 from words.definition_request import DefinitionRequest
 
 rich_tracebacks(show_locals=True, suppress=[click])
-bp = breakpoint
 
 
-@click.group("dict")
+@click.group(
+    "dict",
+    epilog="https://dict.org/"
+)
 def dict_group():
-    """Dict.org API wrapper."""
+    """Dict.org API wrapper.
+
+    Query the dict.org server using the DICT protocol.
+    """
 
 
 @dict_group.command("dbs")
@@ -25,19 +31,27 @@ def dict_group():
 @click.option("--default", is_flag=True,
               help="Display the default databases used for for definition searches.")
 def dbs_cmd(search=None, default=False):
-    """SHOW DATABASES command."""
+    """SHOW DATABASES command.
+
+    List available databases.
+    """
     rsp = DefinitionRequest()
     dbs = rsp.dbs(search, default).items()
 
     table = Table("Name", "Description")
     for db in dbs:
         table.add_row(*db)
-    rprint(table)
+
+    with pager:
+        console.print(table)
 
 
 @dict_group.command("strategies")
 def strategies_cmd():
-    """SHOW DATABASES command."""
+    """SHOW STRATEGIES command.
+
+    List supported search strategies.
+    """
     rsp = DefinitionRequest()
     strategies = rsp.client.strategies.items()
 
@@ -45,14 +59,20 @@ def strategies_cmd():
     table = Table("Name", "Description")
     for db in strategies:
         table.add_row(*db)
-    rprint(table)
+
+    with pager:
+        console.print(table)
 
 
-@dict_group.command("define")
+@dict_group.command(
+    "define",
+    epilog="[*]: all databases, [defaults]: default databases",
+)
 @click.argument("word")
 @click.option(
     "-n", "--num",
     type=int,
+    metavar="MAX",
     default=None,
     show_default="all",
     help="Number of definitions to print.",
@@ -61,11 +81,18 @@ def strategies_cmd():
     "-d", "--db",
     default="*",
     metavar="DB",
-    show_default="all",
     help="Database to search.",
 )
 def define_cmd(word: str, num: int, db: str):
-    """DEFINE command."""
+    """DEFINE command.
+
+    Look up WORD in the specified DB.
+
+    For a list of valid DB values (available databases) use the command:
+
+    \b
+        words dict dbs
+    """
     args = []
     if db == "defaults":
         args = {"default": True}
@@ -86,17 +113,32 @@ def define_cmd(word: str, num: int, db: str):
             break
 
 
-@dict_group.command("match")
+@dict_group.command(
+    "match",
+    epilog="[*]: search all databases, [.]: use server's default strategy"
+)
 @click.argument("word")
-def match_cmd(word: str):
+@click.option(
+    "-d", "--db",
+    default="*",
+    metavar="DB",
+    help="Database to search.",
+)
+@click.option(
+    "-s", "--strat",
+    metavar="STRATEGY",
+    default=".",
+    help="Search strategy.",
+)
+def match_cmd(word: str, db: str, strat: str):
     """MATCH command.
 
-    Search for a word.
+    Search DB index(/indices) for WORD using STRATEGY.
     """
     client = DefinitionRequest()
-    rsp = client.client.match(word)
+    rsp = client.client.match(word, db=db, strategy=strat)
 
-    func = (lambda item, prev: item+[ (v, prev[0]) for v in prev[1] ])
+    func = (lambda item, prev: item+[(v, prev[0]) for v in prev[1]])
     flat = reduce(func, rsp.content.items(), [])
     words = sorted(flat, key=lambda w: w[0].lower())
 

@@ -338,20 +338,21 @@ Typical users will most likely only care about the `DEFINE` and `MATCH` commands
 
 #### Summary
 
-| Command    | Subcommand   | Shorthand | Args                           | Description                                                            |
-|------------|--------------|-----------|--------------------------------|------------------------------------------------------------------------|
-| `DEFINE`   |              | `D`       | `WORD`                         | look up `WORD` in the specified database                               |
-| `MATCH`    |              | `M`       | `DATABASE` `STRATEGY` `WORD`   | search an index for for `WORD` using `STRATEGY`                        |
-| `SHOW`     | `DATABASES`  | `DB`      |                                | list of currently accessible databases                                 |
-| `SHOW`     | `STRATEGIES` | `STRAT`   |                                | list of currently supported search strategies                          |
-| `SHOW`     | `INFO`       |           | `DATABASE`                     | source, copyright, and licensing information about a database          |
-| `SHOW`     | `SERVER`     |           |                                | server information as written by administrator                         |
-| `STATUS`   |              |           |                                | server-specific timing or debugging information                        |
-| `QUIT`     |              |           |                                | exit the server                                                        |
-| `OPTION`   |              |           | `MIME`                         | requested media header for response (Similar to http `Accept` header.) |
-| `AUTH`     |              |           | `USERNAME` `SECRET`            | authenticate a client                                                  |
-| `SASLAUTH` |              |           | `mechanism` `initial-response` | reserved for Simple Authentication and Security Layer (SASL) auth      |
-| `SASLRESP` |              |           | `response`                     | reserved for Simple Authentication and Security Layer (SASL) auth      |
+| Command    | Subcommand   | Shorthand | Args                                   | Description                                                            |
+|------------|--------------|-----------|----------------------------------------|------------------------------------------------------------------------|
+| `DEFINE`   |              | `D`       | `WORD` [`DATABASE`] [`N`]              | look up `WORD` in the specified database                               |
+| `MATCH`    |              | `M`       | `WORD` [`DATABASE`] [`STRATEGY`] [`N`] | search an index for for `WORD` using `STRATEGY`                        |
+| `SHOW`     | `DATABASES`  | `DB`      |                                        | list of currently accessible databases                                 |
+| `SHOW`     | `STRATEGIES` | `STRAT`   |                                        | list of currently supported search strategies                          |
+| `SHOW`     | `INFO`       |           | `DATABASE`                             | source, copyright, and licensing information about a database          |
+| `SHOW`     | `SERVER`     |           |                                        | server information as written by administrator                         |
+| `STATUS`   |              |           |                                        | server-specific timing or debugging information                        |
+| `QUIT`     |              |           |                                        | exit the server                                                        |
+| `OPTION`   |              |           | `MIME`                                 | requested media header for response (Similar to http `Accept` header.) |
+| `AUTH`     |              |           | `USERNAME` `SECRET`                    | authenticate a client                                                  |
+| `SASLAUTH` |              |           | `mechanism` `initial-response`         | reserved for Simple Authentication and Security Layer (SASL) auth      |
+| `SASLRESP` |              |           | `response`                             | reserved for Simple Authentication and Security Layer (SASL) auth      |
+| `HELP`     |              |           |                                        | server commands                                                        |
 
 #### Text
 

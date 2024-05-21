@@ -2,7 +2,7 @@
 
 from click import ParamType
 
-bp = breakpoint
+from words import WordsError, bp  # noqa
 
 
 class RangeType(ParamType):

@@ -13,5 +13,5 @@ def test_cli_def_help():
 
     assert result.exit_code == 0
     assert "def [OPTIONS] WORD" in result.output
-    for opt in ("--num INTEGER"):
+    for opt in ("--num MAX"):
         assert opt in result.output

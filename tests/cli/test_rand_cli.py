@@ -49,7 +49,7 @@ def test_cli_rand_color_help():
     options = (
         "-s, --simple",
         "-v, --verbose",
-        "-n, --num INTEGER",
+        "-n, --num MAX",
     )
 
     for opt in options:
@@ -71,7 +71,7 @@ def test_cli_rand_name_help():
         "-l, --last",
         "-f, --full",
         "-n, --num INTEGER",
-        "-m, --max INTEGER",
+        "-m, --max MAX",
     )
 
     for opt in options:
@@ -236,7 +236,7 @@ def test_cli_rand_word_help():
 
     assert result.exit_code == 0
 
-    for opt in ("-n, --num INTEGER", "-l, --len [MIN]-[MAX]"):
+    for opt in ("-n, --num MAX", "-l, --len [MIN]-[MAX]"):
         assert f"\n  {opt} " in result.output
 
 

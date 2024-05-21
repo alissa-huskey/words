@@ -3,4 +3,4 @@
 try:
     from bdb import BdbQuit
 except ModuleNotFoundError:
-    class BdbQuit(BaseException): ...
+    class BdbQuit(BaseException): ...   # noqa

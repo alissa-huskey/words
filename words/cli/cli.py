@@ -3,7 +3,7 @@
 import click
 from rich.traceback import install as rich_tracebacks
 
-from words import WordsError
+from words import WordsError, bp  # noqa
 from words.cli import err
 from words.cli.def_cli import def_cmd
 from words.cli.dict_cli import dict_group
@@ -13,10 +13,15 @@ from words.cli.syn_cli import syn_cmd
 from words.compat import BdbQuit
 
 rich_tracebacks(show_locals=True, suppress=[click])
-bp = breakpoint
 
 
-@click.group()
+SETTINGS = dict(
+    help_option_names=['-h', '--help'],
+    show_default=True,
+)
+
+
+@click.group(context_settings=SETTINGS)
 def run():
     """Command line thesaurus, dictionary and more."""
     pass

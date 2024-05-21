@@ -2,6 +2,8 @@
 
 from collections import namedtuple
 
+from words import WordsError, bp  # noqa
+
 
 class DictionaryEntry(namedtuple('DictionaryEntry',
                                  ("word", "db", "definition", "dbname"))):
