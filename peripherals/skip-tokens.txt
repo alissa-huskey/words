@@ -1,0 +1,27 @@
+added
+asked
+called
+cried
+exclaimed
+inquired
+interrupted
+muttered
+persisted
+pleaded
+repeated
+roared
+said
+screamed
+shouted
+squeaked
+thought
+whispered
+yelled
+
+I
+he
+she
+the ___
+they
+we
+you 

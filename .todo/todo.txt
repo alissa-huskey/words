@@ -41,3 +41,5 @@
 2024-05-21 @cli random text: add plain output
 2024-05-21 @cli rand text: add --length option
 2024-05-21 @cli rand text: rename --unit para/sent to p/s
+2024-05-21 @rand text: filter out sentences that start with (lowercase) "he/she said/asked" since those usually follow a quote and are therefore incomplete
+2024-05-21 @rand text: filter out sentences that end with "Mr/Mrs." as they probably should not end there
