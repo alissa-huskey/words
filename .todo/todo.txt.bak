@@ -39,4 +39,4 @@
 2024-05-21 @cli rand names: rename --max to --rank or --top
 2024-05-21 @quality rename the various Random classes related to text to make more sense
 2024-05-21 @cli random text: add plain output
-x 2024-05-21 2024-05-21 @rand sentences/paragraphs: strip mid-sentence excess whitespace
+2024-05-21 @cli rand text: add --length option
