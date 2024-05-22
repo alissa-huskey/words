@@ -4,6 +4,7 @@ from collections import namedtuple
 from functools import cached_property
 from pathlib import Path
 from random import choices
+from re import sub as re_sub
 
 from nltk import sent_tokenize
 
@@ -76,10 +77,25 @@ class Sentence(namedtuple("Sentence", ["text", "source"])):
 class RandomParagraph():
     """Randomly selected sentences from a paragraph of text."""
 
+    _text: str = None
+
     def __init__(self, text: str = None, source=None):
         """Create the object."""
-        self.text = text and text.strip() or None
+        self.text = text
         self.source = source
+
+    @property
+    def text(self):
+        """Get text."""
+        return self._text
+
+    @text.setter
+    def text(self, value):
+        """Set text."""
+        if not value:
+            return
+
+        self._text = re_sub(r"\s+", " ", value.strip())
 
     @property
     def sentences(self) -> list[str]:

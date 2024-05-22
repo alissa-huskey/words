@@ -12,24 +12,24 @@ from . import fixture_path
 def text():
     """Return a block of text."""
 
-    text = (
-        "He walked nearer than a hundred paces to it, and yet he did not become "
-        "fixed as before, but found that he could go quite close up to the door. "
-        "Jorindel was very glad indeed to see this. Then he touched the door with "
-        "the flower, and it sprang open; so that he went in through the court, "
-        "and listened when he heard so many birds singing. At last he came to the "
-        "chamber where the fairy sat, with the seven hundred birds singing in "
-        "the seven hundred cages. When she saw Jorindel she was very angry, and "
-        "screamed with rage; but she could not come within two yards of him, for "
-        "the flower he held in his hand was his safeguard. He looked around at "
-        "the birds, but alas! there were many, many nightingales, and how then "
-        "should he find out which was his Jorinda? While he was thinking what to "
-        "do, he saw the fairy had taken down one of the cages, and was making the "
-        "best of her way off through the door. He ran or flew after her, touched "
-        "the cage with the flower, and Jorinda stood before him, and threw her "
-        "arms round his neck looking as beautiful as ever, as beautiful as when "
-        "they walked together in the wood. "
-    )
+    text = """
+        He walked nearer than a hundred paces to it, and yet he did not become
+        fixed as before, but found that he could go quite close up to the door.
+        Jorindel was very glad indeed to see this. Then he touched the door with
+        the flower, and it sprang open; so that he went in through the court,
+        and listened when he heard so many birds singing. At last he came to the
+        chamber where the fairy sat, with the seven hundred birds singing in
+        the seven hundred cages. When she saw Jorindel she was very angry, and
+        screamed with rage; but she could not come within two yards of him, for
+        the flower he held in his hand was his safeguard. He looked around at
+        the birds, but alas! there were many, many nightingales, and how then
+        should he find out which was his Jorinda? While he was thinking what to
+        do, he saw the fairy had taken down one of the cages, and was making the
+        best of her way off through the door. He ran or flew after her, touched
+        the cage with the flower, and Jorinda stood before him, and threw her
+        arms round his neck looking as beautiful as ever, as beautiful as when
+        they walked together in the wood.
+    """
 
     return text
 
@@ -266,10 +266,17 @@ def test_random_paragraph():
 def test_random_paragraph_text(text):
     """
     WHEN: a RandomParagraph object is created with text
-    THEN: it should work
+    THEN: .text should contain the text
+    AND: the excess mid-text whitespace should be stripped
     """
     p = RandomParagraph(text)
-    assert p.text == text.strip()
+    t = p.text
+
+    assert t
+    assert len(t.splitlines()) == 1
+    assert "become fixed" in t
+    assert t.startswith("He walked nearer")
+    assert t.endswith("together in the wood.")
 
 
 def test_random_paragraph_sentences(text):
