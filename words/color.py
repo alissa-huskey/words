@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 from random import choices
 
-from words import WordsError, bp  # noqa
+from words import bp, WordsError  # noqa
 from words.object import Object
 
 ROOT_DIR = Path(__file__).parent.parent

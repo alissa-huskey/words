@@ -1,5 +1,6 @@
 import pytest
 
+from words import bp, WordsError  # noqa
 from words.clients.dm.word import Word
 
 bp = breakpoint

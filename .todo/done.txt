@@ -21,3 +21,4 @@ x 2024-05-21 2024-05-21 @rand sentences/paragraphs: strip mid-sentence excess wh
 x 2024-05-27 2024-05-21 @cli add --pager/--no-pager options
 x 2024-05-27 2024-05-19 @dict @dict add match subcommand @feature
 x 2024-05-27 2024-05-13 @quality refactor to move renderers into one place (ie WordPresenter, Color.render)
+x 2024-05-28 2024-05-27 @quality fix isort settings

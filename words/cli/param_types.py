@@ -2,7 +2,7 @@
 
 from click import ParamType
 
-from words import WordsError, bp  # noqa
+from words import bp, WordsError  # noqa
 from words.cli import ui  # noqa
 
 

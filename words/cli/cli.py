@@ -3,7 +3,7 @@
 import click
 from rich.traceback import install as rich_tracebacks
 
-from words import WordsError, bp  # noqa
+from words import bp, WordsError  # noqa
 from words.cli import ui
 from words.cli.def_cli import def_cmd
 from words.cli.dict_cli import dict_group

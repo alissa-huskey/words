@@ -1,7 +1,13 @@
 from click.testing import CliRunner
 
-from words.cli.dict_cli import (dbs_cmd, define_cmd, dict_group, match_cmd,
-                                strategies_cmd)
+from words import bp, WordsError  # noqa
+from words.cli.dict_cli import (
+    dbs_cmd,
+    define_cmd,
+    dict_group,
+    match_cmd,
+    strategies_cmd,
+)
 
 
 def test_cli_dict_help():

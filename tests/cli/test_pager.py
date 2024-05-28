@@ -2,10 +2,14 @@ import os
 
 import pytest
 
-from words import WordsError, bp  # noqa
+from words import bp, WordsError  # noqa
 from words.cli import pager as pager_module
-from words.cli.pager import (ProgramPager, get_pager, pager_program,
-                             should_enable_pager)
+from words.cli.pager import (
+    get_pager,
+    pager_program,
+    ProgramPager,
+    should_enable_pager,
+)
 
 from .. import Stub
 

@@ -1,5 +1,6 @@
 from click.testing import CliRunner
 
+from words import bp, WordsError  # noqa
 from words.cli.dm_cli import dm_cmd
 
 

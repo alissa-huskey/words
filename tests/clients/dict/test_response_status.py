@@ -1,5 +1,6 @@
 import pytest
 
+from words import bp, WordsError  # noqa
 from words.clients.dict.response_status import ResponseStatus
 
 

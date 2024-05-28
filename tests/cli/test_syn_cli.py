@@ -1,6 +1,7 @@
 #  import pytest
 from click.testing import CliRunner
 
+from words import bp, WordsError  # noqa
 from words.cli.syn_cli import syn_cmd
 
 

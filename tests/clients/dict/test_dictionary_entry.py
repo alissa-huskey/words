@@ -1,3 +1,4 @@
+from words import bp, WordsError  # noqa
 from words.clients.dict.dictionary_entry import DictionaryEntry
 
 

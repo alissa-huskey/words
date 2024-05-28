@@ -2,7 +2,7 @@
 
 from re import compile as re_compile
 
-from words import WordsError, bp  # noqa
+from words import bp, WordsError  # noqa
 
 
 class ResponseStatus():

@@ -1,3 +1,4 @@
+from words import bp, WordsError  # noqa
 from words.clients.dm.datamuse_api import DatamuseAPI
 
 

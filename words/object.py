@@ -1,6 +1,6 @@
 """Custom base object class."""
 
-from words import WordsError, bp  # noqa
+from words import bp, WordsError  # noqa
 
 
 class Object():

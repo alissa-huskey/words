@@ -1,6 +1,7 @@
 import pytest
 from click import BadParameter
 
+from words import bp, WordsError  # noqa
 from words.cli.param_types import RangeType
 
 

@@ -3,6 +3,7 @@
 import pytest
 from dictionary_client import DictionaryClient
 
+from words import bp, WordsError  # noqa
 from words.clients.dict.definition_request import DefinitionRequest
 
 from tests import fake_response

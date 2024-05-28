@@ -6,7 +6,7 @@ from sys import stderr
 from rich import print as rprint
 from rich.console import Console, PagerContext
 
-from words import WordsError, bp  # noqa
+from words import bp, WordsError  # noqa
 from words.cli.pager import get_pager
 from words.object import Object
 

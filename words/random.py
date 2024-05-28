@@ -8,7 +8,7 @@ from re import sub as re_sub
 
 from nltk import sent_tokenize
 
-from words import WordsError, bp  # noqa
+from words import bp, WordsError  # noqa
 from words.object import Object
 
 

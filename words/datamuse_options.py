@@ -2,7 +2,7 @@
 
 from click import Choice, Option
 
-from words import WordsError, bp  # noqa
+from words import bp, WordsError  # noqa
 from words.object import Object
 
 

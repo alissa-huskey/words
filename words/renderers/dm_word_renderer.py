@@ -3,7 +3,7 @@
 (Like a controller.)
 """
 
-from words import WordsError, bp  # noqa
+from words import bp, WordsError  # noqa
 from words.clients.dm.word import Word
 from words.object import Object
 

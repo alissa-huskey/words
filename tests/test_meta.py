@@ -3,6 +3,8 @@ from pytest_socket import SocketBlockedError
 from requests import get
 from requests.exceptions import ConnectionError
 
+from words import bp, WordsError  # noqa
+
 
 #  @pytest.mark.skip
 def test_no_internet():

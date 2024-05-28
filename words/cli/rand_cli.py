@@ -6,7 +6,7 @@ from rich import box
 from rich.columns import Columns
 from rich.panel import Panel
 
-from words import WordsError, bp  # noqa
+from words import bp, WordsError  # noqa
 from words.cli import ui  # noqa
 from words.cli.param_types import RangeType
 from words.color import Colors

@@ -4,6 +4,8 @@ from pathlib import Path
 
 from dictionary_client.response import DefineWordResponse
 
+from words import bp, WordsError  # noqa
+
 DATADIR = Path(__file__).parent / "data"
 
 

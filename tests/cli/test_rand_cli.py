@@ -3,8 +3,14 @@ from re import compile as re_compile
 import pytest
 from click.testing import CliRunner
 
-from words.cli.rand_cli import (color_cmd, name_cmd, rand_group, text_cmd,
-                                word_cmd)
+from words import bp, WordsError  # noqa
+from words.cli.rand_cli import (
+    color_cmd,
+    name_cmd,
+    rand_group,
+    text_cmd,
+    word_cmd,
+)
 
 from tests import Stub
 

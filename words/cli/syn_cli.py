@@ -3,7 +3,7 @@
 import click
 from rich.table import Table
 
-from words import WordsError, bp  # noqa
+from words import bp, WordsError  # noqa
 from words.cli import ui  # noqa
 from words.clients.dict.definition_request import DefinitionRequest
 from words.clients.dm.datamuse_api import DatamuseAPI

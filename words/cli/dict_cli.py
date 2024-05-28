@@ -8,7 +8,7 @@ from rich.panel import Panel
 from rich.table import Table
 from rich.traceback import install as rich_tracebacks
 
-from words import WordsError, bp  # noqa
+from words import bp, WordsError  # noqa
 from words.cli import ui
 from words.clients.dict.definition_request import DefinitionRequest
 

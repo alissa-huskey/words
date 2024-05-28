@@ -1,3 +1,5 @@
+from words import bp, WordsError  # noqa
+
 r"""Module for creating mock socket.socket objects.
 
 Example:

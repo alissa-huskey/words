@@ -8,7 +8,7 @@ from shutil import which
 from more_itertools import first
 from rich.pager import SystemPager
 
-from words import WordsError, bp  # noqa
+from words import bp, WordsError  # noqa
 
 __ALL__ = ["PAGERS", "get_pager"]
 

@@ -2,7 +2,7 @@ from pathlib import Path
 
 import pytest
 
-from words import WordsError, bp  # noqa
+from words import bp, WordsError  # noqa
 from words.random import Random, RandomBooks, RandomParagraph, RandomProse
 
 from . import fixture_path

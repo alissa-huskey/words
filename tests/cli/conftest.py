@@ -2,7 +2,7 @@ import os
 
 import pytest
 
-from words import WordsError, bp  # noqa
+from words import bp, WordsError  # noqa
 
 
 @pytest.fixture(autouse=True)

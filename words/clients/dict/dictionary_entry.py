@@ -2,7 +2,7 @@
 
 from collections import namedtuple
 
-from words import WordsError, bp  # noqa
+from words import bp, WordsError  # noqa
 
 
 class DictionaryEntry(namedtuple('DictionaryEntry',

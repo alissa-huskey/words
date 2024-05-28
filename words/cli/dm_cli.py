@@ -4,7 +4,7 @@ import click
 from rich import print as rprint
 from rich.table import Table
 
-from words import WordsError, bp  # noqa
+from words import bp, WordsError  # noqa
 from words.cli import ui  # noqa
 from words.clients.dm.datamuse_api import DatamuseAPI
 from words.datamuse_options import DatamuseOptions
