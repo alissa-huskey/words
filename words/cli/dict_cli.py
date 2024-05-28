@@ -9,7 +9,7 @@ from rich.table import Table
 from rich.traceback import install as rich_tracebacks
 
 from words import WordsError, bp  # noqa
-from words.cli import console, header, pager
+from words.cli import ui
 from words.definition_request import DefinitionRequest
 
 rich_tracebacks(show_locals=True, suppress=[click])
@@ -42,8 +42,8 @@ def dbs_cmd(search=None, default=False):
     for db in dbs:
         table.add_row(*db)
 
-    with pager:
-        console.print(table)
+    with ui.pager:
+        ui.console.print(table)
 
 
 @dict_group.command("strategies")
@@ -55,13 +55,13 @@ def strategies_cmd():
     rsp = DefinitionRequest()
     strategies = rsp.client.strategies.items()
 
-    header("Strategies")
+    ui.header("Strategies")
     table = Table("Name", "Description")
     for db in strategies:
         table.add_row(*db)
 
-    with pager:
-        console.print(table)
+    with ui.pager:
+        ui.console.print(table)
 
 
 @dict_group.command(

@@ -5,7 +5,7 @@ from rich import print as rprint
 from rich.table import Table
 
 from words import WordsError, bp  # noqa
-from words.cli import console, err, pager
+from words.cli import ui  # noqa
 from words.datamuse_api import DatamuseAPI
 from words.datamuse_options import DatamuseOptions
 from words.word_presenter import WordPresenter
@@ -18,7 +18,7 @@ def _(**kwargs):
     """
     has_required = filter(None, map(kwargs.get, DatamuseOptions.cli_required))
     if not tuple(has_required):
-        err("No search option provided.")
+        ui.err("No search option provided.")
         return
 
     api = DatamuseAPI(**kwargs)
@@ -28,16 +28,16 @@ def _(**kwargs):
         rprint(api.data)
         return
 
-    with pager:
+    with ui.pager:
         if api.long:
             table = Table(*WordPresenter.headers())
             for w in api.words:
                 word = WordPresenter(w)
                 table.add_row(*word.columns)
-            console.print(table)
+            ui.console.print(table)
         else:
             for word in api.words:
-                console.print(word)
+                ui.console.print(word)
 
 
 dm_cmd = click.Command(

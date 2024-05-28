@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "words"
-version = "0.3.0"
+version = "0.3.1"
 description = "Command line thesaurus, dictionary and more."
 authors = ["Alissa Huskey <alissa.huskey@gmail.com>"]
 readme = "README.md"

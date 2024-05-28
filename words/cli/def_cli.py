@@ -4,6 +4,7 @@ import click
 from rich.traceback import install as rich_tracebacks
 
 from words import WordsError, bp  # noqa
+from words.cli import ui  # noqa
 from words.cli.dict_cli import define_cmd
 
 rich_tracebacks(show_locals=True, suppress=[click])

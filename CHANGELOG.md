@@ -13,13 +13,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 #### CLI
 
+- New global options:
+    - `--[no-]pager`
+    - `--debug`
+- Add `WORDS_PAGER` environment variable.
 - New command: `words dict match` with options:
     - `--db`
     - `--strat`
 - New command: `words rand text` with options:
     - `--unit`
     - `--num`
-- Paginate all output when sensible.
+- Paginate output when sensible.
 - Expand help text.
 - Add short help option `-h`.
 

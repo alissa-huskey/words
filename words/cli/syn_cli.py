@@ -4,7 +4,7 @@ import click
 from rich.table import Table
 
 from words import WordsError, bp  # noqa
-from words.cli import console, pager
+from words.cli import ui  # noqa
 from words.datamuse_api import DatamuseAPI
 from words.definition_request import DefinitionRequest
 from words.word import Word
@@ -57,5 +57,5 @@ def syn_cmd(word: str, max: int, json: bool, long: bool):
         table.add_row(*word.columns)
         done.append(w.word)
 
-    with pager:
-        console.print(table)
+    with ui.pager:
+        ui.console.print(table)

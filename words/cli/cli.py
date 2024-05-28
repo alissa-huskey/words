@@ -4,7 +4,7 @@ import click
 from rich.traceback import install as rich_tracebacks
 
 from words import WordsError, bp  # noqa
-from words.cli import err
+from words.cli import ui
 from words.cli.def_cli import def_cmd
 from words.cli.dict_cli import dict_group
 from words.cli.dm_cli import dm_cmd
@@ -22,9 +22,20 @@ SETTINGS = dict(
 
 
 @click.group(context_settings=SETTINGS)
-def run():
+@click.option(
+    "-D", "--debug", "enable_debug_mode",
+    type=bool, is_flag=True, default=False,
+    help="Print debug messages.",
+)
+@click.option(
+    "-p/-P", "--pager/--no-pager", "enable_pager", show_default="True",
+    type=bool, is_flag=True, default=None,
+    help="Enable pager.",
+)
+def run(enable_debug_mode: bool, enable_pager: bool):
     """Command line thesaurus, dictionary and more."""
-    pass
+    ui.enable_debug_mode = enable_debug_mode
+    ui.enable_pager = enable_pager
 
 
 run.add_command(rand_group)
@@ -37,8 +48,8 @@ run.add_command(syn_cmd)
 def main():
     """CLI entrypoint."""
     try:
-        run()
+        run(auto_envvar_prefix="WORDS")
     except (SystemExit, BdbQuit):
         ...
     except WordsError as e:
-        err(e)
+        ui.err(e)

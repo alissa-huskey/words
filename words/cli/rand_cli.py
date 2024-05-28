@@ -7,7 +7,7 @@ from rich.columns import Columns
 from rich.panel import Panel
 
 from words import WordsError, bp  # noqa
-from words.cli import console, pager
+from words.cli import ui  # noqa
 from words.cli.param_types import RangeType
 from words.color import Colors
 from words.random import RandomBooks, RandomName, RandomWord
@@ -99,8 +99,8 @@ def name_cmd(selection, full, num, limit):
         panel = Panel("\n".join(names), title=title)
         panels.append(panel)
 
-    with pager:
-        console.print(Columns(panels))
+    with ui.pager:
+        ui.console.print(Columns(panels))
 
 
 @rand_group.command("color")
@@ -128,8 +128,8 @@ def color_cmd(output_format, num):
     clist = Colors(output_format, num=num)
     obj = clist.render()
 
-    with pager:
-        console.print(obj)
+    with ui.pager:
+        ui.console.print(obj)
 
 
 @rand_group.command("word")
@@ -151,8 +151,8 @@ def word_cmd(num: int, length):
     wordlist = f.get(num)
     panel = Panel("\n".join(wordlist), title="words", expand=False)
 
-    with pager:
-        console.print(panel)
+    with ui.pager:
+        ui.console.print(panel)
 
 
 @rand_group.command("text")
@@ -192,5 +192,5 @@ def text_cmd(unit: str, num: int):
             width=80,
         )
 
-        console.print(panel)
-    console.line()
+        ui.console.print(panel)
+    ui.console.line()

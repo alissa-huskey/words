@@ -95,7 +95,7 @@ class Colors(dict):
         return choices(list(self.values()), k=self.num)
 
     def render(self):
-        """."""
+        """Return a rendearable to print."""
         self.load()
         if self.output_format == "verbose":
             obj = self.render_verbose()
@@ -106,7 +106,7 @@ class Colors(dict):
         return obj
 
     def render_verbose(self):
-        """Return a renderable to print."""
+        """Return a renderable to print verbosely."""
         columns = Columns(padding=(2, 2))
 
         for color in self.choose():
@@ -120,7 +120,7 @@ class Colors(dict):
         return Padding(columns, (1, 5))
 
     def render_simple(self):
-        """Return a renderable to print."""
+        """Return a renderable to print simply."""
         colors = self.choose()
         names = "\n".join([c.name for c in colors])
         panel = Panel(names, expand=False, title="Colors")

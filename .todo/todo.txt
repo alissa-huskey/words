@@ -35,7 +35,6 @@
 2024-05-21 @dict add help command
 2024-05-21 @dict add SHOW INFO db command
 2024-05-21 @dict add SHOW SERVER command @feature
-2024-05-21 @cli add --pager/--no-pager options
 2024-05-21 @cli rand names: rename --max to --rank or --top
 2024-05-21 @quality rename the various Random classes related to text to make more sense
 2024-05-21 @cli random text: add plain output
@@ -43,3 +42,4 @@
 2024-05-21 @cli rand text: rename --unit para/sent to p/s
 2024-05-21 @rand text: filter out sentences that start with (lowercase) "he/she said/asked" since those usually follow a quote and are therefore incomplete
 2024-05-21 @rand text: filter out sentences that end with "Mr/Mrs." as they probably should not end there
+2024-05-26 @cli custom rich param pager type for --[no]-pager[=pager]
