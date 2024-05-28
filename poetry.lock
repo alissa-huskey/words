@@ -1908,7 +1908,17 @@ attrs = "*"
 [package.extras]
 test = ["pytest"]
 
+[[package]]
+name = "wordnik-py3"
+version = "2.1.2"
+description = "Wordnik API for Python3"
+optional = false
+python-versions = "*"
+files = [
+    {file = "wordnik-py3-2.1.2.tar.gz", hash = "sha256:e4a55aeab9d546cb0b76afd6b853a60f96a5553542f89c29b4fcf69dbc237a8b"},
+]
+
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10, <4.0"
-content-hash = "453a51ec8d039e56f87acd8ed002661fdd42bb71f01b39cb344fa3871cdf200a"
+content-hash = "d91b78a6cbe3c5bfad68e9ef2eb378b74493ea83ab79aaaf885855ad922353c5"

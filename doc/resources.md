@@ -52,20 +52,6 @@ Random list of dinosaurs.
 curl "https://dinoipsum.com/api/?format=json&words=10&paragraphs=1"
 ```
 
-### Wordnik
-
-* [API Docs](https://developer.wordnik.com/docs)
-* [Endpoints](https://developer.wordnik.com/docs#/words)
-* [Getting Started](https://developer.wordnik.com/gettingstarted)
-* [Python Client](https://github.com/wordnik/wordnik-python3)
-
-### 
-
-* []()
-
-```bash
-```
-
 Data Sources
 ------------
 

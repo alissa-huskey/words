@@ -1,13 +1,13 @@
-2024-04-21 @datamuse change --ipa to --format=ipa/apc or --proun=ipa/apc @maybe
+(Z) 2024-04-21 @datamuse change --ipa to --format=ipa/apc or --proun=ipa/apc @maybe
 2024-04-21 @datamuse ensure --ipa isn't passed if falsy
 2024-04-23 @dict cache dictionary definitions
 2024-04-23 @dict cache list of databases
-2024-04-23 @define add --host option @maybe
-2024-04-23 @define add --num optoin @maybe
-2024-04-23 @define group entries by dictionary in DefinitionRequest and CLI output @maybe
-2024-04-23 @datamuse add --and/--or flags (to be manually applied) @maybe
-2024-04-23 @feature support wordnik API @maybe
-2024-04-23 @feature add commands to launch websites @maybe
+(Z) 2024-04-23 @define add --host option @maybe
+2024-04-23 @define add --num option @maybe
+(Z) 2024-04-23 @define group entries by dictionary in DefinitionRequest and CLI output @maybe
+(Z) 2024-04-23 @datamuse add --and/--or flags (to be manually applied) @maybe
+2024-04-23 @feature support wordnik API
+2024-04-23 @feature add commands to launch websites
 2024-04-26 @feature remove plural / find base word
 2024-05-12 @rand color: add --source option to include other color files
 2024-05-12 @rand password: add @feature
@@ -15,7 +15,7 @@
 2024-05-12 @rand animal: add @feature
 2024-05-13 @quality CLI: figure out how to test without making real requests
 2024-05-13 @quality docs: cleanup assorted docs
-2024-05-13 @rand name: if --girl or --boy is not passed, randomly choose and list gender @maybe
+2024-05-13 @rand name: if --girl or --boy is not passed, randomly choose and list gender
 2024-05-13 @quality rand name tests: pull names from test-specific files
 2024-05-13 @cli make some flags global like --json, --plain, --fancy
 2024-05-13 @rand name: validate --num should be positive
@@ -24,9 +24,9 @@
 2024-05-13 @datamuse add --topics --lc and --rc options
 2024-05-13 @syn add a custom DefinitionEntry for MobyThesaurusEntry
 2024-05-13 @syn limit the number of synonyms in some sane way
-2024-05-13 @syn look up parts of speech for moby words somehow @maybe
+2024-05-13 @syn look up parts of speech for moby words somehow
 2024-05-19 @dict define: more help info for --db
-2024-05-20 @syn add --related flag to include --ml and moby thes words @maybe
+2024-05-20 @syn add --related flag to include --ml and moby thes words
 2024-05-20 @quality move datamuse_options.py to cli/
 2024-05-21 @dict add help command
 2024-05-21 @dict add SHOW INFO db command
@@ -39,4 +39,3 @@
 2024-05-21 @rand text: filter out sentences that start with (lowercase) "he/she said/asked" since those usually follow a quote and are therefore incomplete
 2024-05-21 @rand text: filter out sentences that end with "Mr/Mrs." as they probably should not end there
 2024-05-26 @cli custom click param pager type for --[no]-pager[=pager]
-x 2024-05-28 2024-05-27 @quality fix isort settings
