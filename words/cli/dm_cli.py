@@ -8,7 +8,7 @@ from words import WordsError, bp  # noqa
 from words.cli import ui  # noqa
 from words.datamuse_api import DatamuseAPI
 from words.datamuse_options import DatamuseOptions
-from words.word_presenter import WordPresenter
+from words.renderers.dm_word_renderer import DMWordRenderer
 
 
 def _(**kwargs):
@@ -30,9 +30,9 @@ def _(**kwargs):
 
     with ui.pager:
         if api.long:
-            table = Table(*WordPresenter.headers())
+            table = Table(*DMWordRenderer.headers())
             for w in api.words:
-                word = WordPresenter(w)
+                word = DMWordRenderer(w)
                 table.add_row(*word.columns)
             ui.console.print(table)
         else:

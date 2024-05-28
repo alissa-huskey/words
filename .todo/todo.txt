@@ -1,6 +1,5 @@
 2024-04-21 @datamuse change --ipa to --format=ipa/apc or --proun=ipa/apc @maybe
 2024-04-21 @datamuse ensure --ipa isn't passed if falsy
-2024-04-22 @datamuse fix no results bug 'words --ml etcetra' @bug
 2024-04-23 @dict cache dictionary definitions
 2024-04-23 @dict cache list of databases
 2024-04-23 @define add --host option @maybe
@@ -8,7 +7,6 @@
 2024-04-23 @define group entries by dictionary in DefinitionRequest and CLI output @maybe
 2024-04-23 @datamuse add --and/--or flags (to be manually applied) @maybe
 2024-04-23 @feature support wordnik API @maybe
-2024-04-23 @datamuse fix `words words --ml "not recommended"` @bug
 2024-04-23 @feature add commands to launch websites @maybe
 2024-04-26 @feature remove plural / find base word
 2024-05-12 @rand color: add --source option to include other color files
@@ -20,7 +18,6 @@
 2024-05-13 @rand name: if --girl or --boy is not passed, randomly choose and list gender @maybe
 2024-05-13 @quality rand name tests: pull names from test-specific files
 2024-05-13 @cli make some flags global like --json, --plain, --fancy
-2024-05-13 @quality refactor to move renderers into one place (ie WordPresenter, Color.render)
 2024-05-13 @rand name: validate --num should be positive
 2024-05-13 @def add --verb/--noun/etc flags to filter defs
 2024-05-13 @cli add translate command (dict -d fd-eng-spa "how are you?") @feature
@@ -28,7 +25,6 @@
 2024-05-13 @syn add a custom DefinitionEntry for MobyThesaurusEntry
 2024-05-13 @syn limit the number of synonyms in some sane way
 2024-05-13 @syn look up parts of speech for moby words somehow @maybe
-2024-05-19 @dict @dict add match subcommand @feature
 2024-05-19 @dict define: more help info for --db
 2024-05-20 @syn add --related flag to include --ml and moby thes words @maybe
 2024-05-20 @quality move datamuse_options.py to cli/
@@ -42,4 +38,4 @@
 2024-05-21 @cli rand text: rename --unit para/sent to p/s
 2024-05-21 @rand text: filter out sentences that start with (lowercase) "he/she said/asked" since those usually follow a quote and are therefore incomplete
 2024-05-21 @rand text: filter out sentences that end with "Mr/Mrs." as they probably should not end there
-2024-05-26 @cli custom rich param pager type for --[no]-pager[=pager]
+2024-05-26 @cli custom click param pager type for --[no]-pager[=pager]

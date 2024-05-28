@@ -1,4 +1,4 @@
-"""Module for preparing a Word object for printing.
+"""Module for preparing a datamuse Word object for printing.
 
 (Like a controller.)
 """
@@ -8,7 +8,7 @@ from words.object import Object
 from words.word import Word
 
 
-class WordPresenter(Object):
+class DMWordRenderer(Object):
     """Prepare a word for printing."""
 
     HEADERS = ("Parts", "Word")

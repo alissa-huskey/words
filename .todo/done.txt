@@ -19,3 +19,5 @@ x 2024-05-21 2024-05-12 @rand word: add @feature
 x 2024-05-21 2024-05-12 @rand sentence: add @feature
 x 2024-05-21 2024-05-21 @rand sentences/paragraphs: strip mid-sentence excess whitespace
 x 2024-05-27 2024-05-21 @cli add --pager/--no-pager options
+x 2024-05-27 2024-05-19 @dict @dict add match subcommand @feature
+x 2024-05-27 2024-05-13 @quality refactor to move renderers into one place (ie WordPresenter, Color.render)

@@ -1,15 +1,8 @@
-"""Printing colors."""
+"""Random colors."""
 
 import json
 from pathlib import Path
 from random import choices
-
-from rich.columns import Columns
-from rich.console import Group
-from rich.padding import Padding
-from rich.panel import Panel
-from rich.style import Style
-from rich.text import Text
 
 from words import WordsError, bp  # noqa
 from words.object import Object
@@ -18,7 +11,7 @@ ROOT_DIR = Path(__file__).parent.parent
 
 
 class Color(Object):
-    """A color."""
+    """A color name and hex code."""
 
     _name = None
     _code = None
@@ -40,12 +33,12 @@ class Color(Object):
 
     @property
     def code(self):
-        """Get code."""
+        """Get hex code."""
         return self._code and ("#" + self._code.lstrip("#")) or self._code
 
     @code.setter
     def code(self, value):
-        """Set code."""
+        """Set hex code."""
         self._code = value
 
 
@@ -57,10 +50,9 @@ class Colors(dict):
     data = {}
     _maxlen = 0
 
-    def __init__(self, output_format=None, num=1, *args, **kwargs):
+    def __init__(self, num=1, *args, **kwargs):
         """Create the object."""
         self.num = num
-        self.output_format = output_format
 
         if not args:
             return
@@ -92,36 +84,6 @@ class Colors(dict):
 
     def choose(self):
         """Return one or more random colors."""
+        if not self:
+            return []
         return choices(list(self.values()), k=self.num)
-
-    def render(self):
-        """Return a rendearable to print."""
-        self.load()
-        if self.output_format == "verbose":
-            obj = self.render_verbose()
-        elif self.output_format == "simple":
-            obj = self.render_simple()
-        else:
-            raise WordsError(f"No such output format: {self.output_format}")
-        return obj
-
-    def render_verbose(self):
-        """Return a renderable to print verbosely."""
-        columns = Columns(padding=(2, 2))
-
-        for color in self.choose():
-            swatch = Text("  ", Style(bgcolor=color.code))
-            code = Text(color.code)
-            code.align("center", self.maxlen)
-            group = Group(swatch, code)
-            panel = Panel(group, title=color.name, width=self.maxlen + 4)
-            columns.add_renderable(panel)
-
-        return Padding(columns, (1, 5))
-
-    def render_simple(self):
-        """Return a renderable to print simply."""
-        colors = self.choose()
-        names = "\n".join([c.name for c in colors])
-        panel = Panel(names, expand=False, title="Colors")
-        return panel

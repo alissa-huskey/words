@@ -11,6 +11,7 @@ from words.cli import ui  # noqa
 from words.cli.param_types import RangeType
 from words.color import Colors
 from words.random import RandomBooks, RandomName, RandomWord
+from words.renderers.colors_renderer import ColorsRenderer
 
 
 def validate_full(ctx, param, value):
@@ -125,8 +126,9 @@ def name_cmd(selection, full, num, limit):
 )
 def color_cmd(output_format, num):
     """Colors."""
-    clist = Colors(output_format, num=num)
-    obj = clist.render()
+    color_list = Colors(num=num)
+    renderer = ColorsRenderer(color_list)
+    obj = renderer.render(output_format)
 
     with ui.pager:
         ui.console.print(obj)

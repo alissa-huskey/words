@@ -201,7 +201,7 @@ def test_cli_rand_name_errors(params):
         desc="Colors panels 6 lines high, title is name, and include the hex code.",
     ),
 ])
-def test_cli_rand_name_verbosity(params):
+def test_cli_rand_color(params):
     """
     WHEN: words rand color [OPTIONS]
     THEN: the results should be as expected

@@ -7,8 +7,8 @@ from words import WordsError, bp  # noqa
 from words.cli import ui  # noqa
 from words.datamuse_api import DatamuseAPI
 from words.definition_request import DefinitionRequest
+from words.renderers.dm_word_renderer import DMWordRenderer
 from words.word import Word
-from words.word_presenter import WordPresenter
 
 
 @click.command("syn")
@@ -49,11 +49,11 @@ def syn_cmd(word: str, max: int, json: bool, long: bool):
         synonyms += ([Word(word=w.strip()) for w in text.split(",")])
 
     done = []
-    table = Table(*WordPresenter.headers())
+    table = Table(*DMWordRenderer.headers())
     for w in synonyms:
         if w.word in done:
             continue
-        word = WordPresenter(w)
+        word = DMWordRenderer(w)
         table.add_row(*word.columns)
         done.append(w.word)
 
