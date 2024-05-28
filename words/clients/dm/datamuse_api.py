@@ -5,9 +5,9 @@ from functools import cached_property
 from datamuse import Datamuse as DatamuseClient
 
 from words import WordsError, bp  # noqa
+from words.clients.dm.word import Word
 from words.datamuse_options import DatamuseOptions
 from words.object import Object
-from words.word import Word
 
 
 class DatamuseAPI(Object):

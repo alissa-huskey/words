@@ -4,8 +4,8 @@
 """
 
 from words import WordsError, bp  # noqa
+from words.clients.dm.word import Word
 from words.object import Object
-from words.word import Word
 
 
 class DMWordRenderer(Object):

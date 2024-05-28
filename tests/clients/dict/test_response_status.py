@@ -1,6 +1,6 @@
 import pytest
 
-from words.response_status import ResponseStatus
+from words.clients.dict.response_status import ResponseStatus
 
 
 def test_response_status():

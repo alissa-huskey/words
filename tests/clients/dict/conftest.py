@@ -3,9 +3,10 @@
 import pytest
 from dictionary_client import DictionaryClient
 
+from words.clients.dict.definition_request import DefinitionRequest
+
 from tests import fake_response
 from tests.mock_socket import MockSocket
-from words.definition_request import DefinitionRequest
 
 
 @pytest.fixture

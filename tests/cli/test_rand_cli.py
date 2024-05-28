@@ -6,7 +6,7 @@ from click.testing import CliRunner
 from words.cli.rand_cli import (color_cmd, name_cmd, rand_group, text_cmd,
                                 word_cmd)
 
-from .. import Stub
+from tests import Stub
 
 bp = breakpoint
 HEX_FINDER = re_compile(r'#[A-Z0-9]{6}')

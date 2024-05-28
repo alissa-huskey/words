@@ -39,3 +39,4 @@
 2024-05-21 @rand text: filter out sentences that start with (lowercase) "he/she said/asked" since those usually follow a quote and are therefore incomplete
 2024-05-21 @rand text: filter out sentences that end with "Mr/Mrs." as they probably should not end there
 2024-05-26 @cli custom click param pager type for --[no]-pager[=pager]
+2024-05-27 @quality fix isort settings

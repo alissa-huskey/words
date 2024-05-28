@@ -1,4 +1,4 @@
-"""A dictionary response status."""
+"""A dict response status."""
 
 from re import compile as re_compile
 

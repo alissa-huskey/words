@@ -4,10 +4,10 @@ from socket import socket
 import pytest
 
 from words import WordsError
-from words.definition_request import DefinitionRequest
+from words.clients.dict.definition_request import DefinitionRequest
 
-from . import Stub, fake_response
-from .mock_socket import MockSocket
+from tests import Stub, fake_response
+from tests.mock_socket import MockSocket
 
 DBS = ("gcide", "wn", "moby-thesaurus", "elements", "english", "all", "easton")
 bp = breakpoint

@@ -1,4 +1,4 @@
-from words.dictionary_entry import DictionaryEntry
+from words.clients.dict.dictionary_entry import DictionaryEntry
 
 
 def test_dictionary_entry():

@@ -1,6 +1,6 @@
 import pytest
 
-from words.word import Word
+from words.clients.dm.word import Word
 
 bp = breakpoint
 

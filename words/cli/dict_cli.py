@@ -10,7 +10,7 @@ from rich.traceback import install as rich_tracebacks
 
 from words import WordsError, bp  # noqa
 from words.cli import ui
-from words.definition_request import DefinitionRequest
+from words.clients.dict.definition_request import DefinitionRequest
 
 rich_tracebacks(show_locals=True, suppress=[click])
 

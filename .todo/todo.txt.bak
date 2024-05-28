@@ -18,7 +18,6 @@
 2024-05-13 @rand name: if --girl or --boy is not passed, randomly choose and list gender @maybe
 2024-05-13 @quality rand name tests: pull names from test-specific files
 2024-05-13 @cli make some flags global like --json, --plain, --fancy
-x 2024-05-27 2024-05-13 @quality refactor to move renderers into one place (ie WordPresenter, Color.render)
 2024-05-13 @rand name: validate --num should be positive
 2024-05-13 @def add --verb/--noun/etc flags to filter defs
 2024-05-13 @cli add translate command (dict -d fd-eng-spa "how are you?") @feature

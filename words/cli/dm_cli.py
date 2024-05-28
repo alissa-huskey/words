@@ -6,7 +6,7 @@ from rich.table import Table
 
 from words import WordsError, bp  # noqa
 from words.cli import ui  # noqa
-from words.datamuse_api import DatamuseAPI
+from words.clients.dm.datamuse_api import DatamuseAPI
 from words.datamuse_options import DatamuseOptions
 from words.renderers.dm_word_renderer import DMWordRenderer
 

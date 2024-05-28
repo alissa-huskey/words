@@ -5,10 +5,10 @@ from rich.table import Table
 
 from words import WordsError, bp  # noqa
 from words.cli import ui  # noqa
-from words.datamuse_api import DatamuseAPI
-from words.definition_request import DefinitionRequest
+from words.clients.dict.definition_request import DefinitionRequest
+from words.clients.dm.datamuse_api import DatamuseAPI
+from words.clients.dm.word import Word
 from words.renderers.dm_word_renderer import DMWordRenderer
-from words.word import Word
 
 
 @click.command("syn")

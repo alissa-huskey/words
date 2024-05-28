@@ -1,4 +1,4 @@
-from words.datamuse_api import DatamuseAPI
+from words.clients.dm.datamuse_api import DatamuseAPI
 
 
 def test_datamuse_api():
