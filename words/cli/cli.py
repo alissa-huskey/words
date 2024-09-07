@@ -8,7 +8,7 @@ from words.cli import ui
 from words.cli.def_cli import def_cmd
 from words.cli.dict_cli import dict_group
 from words.cli.dm_cli import dm_cmd
-from words.cli.lookup_cli import lookup_cmd
+from words.cli.lookup_cli import lookup_group
 from words.cli.rand_cli import rand_group
 from words.cli.syn_cli import syn_cmd
 from words.cli.wordnik_cli import wordnik_group
@@ -43,7 +43,7 @@ def run(enable_debug_mode: bool, enable_pager: bool):
 run.add_command(def_cmd)
 run.add_command(dict_group)
 run.add_command(dm_cmd)
-run.add_command(lookup_cmd)
+run.add_command(lookup_group)
 run.add_command(rand_group)
 run.add_command(syn_cmd)
 run.add_command(wordnik_group)

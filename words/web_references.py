@@ -43,7 +43,7 @@ REFERENCES = Collection(
         options=("ol", "onelook"),
         help="? any letter, * any number of letters, # consonant, @ vowel, -abcd disallow letters, +abcd restrict to letters, //abcd// unscramble, expand:, reverse acronym pattern:meaning",
         resources=(
-            Resource(name="Query", option="q", template="https://onelook.com/?w=${WORD}"),
+            Resource(name="Query", option="query", template="https://onelook.com/?w=${WORD}"),
             Resource(name="Related Words", option="rel", template="https://onelook.com/?w=${WORD}&related=1"),
             Resource(name="Mentions", option="men", template="https://onelook.com/?w=${WORD}&mentions=1"),
             Resource(name="Lyrics", option="lyr", template="https://onelook.com/?w=${WORD}&verses=1"),
@@ -61,7 +61,7 @@ REFERENCES = Collection(
     ),
     WebReference(
         name="Wiktionary",
-        options=("w", "wik"),
+        options=("wt", "wik"),
         resources=(
             Resource(name="Wiki", option="wiki", template="https://en.wiktionary.org/wiki/${WORD}"),
         )
